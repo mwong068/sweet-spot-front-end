@@ -1,7 +1,8 @@
 // import { useHistory } from 'react-router-dom';
 
-const postNewUser = (event) => {
+const postNewUser = (event, userData) => {
     event.preventDefault();
+    console.log(userData)
     return (dispatch) => {
         dispatch({type: 'SIGNING_UP'})
         return fetch('http://127.0.0.1:3000/users', {
@@ -11,12 +12,7 @@ const postNewUser = (event) => {
             'Accept': 'application/json'
         },
         body: JSON.stringify({
-            user: {
-            name: event.target.name.value,
-            username: event.target.username.value,
-            email: event.target.email.value,
-            password: event.target.password.value
-            }
+            user: userData
         })
         })
         .then(resp => resp.json())

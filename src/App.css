@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+/* a {
+  color: white;
+  text-decoration: none;
+} */
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -40,7 +45,6 @@
 /* Style the navbar */
 #navbar {
   overflow: hidden;
-  background-color: teal;
 }
 
 /* Navbar links */

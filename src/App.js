@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Homepage from './components/Homepage'; 
 import Navbar from './components/Navbar'; 
+import Header from './components/Header'; 
 import Signup from './components/Signup'; 
 import Profile from './components/Profile'; 
 import Login from './components/Login'; 
@@ -13,6 +14,7 @@ function App() {
         <Router>
           <div>
             <Navbar />
+            <Header />
           </div>
           <Switch>
             <Route exact path='/'>
