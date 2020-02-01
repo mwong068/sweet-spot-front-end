@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Signup from './components/Signup'; 
 import Profile from './components/Profile'; 
 import Login from './components/Login'; 
+import Footer from './components/Footer'; 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -14,8 +15,11 @@ function App() {
         <Router>
           <div>
             <Navbar />
+            <hr></hr>
             <Header />
+            <hr></hr>
           </div>
+          <div id="main-container">
           <Switch>
             <Route exact path='/'>
               <Homepage />
@@ -36,6 +40,10 @@ function App() {
               <Profile />
             </Route>
           </Switch>
+          </div>
+          <div id="footer-div">
+          <Footer />
+          </div>
         </Router>
     </div>
   );

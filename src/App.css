@@ -1,11 +1,25 @@
 .App {
   text-align: center;
+  padding: 0 50px;
+  font-family: Roboto;
 }
 
-/* a {
-  color: white;
-  text-decoration: none;
-} */
+hr { 
+  display: block;
+  width: 95%;
+  margin-before: 0.5em;
+  margin-after: 0.5em;
+  margin-start: auto;
+  margin-end: auto;
+  overflow: hidden;
+  border-style: inset;
+  border-width: 1px;
+}
+
+#main-container {
+  padding: 50px;
+}
+
 
 .App-logo {
   height: 40vmin;
@@ -42,35 +56,84 @@
   }
 }
 
-/* Style the navbar */
-#navbar {
-  overflow: hidden;
-}
 
-/* Navbar links */
-#navbar-links {
-  float: right;
-  display: block;
-  color: #f2f2f2;
+#container {
+  height: 100%;
   text-align: center;
-  padding: 14px;
-  text-decoration: none;
+}
+
+#container div {
+  width: 8%;
+  display: inline-block;
+}
+
+#container:after {
+  /* content: ''; */
+  width: 100%; /* Ensures there are at least 2 lines of text, so justification works */
+  display: inline-block;
+}
+
+#landing-image {
+  background-color: teal;
+  padding: 100px;
+}
+
+#about-us {
+  background-color: orange;
+  padding: 100px;
+}
+
+#featured {
+  background-color: teal;
+  padding: 100px;
+}
+
+#break {
+  padding: 50px;
+}
+
+#footer-div {
+  padding: 50px 30px 0;
+}
+
+#footer {
+  background-color: orange;
+  margin: 0;
+  padding: 10px 0 10px 50px;
+  height: 100%;
+  /* width: 100vh; */
+  text-align: left;
 }
 
 
-/* Page content */
-.content {
-  padding: 16px;
+#footer div {
+  width: 19%;
+  display: inline-block;
+  padding: 10px 0;
+  /* border: 1px solid black; */
 }
 
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
+#footer:after {
+  content: '';
+  width: 100%; /* Ensures there are at least 2 lines of text, so justification works */
+  display: inline-block;
 }
 
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-  padding-top: 60px;
+#contact-div {
+  height: 100%;
+  text-align: center;
+  background-color: orange;
+}
+
+#contact-div div {
+  width: 8%;
+  display: inline-block;
+  /* border: 1px solid black; */
+  padding: 0 0 25px 0;
+}
+
+#contact-div:after {
+  /* content: ''; */
+  width: 100%; /* Ensures there are at least 2 lines of text, so justification works */
+  display: inline-block;
 }

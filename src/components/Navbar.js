@@ -22,8 +22,11 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1,
-    marginLeft: '180px',
+    marginLeft: '230px',
     color: 'orange',
+  },
+  largeIcon: {
+    fontSize: "1.3em"
   },
 }));
 
@@ -32,34 +35,35 @@ export default function Navbar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ background: 'white',  padding: '20px', color: 'black' }}>
+      <AppBar position="static" elevation={0} style={{ background: 'white',  padding: '20px', color: 'black' }}>
         <Toolbar>
           {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton> */}
           <Typography variant="h3" className={classes.title}>
-          Sweet Spot
+          <span style={{color: 'teal'}}>Sweet</span> <span style={{color: 'orange'}}>Spot</span>
           </Typography>
           
-          <IconButton aria-label="search" color="inherit">
-            <SearchIcon />
+          <IconButton aria-label="search" color="inherit" >
+            <SearchIcon className={classes.largeIcon}/>
           </IconButton>
           
-          <IconButton aria-label="favorites" color="inherit">
-            <FavoriteBorderIcon />
-          </IconButton>
-
           <IconButton aria-label="account of current user"
             //   aria-controls={menuId}
               aria-haspopup="true"
             //   onClick={handleProfileMenuOpen}
+            className={classes.largeIcon}
               color="inherit"
             >
-              <AccountCircle />
-            </IconButton>
+              <AccountCircle className={classes.largeIcon}/>
+          </IconButton>
 
-            <IconButton aria-label="search" color="inherit">
-            <ShoppingCartIcon />
+          <IconButton aria-label="favorites" color="inherit">
+            <FavoriteBorderIcon className={classes.largeIcon}/>
+          </IconButton>
+
+          <IconButton aria-label="search" color="inherit">
+            <ShoppingCartIcon className={classes.largeIcon}/>
           </IconButton>
             
           {/* <Button color="inherit">Login</Button> */}
