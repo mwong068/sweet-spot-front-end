@@ -26,7 +26,8 @@ const useStyles = makeStyles(theme => ({
     color: 'orange',
   },
   largeIcon: {
-    fontSize: "1.3em"
+    fontSize: "1.3em",
+    color: 'black',
   },
 }));
 
@@ -55,7 +56,9 @@ export default function Navbar() {
             className={classes.largeIcon}
               color="inherit"
             >
+                <Link to="/signup">
               <AccountCircle className={classes.largeIcon}/>
+                </Link>
           </IconButton>
 
           <IconButton aria-label="favorites" color="inherit">

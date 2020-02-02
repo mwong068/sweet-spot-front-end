@@ -23,10 +23,6 @@ export default function Header() {
                 <div>
                     <h3><Link to="/signup">Signup</Link></h3>
                 </div>
-                <div></div>
-                <div>
-                    <h3><Link to="/login">Login</Link></h3>
-                </div>
             </div>
         )
 }
