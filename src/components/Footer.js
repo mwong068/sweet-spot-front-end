@@ -6,9 +6,8 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import PinterestIcon from '@material-ui/icons/Pinterest';
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
 
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
     largeIcon: {

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import postNewUser from '../actions/postNewUser';
 import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import TwitterIcon from '@material-ui/icons/Twitter';
@@ -16,14 +16,15 @@ class Signup extends React.Component {
     state = {
         username: '',
         name: '',
+        email: '',
         password: '',
-        email: ''
+        password_confirmation: ''
     }
 
     handleChange = (e) => {
-        console.log(e.target.value)
+        console.log(e.target.id)
       this.setState({
-          [e.target.name]: e.target.value
+          [e.target.id]: e.target.value
       })
     }
 
@@ -69,43 +70,53 @@ class Signup extends React.Component {
                     <hr style={{width: "0.1px", height: "450px" }}></hr>
                     </div>
                     <div>
-                    <form noValidate autoComplete="off" id="signup-form">            
+                    <form noValidate autoComplete="off" id="signup-form" onSubmit={ (e) => {this.props.postNewUser(e, this.state, this.props.history)} }>            
                         <TextField
                         required
-                        id="outlined-required"
+                        id="name"
                         label="Name"
                         variant="outlined"
+                        value={this.state.name} 
+                        onChange={this.handleChange}
                         />
                         <br></br><br></br>
                         <TextField
                         required
-                        id="outlined-disabled"
+                        id="email"
                         label="Email"
                         variant="outlined"
+                        value={this.state.email} 
+                        onChange={this.handleChange}
                         />
                         <br></br><br></br>
                         <TextField
-                        id="outlined-helperText"
+                        id="username"
                         label="Username"
                         variant="outlined"
+                        value={this.state.username} 
+                        onChange={this.handleChange}
                         /> 
                         <br></br><br></br>
                         <TextField
-                        id="outlined-helperText"
+                        id="password"
                         label="Password"
                         type="password"
                         variant="outlined"
+                        value={this.state.password} 
+                        onChange={this.handleChange}
                         /> 
                         <br></br><br></br>
                         <TextField
-                        id="outlined-helperText"
+                        id="confirm-password"
                         label="Confirm Password"
                         type="password"
                         helperText="Some important text"
                         variant="outlined"
+                        value={this.state.password_confirmation} 
+                        onChange={this.handleChange}
                         /> 
                         <br></br><br></br><br></br>     
-                        <Button variant="contained" color="primary">Sign Up</Button>
+                        <Button variant="contained" color="primary" type="submit">Sign Up</Button>
                         <br></br><br></br>
                         <p>By signing up for Sweet Spot, you agree to the Terms of Service.</p>
                         <p>View our Privacy Policy.</p>
@@ -123,7 +134,8 @@ class Signup extends React.Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        postNewUser: (event, userData) => { dispatch(postNewUser(event, userData)) }
+        postNewUser: (event, userData, history) => { dispatch(postNewUser(event, userData, history));
+        }
     }
 }
 

@@ -13,7 +13,7 @@ export default function Header() {
                 </div>
                 <div></div>
                 <div>
-                    <h3><Link to="/favorites">Favorites</Link></h3>
+                    <h3><Link to="/allproducts">Explore</Link></h3>
                 </div>
                 <div></div>
                 <div>

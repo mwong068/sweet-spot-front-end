@@ -1,7 +1,8 @@
 // import { useHistory } from 'react-router-dom';
 
-const getExistingUser = (event) => {
+const getExistingUser = (event, userData, history) => {
     event.preventDefault();
+    console.log(history)
     return (dispatch) => {
         dispatch({type: 'LOGGING_IN'})
         return fetch('http://127.0.0.1:3000/login', {
@@ -26,9 +27,12 @@ const getExistingUser = (event) => {
             else {
                 localStorage.setItem('token', data.jwt);
                 dispatch({type: "SET_CURRENT_USER", currentUser: data.user.data.attributes.username})
-                // useHistory().push("/profile");
+                history.push('/user/`${data.user.data.attributes.username}`')
+                // return data.user.data.attributes.username
             }
         })
+        // console.log(data.user.data.attributes.username)
+        // .then((username) => typeof username === 'string' ? history.push("/user/`${data.user.data.attributes.username}`") : null)
     }
 }
 

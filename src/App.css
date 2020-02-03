@@ -5,7 +5,7 @@
 }
 
 hr { 
-  display: block;
+  /* display: block;
   width: 95%;
   margin-before: 0.5em;
   margin-after: 0.5em;
@@ -13,7 +13,7 @@ hr {
   margin-end: auto;
   overflow: hidden;
   border-style: inset;
-  border-width: 1px;
+  border-width: 1px; */
 }
 
 #main-container {
@@ -188,4 +188,28 @@ hr {
 
 p {
   font-size: 0.7em;
+}
+
+/*Product page */
+#product-page {
+  text-align: center;
+}
+
+#product-image {
+  display: inline-block;
+  width: 55%;
+  height: 100vh;
+  /* border: 1px solid black; */
+}
+
+#product-info {
+  display: inline-block;
+  width: 40%;
+  height: 100vh;
+  /* border: 1px solid black; */
+}
+
+#extra-info {
+  text-align: left;
+  padding: 10px;
 }

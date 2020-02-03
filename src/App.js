@@ -7,46 +7,66 @@ import Signup from './components/Signup';
 import Profile from './components/Profile'; 
 import Login from './components/Login'; 
 import Footer from './components/Footer'; 
+import ProductContainer from './components/ProductContainer'; 
+import ProductPage from './components/ProductPage'; 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import checkUser from './actions/checkUser';
 
-function App() {
-  return (
-    <div className="App">
-        <Router>
-          <div>
-            <Navbar />
-            <hr></hr>
-            <Header />
-            <hr></hr>
-          </div>
-          <div id="main-container">
-          <Switch>
-            <Route exact path='/'>
-              <Homepage />
-            </Route>
-            <Route path='/signup'>
-              <Signup />
-            </Route>
-            <Route path='/login'>
-              <Login />
-            </Route>
-            {/* <Route path='/about'>
-              <About />
-            </Route>
-            <Route path='/favorites'>
-              <Favorites />
-            </Route> */}
-            <Route path='/profile'>
-              <Profile />
-            </Route>
-          </Switch>
-          </div>
-          <div id="footer-div">
-          <Footer />
-          </div>
-        </Router>
-    </div>
-  );
+class App extends React.Component {
+
+  componentDidMount () {
+    this.props.checkUser();
+  }
+  
+  
+  render () {
+    return (
+      <div className="App">
+          <Router>
+            <div>
+              <Navbar />
+              <hr></hr>
+              <Header />
+              <hr></hr>
+            </div>
+            <div id="main-container">
+            <Switch>
+              <Route exact path='/'>
+                <Homepage />
+              </Route>
+              <Route path='/signup' render={(props) => <Signup {...props}/> } />
+              <Route path='/login' render={(props) => <Login {...props} />} />
+              <Route path='/allproducts'>
+                <ProductContainer />
+              </Route>
+              <Route path='/productpage'>
+                <ProductPage />
+              </Route>
+              {/* <Route path='/about'>
+                <About />
+              </Route>
+              <Route path='/favorites'>
+                <Favorites />
+              </Route> */}
+              <Route path='/users/:id' render={(props) => <Profile {...props} />} />
+            </Switch>
+            </div>
+            <div id="footer-div">
+            <Footer />
+            </div>
+          </Router>
+      </div>
+    );
+  }
+
 }
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  return {
+      checkUser: () => { dispatch(checkUser()) },
+    }
+  }
+  
+
+export default connect(null, mapDispatchToProps)(App);

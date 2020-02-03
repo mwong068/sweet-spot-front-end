@@ -1,6 +1,6 @@
 // import { useHistory } from 'react-router-dom';
 
-const postNewUser = (event, userData) => {
+const postNewUser = (event, userData, history) => {
     event.preventDefault();
     console.log(userData)
     return (dispatch) => {
@@ -24,9 +24,11 @@ const postNewUser = (event, userData) => {
             else {
                 localStorage.setItem('token', data.jwt);
                 dispatch({type: "SET_CURRENT_USER", currentUser: data.user.data.attributes.username})
-                // useHistory().push("/profile");
+                history.push('/users/`${data.user.data.attributes.username}`')
+                // return data.user.data.attributes.username
             }
         })
+        // .then((username) => typeof username === 'string' ? history.push(`/users/${username}`) : null )
     }
 }
 
