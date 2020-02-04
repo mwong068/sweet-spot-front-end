@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
-import Avatar from '@material-ui/core/Avatar';
 
 
 class Profile extends React.Component {
@@ -15,7 +14,7 @@ class Profile extends React.Component {
             <div>
                 <div id="profile-header">
                     <div>
-                        <Avatar alt="Remy Sharp" src="../assets/donuts.jpg" style={{width: '200', height: '200'}} />
+                    <img src={require('../assets/felicia.jpg')} width='90px' height='90px' style={{borderRadius: '50%'}}></img>
                     </div>
                     <div>
                     <h1>Hi there, {this.props.currentUser}!</h1>

@@ -87,15 +87,23 @@ export default function Homepage() {
                 <CardMedia
                 className={classes.media}
                 title="Donut"
-                image={ require('../assets/cupcake.jpg') }
-                style={{width: '290px', height: '240px'}}
+                image={ require('../assets/macarons.jpg') }
+                style={{width: '290px', height: '280px'}}
                 /><br></br>
-                <CardContent style={{height: '5px'}}>
+                <CardContent style={{height: '5px', textAlign: 'left', padding: '10px'}}>
                 <Typography gutterBottom variant="h5" style={{fontFamily: 'Montserrat'}}>
                     Macarons (Assorted)
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                    Ratings
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                </Typography>
+                <br/>
+                <Typography variant="body2" component="h2" style={{fontFamily: 'Montserrat', fontSize: '20px', fontWeight: 'bold'}}>
+                    $30.00
                 </Typography>
                 </CardContent>
             </CardActionArea>
@@ -105,16 +113,24 @@ export default function Homepage() {
             <CardActionArea>
                 <CardMedia
                 className={classes.media}
-                image={ require('../assets/sweetspot.png') }
+                image={ require('../assets/chocolatecake.jpg') }
                 title="Donut"
-                style={{width: '290px', height: '240px'}}
+                style={{width: '290px', height: '280px'}}
                 /><br></br>
-                <CardContent style={{height: '5px'}}>
+                <CardContent style={{height: '5px', textAlign: 'left', padding: '10px'}}>
                 <Typography gutterBottom variant="h5" style={{fontFamily: 'Montserrat'}}>
-                    Chocolate Raspberry...
+                    Chocolate Raspberry C...
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p" image={ require('../assets/sweetspot.png') }>
-                    Ratings
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                </Typography>
+                <br/>
+                <Typography variant="body2" component="h2" style={{fontFamily: 'Montserrat', fontSize: '20px', fontWeight: 'bold'}}>
+                    $40.00
                 </Typography>
                 </CardContent>
             </CardActionArea>
@@ -124,26 +140,30 @@ export default function Homepage() {
       <CardActionArea>
             <CardMedia
           className={classes.media}
-          image="https://images.unsplash.com/photo-1570368112535-43e1e5b78f75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1107&q=80"
+          image={ require('../assets/pannacotta.jpg') }
           title="Donut"
-          style={{width: '290px', height: '240px'}}
+          style={{width: '290px', height: '280px'}}
         /><br></br>
         <CardContent style={{height: '5px', textAlign: 'left', padding: '10px'}}>
           <Typography gutterBottom variant="h5" style={{fontFamily: 'Montserrat'}}>
-            Strawberry Yogurt Parf...
+            Strawberry Panna Cotta
           </Typography>
           <Typography variant="body2" color="textSecondary" component="h2">
-          Ratings
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
           </Typography>
           <br/>
           <Typography variant="body2" component="h2" style={{fontFamily: 'Montserrat', fontSize: '20px', fontWeight: 'bold'}}>
-            $40.00
+            $20.00
           </Typography>
         </CardContent>
       </CardActionArea>
     </Card>
             </div>
-            <br></br><br></br>
+            <br></br><br></br><br></br><br></br>
             <center>
             <Button variant="contained" color="primary"
                 style={{
@@ -154,33 +174,35 @@ export default function Homepage() {
                     color: 'black',
                     border: '3px solid #f3e4b7',
                     fontFamily: 'Montserrat',
+                    // boxShadow: 'none'
                 }}
-                >view all</Button>
+                ><Link to="/products" style={{color: 'black', textDecoration: 'none'}}>view all</Link></Button>
                 </center>
         </div>
-        <div id="break"></div>
         <div id="categories">
         <h1 style={{color: '#C3DBBF'}}>Top Categories</h1>
+        <br></br>
         <center>
         <div class="grid-container">
-            <div class="grid-item">1</div>
-            <div class="grid-item">2</div>
-            <div class="grid-item">3</div>
-            <div class="grid-item">4</div>
-            <div class="grid-item">Macarons</div>
-            <div class="grid-item">Cupcakes</div>
-            <div class="grid-item">Tarts</div>
-            <div class="grid-item">Pie</div>
-            <div class="grid-item">9</div>
-            <div class="grid-item">10</div>
-            <div class="grid-item">11</div>
-            <div class="grid-item">12</div>
-            <div class="grid-item">Cookies</div>
-            <div class="grid-item">Cheesecakes</div>
-            <div class="grid-item">Cakes</div>
-            <div class="grid-item">Puddings</div>
+            <div class="grid-item"><img src={require('../assets/closeupmacarons.jpg')} width='100%' height='100%'></img></div>
+            
+            <div class="grid-item"><img src={require('../assets/cupcakes.jpg')} width='100%' height='100%'></img></div>
+            <div class="grid-item"><img src={require('../assets/tarts.jpg')} width='100%' height='100%' style={{objectFit: 'cover'}}></img></div>
+            <div class="grid-item"><img src={require('../assets/pie.jpg')} width='100%' height='100%'    style={{objectFit: 'cover'}}></img></div>
+            <div class="grid-item" style={{border: 'none'}}>Macarons<hr></hr></div>
+            <div class="grid-item" style={{border: 'none'}}>Cupcakes<hr></hr></div>
+            <div class="grid-item" style={{border: 'none'}}>Tarts<hr></hr></div>
+            <div class="grid-item" style={{border: 'none'}}>Pie<hr></hr></div>
+            <div class="grid-item"><img src={require('../assets/cookies.jpg')} width='100%' height='100%' style={{objectFit: 'cover'}}></img></div>
+            <div class="grid-item"><img src={require('../assets/cheesecake.jpg')} width='100%' height='100%' style={{objectFit: 'cover'}}></img></div>
+            <div class="grid-item"><img src={require('../assets/cake.jpg')} width='100%' height='100%' style={{objectFit: 'cover'}}></img></div>
+            <div class="grid-item"><img src={require('../assets/pudding.jpg')} width='100%' height='100%' style={{objectFit: 'cover'}}></img></div>
+            <div class="grid-item">Cookies<hr></hr></div>
+            <div class="grid-item">Cheesecakes<hr></hr></div>
+            <div class="grid-item">Cakes<hr></hr></div>
+            <div class="grid-item">Puddings<hr></hr></div>
         </div>
-        <br></br>
+        <br></br><br></br>
             <Button variant="contained" color="primary"
                 style={{
                     borderRadius: 5,
@@ -191,9 +213,11 @@ export default function Homepage() {
                     border: '3px solid #f3e4b7',
                     fontFamily: 'Montserrat',
                 }}
-                >shop all</Button>
+                ><Link to="/products" style={{color: 'black', textDecoration: 'none'}}>shop all</Link></Button>
             </center>
         </div>
+        <div id="break"></div>
+        <br></br><br></br>
         <div id="break"></div>
         <div id="about">
             <h1 style={{color: '#C3DBBF'}}>About Sweet Spot</h1>
