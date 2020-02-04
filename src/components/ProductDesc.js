@@ -41,9 +41,14 @@ function a11yProps(index) {
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    width: 1200,
-    backgroundColor: theme.palette.background.paper,
-    padding: 40,
+    width: 825,
+    backgroundColor: 'white',
+    padding: '0px 100px',
+    textAlign: 'center',
+  },
+  indicator: {
+    backgroundColor: '#dcead9',
+    border: 'none'
   },
 }));
 
@@ -57,11 +62,17 @@ export default function SimpleTabs() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+      <AppBar position="static" style={{backgroundColor: 'white', border: 'none', color: 'black' }}>
+        <Tabs value={value} onChange={handleChange} 
+              classes={{
+                indicator: classes.indicator
+              }}>       
+              aria-label="simple tabs example" >
           <Tab label="Ingredients" {...a11yProps(0)} />
-          <Tab label="Description" {...a11yProps(1)} />
-          <Tab label="Shipping" {...a11yProps(2)} />
+          <Tab label="Description" {...a11yProps(1)} />      
+          <Tab label="Shipping" {...a11yProps(2)} />    
+          <Tab label="Reviews" {...a11yProps(3)} />    
+          <Tab label="About" {...a11yProps(4)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -88,6 +99,12 @@ export default function SimpleTabs() {
         Made with love!
       </TabPanel>
       <TabPanel value={value} index={2}>
+        Shipping is a $7 flat rate fee.
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        Shipping is a $7 flat rate fee.
+      </TabPanel>
+      <TabPanel value={value} index={4}>
         Shipping is a $7 flat rate fee.
       </TabPanel>
     </div>

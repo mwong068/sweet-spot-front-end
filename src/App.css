@@ -4,8 +4,18 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+h1 {
+  color: #C3DBBF;
+  font-family: 'Montserrat';
+}
+
 h2 {
   text-transform: uppercase;
+  font-family: 'Montserrat';
+}
+
+p {
+  font-family: 'Montserrat';
 }
 
 /* a {
@@ -96,12 +106,13 @@ hr {
 #landing-text {
   text-align: left;
   position: absolute;
-  font-size: 16px;
-  top: 50%;
+  font-size: 25px;
+  top: 40%;
   left: 20%;
   transform: translate(-50%, -50%);
   color: black;
   font-weight: 500;
+  font-family: 'Montserrat';
 }
 
 #promises{
@@ -126,22 +137,22 @@ hr {
 }
 
 #homepage-cards {
-  height: 100%;
-  text-align: center;
+  height: 150%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 60px;
+
 }
 
 #homepage-cards div {
-  height: 100%;
+  /* height: 125%; */
   display: inline-block;
-  /* padding: 35px 5px; */
+  width: 32vh;
+  padding: 25px 0;
   /* border: 1px solid black; */
+  text-align: center;
 }
 
-#homepage-cards:after {
-  content: '';
-  /* width: 100%;  */
-  display: inline-block;
-}
 
 #featured {
   background-color: #white;
@@ -183,7 +194,7 @@ hr {
   background-image: url('./assets/cupcake.jpg');
   height: 300px;
   background-repeat: no-repeat;
-  background-position: -250px -415px;
+  background-position: -250px -295px;
   background-size: cover;
   /* position: relative; */
 }
@@ -304,26 +315,37 @@ hr {
 /*Product page */
 #product-page {
   text-align: center;
-  width: 130vh;
+  display: grid;
+  /* border: 1px solid black; */
+  grid-template-columns: auto auto;
+  padding: 30px;
 }
 
 #product-image {
   display: inline-block;
-  width: 55%;
-  /* height: 100vh; */
-  /* border: 1px solid black; */
+  width: 40%;
+  padding: 50px;
+  /* border: 1px solid pink; */
+}
+
+#display-image {
+  width: 100%;
+  height: 100%;
 }
 
 #product-info {
   display: inline-block;
-  width: 40%;
-  /* height: 50vh; */
-  /* border: 1px solid black; */
+  width: 30%;
+  padding: 50px;
+  /* border: 1px solid orange; */
+  text-align: left;
 }
 
 #extra-info {
   text-align: left;
   padding: 10px;
+  width: 130vh;
+  /* border: 1px solid purple; */
 }
 
 .checked {
@@ -332,12 +354,16 @@ hr {
 
 #product-list {
   text-align: center;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 10px;
 }
 
 #products {
   display: inline-block;
   width: 300px;
   height: 400px;
+  padding: 20px;
 }
 
 /* PROFILE alignment */

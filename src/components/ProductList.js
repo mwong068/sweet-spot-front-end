@@ -6,11 +6,14 @@ import { Link, Route } from 'react-router-dom';
 
 class ProductList extends React.Component {
 
+removeList = (event) => {
+    React.unmountComponentAtNode(document.getElementById('product-list'));  
+}
 
     render() {
         return (
             <div id="product-list">
-                {Object.keys(this.props.products).length !== 0 ? this.props.products.data.map(function (product) { return <div id="products"><Link key={product.id} to={`/products/${product.id}`}><Product {...product} /></Link></div>}) : null }
+                {Object.keys(this.props.products).length !== 0 ? this.props.products.data.map(function (product) { return <div id="products"><Link key={product.id} to={`/products/${product.id}`} ><Product {...product} /></Link></div>}) : null }
             </div>
         )
     }

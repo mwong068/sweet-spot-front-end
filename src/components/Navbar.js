@@ -108,9 +108,9 @@ export default function Navbar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}><Link to="/login" style={{ color: 'black', textDecoration: 'none' }}>Login</Link></MenuItem>
-      <MenuItem onClick={handleMenuClose}><Link to="/signup" style={{ color: 'black', textDecoration: 'none' }}>Signup</Link></MenuItem>
-      <MenuItem onClick={handleMenuClose}><Link to="/profile" style={{ color: 'black', textDecoration: 'none' }}>Profile</Link></MenuItem>
+      <MenuItem onClick={handleMenuClose}><Link to="/login" style={{ color: 'black', textDecoration: 'none', fontFamily: 'Montserrat', }}>Login</Link></MenuItem>
+      <MenuItem onClick={handleMenuClose}><Link to="/signup" style={{ color: 'black', textDecoration: 'none', fontFamily: 'Montserrat',}}>Signup</Link></MenuItem>
+      <MenuItem onClick={handleMenuClose}><Link to="/profile" style={{ color: 'black', textDecoration: 'none', fontFamily: 'Montserrat', }}>Profile</Link></MenuItem>
     </Menu>
   );
 

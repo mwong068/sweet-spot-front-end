@@ -39,7 +39,7 @@ class Signup extends React.Component {
         return (
             <div id="signup-border">
                 <div id="signup-container">
-                    <h1>Create Account</h1>
+                    <h1 style={{color: 'black'}}>Create Account</h1>
                     <br></br>
                     <div>
                     <Button
@@ -155,9 +155,11 @@ class Signup extends React.Component {
                         <Button variant="contained" type="submit"
                         style={{
                             radius: '3',
-                            border: '1px solid #353535',
-                            backgroundColor: '#C3DBBF',
-                            padding: '5px 20px',
+                            border: '0.6px solid #D3D3D3',
+                            backgroundColor: '#dcead9',
+                            color: '#3e4e60',
+                            fontWeight: 'bold',
+                            padding: '6px 25px',
 
                         }}>Sign Up</Button>
                         <br></br><br></br>

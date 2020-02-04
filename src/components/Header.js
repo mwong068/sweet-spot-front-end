@@ -29,7 +29,8 @@ class Header extends React.Component {
                         fontSize: "16px",
                         color: 'black',
                         textTransform: 'capitalize',
-                        fontWeight: 'semibold',
+                        fontWeight: 'bold',
+                        fontFamily: 'Montserrat',
                     }}>Home</Button></Link></h3>
                 </div>
                 <div></div>
@@ -39,7 +40,8 @@ class Header extends React.Component {
                         fontSize: "16px",
                         color: 'black',
                         textTransform: 'capitalize',
-                        fontWeight: 'semibold',
+                        fontWeight: 'bold',
+                        fontFamily: 'Montserrat',
                     }}>Shop</Button></Link></h3>
                 </div>
                 <div></div>
@@ -49,7 +51,8 @@ class Header extends React.Component {
                         fontSize: "16px",
                         color: 'black',
                         textTransform: 'capitalize',
-                        fontWeight: 'semibold',
+                        fontWeight: '700',
+                        fontFamily: 'Montserrat',
                     }}>Brands</Button></Link></h3>
                 </div>
                 <div></div>
@@ -59,7 +62,8 @@ class Header extends React.Component {
                         fontSize: "16px",
                         color: 'black',
                         textTransform: 'capitalize',
-                        fontWeight: 'semibold',
+                        fontWeight: 'bold',
+                        fontFamily: 'Montserrat',
                     }}>About</Button></Link></h3>
                 </div>
                 <div></div>
@@ -70,7 +74,8 @@ class Header extends React.Component {
                         fontSize: "16px",
                         color: 'black',
                         textTransform: 'capitalize',
-                        fontWeight: 'semibold',
+                        fontWeight: 'bold',
+                        fontFamily: 'Montserrat',
                     }}>Logout</Button></h3>
                 </div>
                 : null }

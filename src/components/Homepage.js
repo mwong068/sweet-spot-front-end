@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 import AirplanemodeActiveOutlinedIcon from '@material-ui/icons/AirplanemodeActiveOutlined';
 import EmojiEventsOutlinedIcon from '@material-ui/icons/EmojiEventsOutlined';
 import PeopleOutlineOutlinedIcon from '@material-ui/icons/PeopleOutlineOutlined';
@@ -15,31 +16,36 @@ const useStyles = makeStyles({
       maxWidth: 345,
     },
     media: {
-      height: 230,
-      width: 500,
+        // will not work for some reason
+    //   height: '230px',
+    //   width: 500,
     },
   });
+  
+  
 
 export default function Homepage() {
+
     const classes = useStyles();
+
     return (
         <div>
         <div id="landing-image">
             <div id="landing-text">
-                <h2>Made to order.</h2>
-                <h2>Fresh ingredients.</h2>
-                <h2>From local pastry chefs.</h2>
-                <br/>
+                <p>Made to Order.
+                <br></br><br></br>Fresh Ingredients.
+                <br></br><br></br>Local Pastry Chefs.</p>
                 <Button variant="contained" color="primary"
                 style={{
                     borderRadius: 5,
                     backgroundColor: 'white',
-                    padding: "9px 15px",
+                    padding: "7px 15px",
                     fontSize: "14px",
-                    color: 'black',
-                    border: '3px solid #ECD189',
+                    color: '#353535',
+                    border: '3px solid #f3e4b7',
+                    fontFamily: 'Montserrat',
                 }}
-                >Shop now ></Button>
+                ><Link to="/products" style={{color: 'black', textDecoration: 'none'}}>Shop now ></Link></Button>
             </div>
         </div>
         <div id="break"></div>
@@ -73,71 +79,69 @@ export default function Homepage() {
         </div>
         <div id="break"></div>
         <div id="featured">
-            <h1 style={{color: '#C3DBBF'}}>Featured Products</h1>
+            <h1>Featured Products</h1>
             <br></br>
             <div id="homepage-cards">
-            <div>
             <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia
                 className={classes.media}
-                image="/static/images/cards/contemplative-reptile.jpg"
-                title="Contemplative Reptile"
-                />
-                <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                    Lizard
+                title="Donut"
+                image={ require('../assets/cupcake.jpg') }
+                style={{width: '290px', height: '240px'}}
+                /><br></br>
+                <CardContent style={{height: '5px'}}>
+                <Typography gutterBottom variant="h5" style={{fontFamily: 'Montserrat'}}>
+                    Macarons (Assorted)
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica
+                    Ratings
                 </Typography>
                 </CardContent>
             </CardActionArea>
             </Card>
-            </div>
-                <div></div>
-            <div>
+               
             <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia
                 className={classes.media}
-                image="https://images.unsplash.com/photo-1570368112535-43e1e5b78f75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1107&q=80"
-                title="Contemplative Reptile"
-                />
-                <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                    Lizard
+                image={ require('../assets/sweetspot.png') }
+                title="Donut"
+                style={{width: '290px', height: '240px'}}
+                /><br></br>
+                <CardContent style={{height: '5px'}}>
+                <Typography gutterBottom variant="h5" style={{fontFamily: 'Montserrat'}}>
+                    Chocolate Raspberry...
                 </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica
-                </Typography>
-                </CardContent>
-            </CardActionArea>
-            </Card>
-            </div>
-                <div></div>
-            <div>
-            <Card className={classes.root}>
-            <CardActionArea>
-                <CardMedia
-                className={classes.media}
-                image="/static/images/cards/contemplative-reptile.jpg"
-                title="Contemplative Reptile"
-                />
-                <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                    Lizard
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica
+                <Typography variant="body2" color="textSecondary" component="p" image={ require('../assets/sweetspot.png') }>
+                    Ratings
                 </Typography>
                 </CardContent>
             </CardActionArea>
             </Card>
-            </div>
+               
+            <Card className={classes.card}>
+      <CardActionArea>
+            <CardMedia
+          className={classes.media}
+          image="https://images.unsplash.com/photo-1570368112535-43e1e5b78f75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1107&q=80"
+          title="Donut"
+          style={{width: '290px', height: '240px'}}
+        /><br></br>
+        <CardContent style={{height: '5px', textAlign: 'left', padding: '10px'}}>
+          <Typography gutterBottom variant="h5" style={{fontFamily: 'Montserrat'}}>
+            Strawberry Yogurt Parf...
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="h2">
+          Ratings
+          </Typography>
+          <br/>
+          <Typography variant="body2" component="h2" style={{fontFamily: 'Montserrat', fontSize: '20px', fontWeight: 'bold'}}>
+            $40.00
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
             </div>
             <br></br><br></br>
             <center>
@@ -148,7 +152,8 @@ export default function Homepage() {
                     padding: "6px 20px",
                     fontSize: "14px",
                     color: 'black',
-                    border: '3px solid #ECD189',
+                    border: '3px solid #f3e4b7',
+                    fontFamily: 'Montserrat',
                 }}
                 >view all</Button>
                 </center>
@@ -183,7 +188,8 @@ export default function Homepage() {
                     padding: "6px 20px",
                     fontSize: "14px",
                     color: 'black',
-                    border: '3px solid #ECD189',
+                    border: '3px solid #f3e4b7',
+                    fontFamily: 'Montserrat',
                 }}
                 >shop all</Button>
             </center>

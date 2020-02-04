@@ -30,19 +30,21 @@ export default function Footer() {
                     style={{
                         borderRadius: 2,
                         backgroundColor: 'white',
-                        padding: "2px 80px",
+                        padding: "4px 80px",
                         fontSize: "14px",
                         border: '1px solid white',
+                        fontFamily: 'Montserrat',
                     }}></input>
                     <Button variant="contained" color="primary" 
                     style={{
                     borderRadius: 2,
                     backgroundColor: '#E1EDDF',
-                    padding: "11px 20px",
+                    padding: "9px 20px",
                     fontSize: "14px",
                     color: 'black',
                     fontWeight: 'bold',
                     border: 'none',
+                    fontFamily: 'Montserrat',
                 }}>subscribe</Button>
                 <br></br><br/>
                     </div>
