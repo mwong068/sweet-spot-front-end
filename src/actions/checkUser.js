@@ -1,6 +1,6 @@
 
 
-const checkUser = (event) => {
+const checkUser = (event, history) => {
     return (dispatch) => {
         const token = localStorage.token;
         console.log(token)
@@ -17,10 +17,11 @@ const checkUser = (event) => {
         .then(data => {
             if(data.message){
                 localStorage.removeItem("token")
+                history.push("/");
             }
             else {
                 dispatch({type: "SET_CURRENT_USER", currentUser: data.user.data.attributes.username})
-                // history.push("/profile");
+                return data.user.data.attributes.username
             }
         })
     }

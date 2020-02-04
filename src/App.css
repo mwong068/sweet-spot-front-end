@@ -213,3 +213,17 @@ p {
   text-align: left;
   padding: 10px;
 }
+
+.checked {
+  color: pink;
+}
+
+#product-list {
+  text-align: center;
+}
+
+#products {
+  display: inline-block;
+  width: 300px;
+  height: 400px;
+}

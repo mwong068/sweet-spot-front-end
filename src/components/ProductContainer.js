@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import getProducts from '../actions/getProducts';
+import checkUser from '../actions/checkUser';
 import ProductList from './ProductList';
 
 
@@ -9,7 +10,8 @@ class ProductContainer extends React.Component {
     // fetch to all products and display them
 
     componentDidMount () {
-        this.props.getProducts();
+        // this.props.checkUser();
+        // this.props.getProducts();
     }
 
     render() {
@@ -23,7 +25,8 @@ class ProductContainer extends React.Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getProducts: (event) => { dispatch(getProducts(event)) }
+        // checkUser: (event, history) => { dispatch(checkUser(event, history)) },
+        // getProducts: (event) => { dispatch(getProducts(event)) }
     }
 }
 

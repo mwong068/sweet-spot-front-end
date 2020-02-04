@@ -12,11 +12,15 @@ import ProductPage from './components/ProductPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import checkUser from './actions/checkUser';
+import getProducts from './actions/getProducts';
+
 
 class App extends React.Component {
 
   componentDidMount () {
-    this.props.checkUser();
+    this.props.checkUser(this.props.history);
+    this.props.getProducts();
+
   }
   
   
@@ -27,7 +31,7 @@ class App extends React.Component {
             <div>
               <Navbar />
               <hr></hr>
-              <Header />
+            <Route path='/' render={ (props) => <Header {...props} /> } />
               <hr></hr>
             </div>
             <div id="main-container">
@@ -65,6 +69,7 @@ class App extends React.Component {
 const mapDispatchToProps = dispatch => {
   return {
       checkUser: () => { dispatch(checkUser()) },
+      getProducts: (event) => { dispatch(getProducts(event)) }
     }
   }
   

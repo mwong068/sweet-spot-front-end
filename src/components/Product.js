@@ -18,7 +18,68 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MediaCard() {
+export default function MediaCard(props) {
+
+let starRatings = (num) => {
+    if (num === 1) {
+        return (
+            <div>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        </div>
+        )
+    }
+    else if (num === 2) {
+        return (
+            <div>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            </div>
+            )
+    }
+    else if (num === 3) {
+        return (
+            <div>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            </div>
+            )
+    }
+    else if (num === 4) {
+        return (
+            <div>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            </div>
+            )
+    }
+    else {
+        return (
+            <div>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            </div>
+            )
+    }
+}
+
+
+
   const classes = useStyles();
 
   return (
@@ -32,14 +93,15 @@ export default function MediaCard() {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Donut
+            {props.attributes.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="h2">
-            justDeezNuts
+          {/* {props.attributes.rating} */}
+          {starRatings(props.attributes.rating)}
           </Typography>
           <br/>
           <Typography variant="body2" color="primary" component="p">
-            $15.00
+            ${props.attributes.price}.00
           </Typography>
         </CardContent>
         </Link>

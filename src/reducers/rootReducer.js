@@ -14,6 +14,8 @@ const rootReducer = (state = initialState, action) => {
             return {...state, loading: true}
         case 'SET_CURRENT_USER':
             return {...state, currentUser: action.currentUser, loading: false}
+        case 'LOGOUT':
+            return {...state, currentUser: {}}
         case 'GETTING_PRODUCTS':
             return {...state, loading: true}
         case 'SET_PRODUCTS':
