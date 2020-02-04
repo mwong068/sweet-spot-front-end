@@ -10,7 +10,7 @@ class Profile extends React.Component {
     render() {
         return (
             <div>
-                <h1>Hi there, {this.props.currentUser}</h1>
+                <h1>Hi there, {this.props.currentUser}!</h1>
             </div>
         )
     }

@@ -53,7 +53,7 @@ class App extends React.Component {
               <Route path='/favorites'>
                 <Favorites />
               </Route> */}
-              <Route path='/users/:id' render={(props) => <Profile {...props} />} />
+              <Route path='/profile' render={(props) => <Profile {...props} />} />
             </Switch>
             </div>
             <div id="footer-div">
