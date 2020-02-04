@@ -1,8 +1,16 @@
 .App {
   text-align: center;
-  padding: 0 50px;
-  font-family: Roboto;
+  /* padding: 0 50px; */
+  font-family: 'Montserrat', sans-serif;
 }
+
+h2 {
+  text-transform: uppercase;
+}
+
+/* a {
+  color: hotpink;
+} */
 
 hr { 
   /* display: block;
@@ -58,8 +66,8 @@ hr {
 
 /* Second Header or Navbar */
 #container {
-  height: 100%;
   text-align: center;
+  background-color: #F0DAA1;
 }
 
 #container div {
@@ -76,43 +84,128 @@ hr {
 
 /* Main body of homepage */
 #landing-image {
-  background-color: teal;
+  background-image: url('./assets/landing.jpeg');
   padding: 100px;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position: 30% 35%;
+  background-size: cover;
+  position: relative;
 }
 
-#about-us {
-  background-color: orange;
-  padding: 100px;
+#landing-text {
+  text-align: left;
+  position: absolute;
+  font-size: 16px;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-weight: 500;
+}
+
+#promises{
+  /* background-color: #F0DAA1; */
+  margin: 0;
+  padding: 10px 0 10px 100px;
+  height: 15vh; 
+  text-align: left;
+}
+
+#promises div {
+  width: 19%;
+  display: inline-block;
+  /* padding: 30px 0; */
+  /* border: 1px solid black; */
+}
+
+#promises:after {
+  content: '';
+  width: 100%; 
+  display: inline-block;
+}
+
+#homepage-cards {
+  height: 100%;
+  text-align: center;
+}
+
+#homepage-cards div {
+  height: 100%;
+  display: inline-block;
+  /* padding: 35px 5px; */
+  /* border: 1px solid black; */
+}
+
+#homepage-cards:after {
+  content: '';
+  /* width: 100%;  */
+  display: inline-block;
 }
 
 #featured {
-  background-color: teal;
+  background-color: #white;
   padding: 100px;
+  text-align: left;
+}
+
+#categories {
+  background-color: #white;
+  padding: 100px;
+  text-align: left;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  /* background-color: #2196F3; */
+  padding: 10px;
+  grid-gap: 10px;
+  width: 105vh;
+  grid-template-rows: 200px 35px 200px 35px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  /* align-content: space-between; */
+}
+
+.grid-item {
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  /* padding: 20px; */
+  font-size: 20px;
+  text-align: center;
+  width: 25vh;
+}
+
+#about {
+  background-color: #white;
+  padding: 100px;
+  text-align: right;
+  background-image: url('./assets/cupcake.jpg');
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position: -250px -415px;
+  background-size: cover;
+  /* position: relative; */
 }
 
 #break {
-  padding: 50px;
+  padding: 15px;
 }
 
 
 /* Footer */
-#footer-div {
-  padding: 50px 30px 0;
-}
-
 #footer {
-  background-color: orange;
+  background-color: #F0DAA1;
   margin: 0;
-  padding: 10px 0 10px 50px;
-  height: 100%;
-  /* width: 100vh; */
+  padding: 10px 0 10px 100px;
+  height: 15vh; 
   text-align: left;
 }
 
 #footer div {
   width: 19%;
   display: inline-block;
-  padding: 18px 0;
+  /* padding: 30px 0; */
   /* border: 1px solid black; */
 }
 
@@ -122,9 +215,21 @@ hr {
   display: inline-block;
 }
 
+#newsletter-div {
+  text-align: center;
+  background-color: #F0DAA1;
+  padding: 30px 0 0 40px;
+  width: 97.2%;
+}
+
+#newsletter-div div {
+  display: inline-block;
+  padding: 0 100px 0 100px;
+}
+
 #newsletter {
   height: 4vh;
-  width: 20vh;
+  width: 10vh;
   border-radius: 5px;
   border: 1px solid black;
 }
@@ -132,8 +237,9 @@ hr {
 /* contact buttons at bottom of footer */
 #contact-div {
   height: 100%;
+  padding: 40px 0 0 0;
   text-align: center;
-  background-color: orange;
+  background-color: #F0DAA1;
 }
 
 #contact-div div {
@@ -152,9 +258,8 @@ hr {
 /*signup */
 #signup-border {
   text-align: center;
-  border: 1px solid black;
   padding: 50px;
-  background-color: teal;
+  background-color: #C3DBBF;
 }
 
 #signup-container {
@@ -162,12 +267,22 @@ hr {
   height: 100%;
   width: 100vh;
   padding: 20px 75px 10px 75px;
+  border: 1px solid black;
   display: inline-block;
+}
+
+#signup-container p {
+  font-size: 0.9em;
+
+}
+#signup-container a {
+  text-decoration: none;
+  color: #C3DBBF;
 }
 
 #signup-container div {
   height: 5vh;
-  width: 30vh;
+  width: 25vh;
   display: inline-block;
   /* margin-left: -25px; */
   /* padding: 0 60px 0 0; */
@@ -186,26 +301,23 @@ hr {
   padding: 25px;
 }
 
-p {
-  font-size: 0.7em;
-}
-
 /*Product page */
 #product-page {
   text-align: center;
+  width: 130vh;
 }
 
 #product-image {
   display: inline-block;
   width: 55%;
-  height: 100vh;
+  /* height: 100vh; */
   /* border: 1px solid black; */
 }
 
 #product-info {
   display: inline-block;
   width: 40%;
-  height: 100vh;
+  /* height: 50vh; */
   /* border: 1px solid black; */
 }
 
@@ -226,4 +338,25 @@ p {
   display: inline-block;
   width: 300px;
   height: 400px;
+}
+
+/* PROFILE alignment */
+#profile-header {
+  text-decoration: none;
+  color:black;
+}
+
+#profile-header div {
+  height: 5vh;
+  width: 25vh;
+  display: inline-block;
+  /* margin-left: -25px; */
+  /* padding: 0 60px 0 0; */
+  /* border: 1px solid black; */
+}
+
+#profile-header:after {
+  /* content: ''; */
+  width: 100%; 
+  display: inline-block;
 }

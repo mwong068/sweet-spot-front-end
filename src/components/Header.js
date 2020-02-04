@@ -24,28 +24,54 @@ class Header extends React.Component {
         return (
             <div id="container">
                 <div>
-                    <h3><Link to="/"><Button>Home</Button></Link></h3>
+                    <h3><Link to="/" style={{ textDecoration: 'none' }}><Button
+                    style={{
+                        fontSize: "16px",
+                        color: 'black',
+                        textTransform: 'capitalize',
+                        fontWeight: 'semibold',
+                    }}>Home</Button></Link></h3>
                 </div>
                 <div></div>
                 <div>
-                    <h3><Link to="/about"><Button>About</Button></Link></h3>
+                    <h3><Link to="/products" style={{ textDecoration: 'none' }}><Button
+                    style={{
+                        fontSize: "16px",
+                        color: 'black',
+                        textTransform: 'capitalize',
+                        fontWeight: 'semibold',
+                    }}>Shop</Button></Link></h3>
                 </div>
                 <div></div>
                 <div>
-                    <h3><Link to="/allproducts"><Button>Explore</Button></Link></h3>
+                    <h3><Link to="/" style={{ textDecoration: 'none' }}><Button
+                    style={{
+                        fontSize: "16px",
+                        color: 'black',
+                        textTransform: 'capitalize',
+                        fontWeight: 'semibold',
+                    }}>Brands</Button></Link></h3>
                 </div>
                 <div></div>
                 <div>
-                    <h3><Link to="/profile"><Button>Profile</Button></Link></h3>
-                </div>
-                <div></div>
-                <div>
-                    <h3><Link to="/signup"><Button>Signup</Button></Link></h3>
+                    <h3><Link to="/about" style={{ textDecoration: 'none' }}><Button
+                    style={{
+                        fontSize: "16px",
+                        color: 'black',
+                        textTransform: 'capitalize',
+                        fontWeight: 'semibold',
+                    }}>About</Button></Link></h3>
                 </div>
                 <div></div>
                 {this.props.currentUser ? 
                 <div>
-                    <h3><Button onClick={ (event) => {this.handleClick(event, this.props.history)} }>Logout</Button></h3>
+                    <h3><Button onClick={ (event) => {this.handleClick(event, this.props.history)} }
+                    style={{
+                        fontSize: "16px",
+                        color: 'black',
+                        textTransform: 'capitalize',
+                        fontWeight: 'semibold',
+                    }}>Logout</Button></h3>
                 </div>
                 : null }
             </div>

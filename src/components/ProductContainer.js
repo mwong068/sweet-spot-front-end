@@ -3,31 +3,19 @@ import { connect } from 'react-redux';
 import getProducts from '../actions/getProducts';
 import checkUser from '../actions/checkUser';
 import ProductList from './ProductList';
+import ProductPage from './ProductPage';
+import { Route } from 'react-router-dom';
 
 
-class ProductContainer extends React.Component {
+function ProductContainer({ match, product }) {
 
-    // fetch to all products and display them
-
-    componentDidMount () {
-        // this.props.checkUser();
-        // this.props.getProducts();
-    }
-
-    render() {
         return (
             <div>
                 <ProductList />
+                <Route path={`${match.url}/:product`} render={routerProps => <ProductPage {...routerProps} product={product} />} />
             </div>
         )
-    }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        // checkUser: (event, history) => { dispatch(checkUser(event, history)) },
-        // getProducts: (event) => { dispatch(getProducts(event)) }
-    }
-}
 
-export default connect(null, mapDispatchToProps)(ProductContainer);
+export default ProductContainer;

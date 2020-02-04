@@ -82,10 +82,10 @@ let starRatings = (num) => {
 
   const classes = useStyles();
 
+
   return (
     <Card className={classes.card}>
       <CardActionArea>
-        <Link to="/productpage">
             <CardMedia
           className={classes.media}
           image="https://images.unsplash.com/photo-1570368112535-43e1e5b78f75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1107&q=80"
@@ -93,10 +93,10 @@ let starRatings = (num) => {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
+              {/* {match.params.product.id} */}
             {props.attributes.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="h2">
-          {/* {props.attributes.rating} */}
           {starRatings(props.attributes.rating)}
           </Typography>
           <br/>
@@ -104,7 +104,6 @@ let starRatings = (num) => {
             ${props.attributes.price}.00
           </Typography>
         </CardContent>
-        </Link>
       </CardActionArea>
       {/* <CardActions>
       <Button size="small" color="primary">

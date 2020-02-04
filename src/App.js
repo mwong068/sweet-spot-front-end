@@ -30,23 +30,16 @@ class App extends React.Component {
           <Router>
             <div>
               <Navbar />
-              <hr></hr>
+              {/* <hr></hr> */}
             <Route path='/' render={ (props) => <Header {...props} /> } />
-              <hr></hr>
+              {/* <hr></hr> */}
             </div>
             <div id="main-container">
             <Switch>
-              <Route exact path='/'>
-                <Homepage />
-              </Route>
+              <Route exact path='/' render={(props) => <Homepage {...props} /> } />
               <Route path='/signup' render={(props) => <Signup {...props}/> } />
               <Route path='/login' render={(props) => <Login {...props} />} />
-              <Route path='/allproducts'>
-                <ProductContainer />
-              </Route>
-              <Route path='/productpage'>
-                <ProductPage />
-              </Route>
+              <Route path='/products' render={routerProps => <ProductContainer {...routerProps} />} />
               {/* <Route path='/about'>
                 <About />
               </Route>

@@ -19,22 +19,35 @@ export default function Footer() {
     const classes = useStyles();
         return (
             <div>
+                <div id="newsletter-div">
+                    <div>
+                    <h2>Subscribe our Newsletter</h2>
+                    <p>Subscribe to recieve the latest updates and special offers.</p>
+                    </div>
+                    {/* <div></div> */}
+                    <div>
+                    <input type="text" id="newsletter"
+                    style={{
+                        borderRadius: 2,
+                        backgroundColor: 'white',
+                        padding: "2px 80px",
+                        fontSize: "14px",
+                        border: '1px solid white',
+                    }}></input>
+                    <Button variant="contained" color="primary" 
+                    style={{
+                    borderRadius: 2,
+                    backgroundColor: '#E1EDDF',
+                    padding: "11px 20px",
+                    fontSize: "14px",
+                    color: 'black',
+                    fontWeight: 'bold',
+                    border: 'none',
+                }}>subscribe</Button>
+                <br></br><br/>
+                    </div>
+                </div>
             <div id="footer">
-                    <div>
-                        <h2>Need help?</h2>
-                        <p>We're here to help.</p>
-                        <p>Please check the FAQ page or contact our support team.</p>
-                    </div>
-                    <div></div>
-                    <div>
-                        <center>
-                        <h2>Join our Newsletter</h2>
-                        <input type="text" id="newsletter"></input>
-                        <Button variant="contained" color="primary">Join</Button>
-                        <p>Sign up to recieve the latest updates and special offers.</p>
-                        </center>
-                    </div>
-                    <div></div>
                     <div>
                         <h2>Follow Us</h2>
                         <IconButton aria-label="search" color="inherit" >
@@ -51,6 +64,22 @@ export default function Footer() {
                         </IconButton>
                         <br></br><br></br>
                     </div>
+                    <div></div>
+                    <div>
+                        <h2>Need help?</h2>
+                        <p>We're here to help.
+                        Please check the FAQ page or contact our support team.</p>
+                        <br></br>
+                    </div>
+                    <div></div>
+                    <div>
+                        <h2>Contact</h2>
+                        <p>support@sweetspot.com</p>
+                        <p>(415) 358-9485</p>
+                        <br></br>
+                    </div>
+                    <div></div>
+                    
             </div>
             <div id="contact-div">
                 <div><h3>Contact</h3></div>

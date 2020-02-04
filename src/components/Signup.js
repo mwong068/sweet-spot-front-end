@@ -8,6 +8,8 @@ import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import { Link } from 'react-router-dom';
+import { FormLabel } from '@material-ui/core';
+
 
 
 
@@ -45,32 +47,65 @@ class Signup extends React.Component {
                         color="default"
                         // className={classes.button}
                         startIcon={<PeopleAltIcon />}
+                        style={{ 
+                            backgroundColor: '#DF4930',
+                            color: 'white',
+                            radius: '2',
+                            padding: '10px 30px',
+                            textTransform: 'capitalize',
+                            fontSize: '14px',
+                            fontWeight: '500',
+                        }}
                     >
                         Sign up with Google
-                    </Button><br></br><br></br>
+                    </Button><br></br><br></br><br></br>
                     <Button
                         variant="contained"
                         color="secondary"
                         // className={classes.button}
                         startIcon={<TwitterIcon />}
+                        style={{ 
+                            backgroundColor: '#64CCF1',
+                            color: 'white',
+                            radius: '2',
+                            padding: '10px 30px',
+                            textTransform: 'capitalize',
+                            fontSize: '14px',
+                            fontWeight: '500',
+                        }}
                     >
                         Sign up with Twitter
-                    </Button><br></br><br></br>
+                    </Button><br></br><br></br><br></br>
                     <Button
                         variant="contained"
                         color="primary"
                         // className={classes.button}
                         startIcon={<FacebookIcon />}
+                        style={{ 
+                            backgroundColor: '#507CC0',
+                            color: 'white',
+                            radius: '2',
+                            padding: '10px 30px',
+                            textTransform: 'capitalize',
+                            fontSize: '14px',
+                            fontWeight: '500',
+                        }}
                     >
                         Sign up with Facebook
                     </Button>
-                        <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>     
+                        <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>    
                     </div>
                     <div>
-                    <hr style={{width: "0.1px", height: "450px" }}></hr>
+                    <hr style={{width: "0.1px", height: "470px" }}></hr>
                     </div>
                     <div>
                     <form noValidate autoComplete="off" id="signup-form" onSubmit={ (e) => {this.props.postNewUser(e, this.state, this.props.history)} }>            
+                        {/* <FormLabel
+                        style={{
+                            textAlign: 'left',
+                        }}>
+                        Name
+                        </FormLabel> */}
                         <TextField
                         required
                         id="name"
@@ -78,6 +113,7 @@ class Signup extends React.Component {
                         variant="outlined"
                         value={this.state.name} 
                         onChange={this.handleChange}
+                        
                         />
                         <br></br><br></br>
                         <TextField
@@ -110,17 +146,24 @@ class Signup extends React.Component {
                         id="confirm-password"
                         label="Confirm Password"
                         type="password"
-                        helperText="Some important text"
+                        // helperText="Some important text"
                         variant="outlined"
                         value={this.state.password_confirmation} 
                         onChange={this.handleChange}
                         /> 
                         <br></br><br></br><br></br>     
-                        <Button variant="contained" color="primary" type="submit">Sign Up</Button>
+                        <Button variant="contained" type="submit"
+                        style={{
+                            radius: '3',
+                            border: '1px solid #353535',
+                            backgroundColor: '#C3DBBF',
+                            padding: '5px 20px',
+
+                        }}>Sign Up</Button>
                         <br></br><br></br>
-                        <p>By signing up for Sweet Spot, you agree to the Terms of Service.</p>
-                        <p>View our Privacy Policy.</p>
-                        <h5>Already a member? <Link to="/login">Login</Link></h5>
+                        <p>By signing up for Sweet Spot, you agree to the <a href="#">Terms of Service.</a></p>
+                        <p>View our <a href="#">Privacy Policy.</a></p>
+                        <h5>Already a Member? <Link to="/login" style={{ fontSize: '14px' }}>Login</Link></h5>
                     </form>
                     </div>
                     <br></br>

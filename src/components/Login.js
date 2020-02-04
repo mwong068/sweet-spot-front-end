@@ -46,29 +46,56 @@ class Login extends React.Component {
                         color="default"
                         // className={classes.button}
                         startIcon={<PeopleAltIcon />}
+                        style={{ 
+                            backgroundColor: '#DF4930',
+                            color: 'white',
+                            radius: '2',
+                            padding: '10px 30px',
+                            textTransform: 'capitalize',
+                            fontSize: '14px',
+                            fontWeight: '500',
+                        }}
                     >
-                        Login with Google
-                    </Button><br></br><br></br>
+                        Sign up with Google
+                    </Button><br></br><br></br><br></br>
                     <Button
                         variant="contained"
                         color="secondary"
                         // className={classes.button}
                         startIcon={<TwitterIcon />}
+                        style={{ 
+                            backgroundColor: '#64CCF1',
+                            color: 'white',
+                            radius: '2',
+                            padding: '10px 30px',
+                            textTransform: 'capitalize',
+                            fontSize: '14px',
+                            fontWeight: '500',
+                        }}
                     >
-                        Login with Twitter
-                    </Button><br></br><br></br>
+                        Sign up with Twitter
+                    </Button><br></br><br></br><br></br>
                     <Button
                         variant="contained"
                         color="primary"
                         // className={classes.button}
                         startIcon={<FacebookIcon />}
+                        style={{ 
+                            backgroundColor: '#507CC0',
+                            color: 'white',
+                            radius: '2',
+                            padding: '10px 30px',
+                            textTransform: 'capitalize',
+                            fontSize: '14px',
+                            fontWeight: '500',
+                        }}
                     >
-                        Login with Facebook
+                        Sign up with Facebook
                     </Button>
-                        <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>     
+                        <br></br><br></br><br></br><br></br><br></br><br></br><br></br>     
                     </div>
                     <div>
-                    <hr style={{width: "0.1px", height: "450px" }}></hr>
+                    <hr style={{width: "0.1px", height: "400px" }}></hr>
                     </div>
                     <div>
                     <form noValidate autoComplete="off" id="signup-form" onSubmit={ (event) => {this.props.getExistingUser(event, this.state, this.props.history)} }>            
@@ -93,13 +120,20 @@ class Login extends React.Component {
                         id="confirm-password"
                         label="Confirm Password"
                         type="password"
-                        helperText="Some important text"
+                        // helperText="Some important text"
                         variant="outlined"
                         value={this.state.password_confirmation} 
                         onChange={this.handleChange}
                         /> 
                         <br></br><br></br><br></br>     
-                        <Button variant="contained" color="primary" type="submit">Login</Button>
+                        <Button variant="contained" type="submit"
+                        style={{
+                            radius: '3',
+                            border: '1px solid #353535',
+                            backgroundColor: '#C3DBBF',
+                            padding: '5px 20px',
+
+                        }}>Login</Button>
                         <br></br><br></br>
                         <h5>Not a member? <Link to="/signup">Signup</Link></h5>
                         <br></br><br></br><br></br><br/>
