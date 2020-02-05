@@ -7,6 +7,7 @@ import Signup from './components/Signup';
 import Profile from './components/Profile'; 
 import Login from './components/Login'; 
 import Footer from './components/Footer'; 
+import Cart from './components/Cart'; 
 import ProductContainer from './components/ProductContainer'; 
 import ProductPage from './components/ProductPage'; 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -40,6 +41,7 @@ class App extends React.Component {
               <Route path='/signup' render={(props) => <Signup {...props}/> } />
               <Route path='/login' render={(props) => <Login {...props} />} />
               <Route path='/products' render={routerProps => <ProductContainer {...routerProps} />} />
+              <Route path='/cart' render={(props) => <Cart {...props} />} />
               {/* <Route path='/about'>
                 <About />
               </Route>

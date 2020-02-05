@@ -83,16 +83,14 @@ export default function SimpleTabs(props) {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0} style={{fontFamily: 'Montserrat'}}>
-        {console.log(Object.keys(props).length !== 0 ? 
-                    <p>{props.info}</p> : null)}
-        Each macaron is made with carefully selected ingredients to ensure the best quality for our customers. We're so certain you'll enjoy it that you'll be coming back for seconds.
-        <br></br><br></br>
-        The Macaron 12 piece Variety Pack comes with six flavors: strawberry, orange, pistachio, blueberry, cherry, and chocolate.
-        <br></br><br></br>
+        {(Object.keys(props).length !== 0 ? 
+                    <p>{props.desc}</p> : null)}
+    
         <b>NO RETURNS. ALL SALES ARE FINAL.</b>
       </TabPanel>
       <TabPanel value={value} index={1} style={{fontFamily: 'Montserrat'}}>
-        Made with love!
+      {(Object.keys(props).length !== 0 ? 
+                    <p>{props.desc}</p> : null)}
       </TabPanel>
       <TabPanel value={value} index={2} style={{fontFamily: 'Montserrat'}}>
         Shipping is a $7 flat rate fee.

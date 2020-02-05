@@ -17,6 +17,7 @@ import Typography from '@material-ui/core/Typography';
 import addToCart from '../actions/addToCart';
 
 
+
 class ProductPage extends React.Component {
 
     constructor() {
@@ -27,11 +28,17 @@ class ProductPage extends React.Component {
     }
 
     componentDidMount () {
-        
+    //    if (Object.keys(this.props.products).length !== 0) { 
+    //         console.log(this.props.products.data.find(product => product.id === (this.props.match.params.product)))
+    //    }
+    //    else {
+    //        console.log('noooooo')
+    //    }
     }
+    
 
     handleClick = (event, productData) => {
-    console.log('hi')
+        console.log('hi')
     }
 
     starRatings = (num) => {
@@ -99,14 +106,12 @@ class ProductPage extends React.Component {
             <div id="product-page">
                 <center>
                 <div id="product-image">
-                    <img src="https://images.unsplash.com/photo-1570368112535-43e1e5b78f75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1107&q=80" id="display-image"></img>
-                    <br></br><br></br><br></br>
+                    <img src={(Object.keys(this.props.products).length !== 0) ? (this.props.products.data.find(product => product.id === (this.props.match.params.product)).attributes.image) : null } 
+                    style={{width: '60vh', height: '50vh', objectFit: 'cover'}} />
+                    <br></br><br></br>
                 </div>
                 <div id="product-info">
-                    {Object.keys(this.props.products).length !== 0 ? 
-                    console.log(this.props.products.data.find(product => product.id === (this.props.match.params.product)))
-                    : console.log('not cool')}
-                    
+                
                     {/* name */}
                     {Object.keys(this.props.products).length !== 0 ? 
                     <h1 style={{color: 'black'}}>{(this.props.products.data.find(product => product.id === (this.props.match.params.product))).attributes.name}</h1>
@@ -117,12 +122,16 @@ class ProductPage extends React.Component {
                     : null}
                     {/* price */}
                     {Object.keys(this.props.products).length !== 0 ? 
-                    <h3>${(this.props.products.data.find(product => product.id === (this.props.match.params.product))).attributes.price}.00</h3>
+                    <h3>${(this.props.products.data.find(product => product.id === (this.props.match.params.product))).attributes.price}</h3>
                     : null}
                     {/* quantity */}
                     {Object.keys(this.props.products).length !== 0 ? 
                     <h3>{(this.props.products.data.find(product => product.id === (this.props.match.params.product))).attributes.quantity} pieces per order</h3>
                     : null}
+
+                    {Object.keys(this.props.products).length !== 0 ? 
+                    <h3>{(this.props.products.data.find(product => product.id === (this.props.match.params.product))).attributes.ingredients}</h3>
+                    : console.log('not cool')}
         
                     <p><b>Delivery estimates:</b><br/>
                     1-3 days for U.S. Residents.
@@ -161,8 +170,12 @@ class ProductPage extends React.Component {
                     </div>
                 </div>
                 <div id="extra-info">
-                <ProductDesc info={Object.keys(this.props.products).length !== 0 ? 
-                    (this.props.products.data.find(product => product.id === (this.props.match.params.product))) : null}/>
+                <ProductDesc 
+                    desc={Object.keys(this.props.products).length !== 0 ? 
+                    (this.props.products.data.find(product => product.id === (this.props.match.params.product))).attributes.description : null}
+                    ingred={Object.keys(this.props.products).length !== 0 ? 
+                        (this.props.products.data.find(product => product.id === (this.props.match.params.product))).attributes.description : null}
+                    />
               <br></br><br></br><br></br>
 
                 <div>

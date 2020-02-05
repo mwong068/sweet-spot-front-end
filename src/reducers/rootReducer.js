@@ -21,8 +21,8 @@ const rootReducer = (state = initialState, action) => {
             return {...state, loading: true}
         case 'SET_PRODUCTS':
             return {...state, products: action.products, loading: false}
-        case 'ADD_TO_CART':
-            return {...state, cart: this.state.cart += action.cart}
+        // case 'ADD_TO_CART':
+        //     return {...state, cart: this.state.cart += action.cart}
         default:
             return state;
     }

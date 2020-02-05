@@ -88,7 +88,7 @@ let starRatings = (num) => {
       <CardActionArea>
             <CardMedia
           className={classes.media}
-          image="https://images.unsplash.com/photo-1570368112535-43e1e5b78f75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1107&q=80"
+          image={props.attributes.image}
           title="Donut"
         />
         <CardContent>
@@ -101,7 +101,7 @@ let starRatings = (num) => {
           </Typography>
           <br/>
           <Typography variant="body2" color="primary" component="p" style={{fontFamily: 'Montserrat'}}>
-            ${props.attributes.price}.00
+            ${props.attributes.price}
           </Typography>
         </CardContent>
       </CardActionArea>
