@@ -49,6 +49,7 @@ export default function Homepage() {
             </div>
         </div>
         <div id="break"></div>
+        <div id="break"></div>
         <div id="promises">
             <div>
                 <center>
@@ -197,10 +198,10 @@ export default function Homepage() {
             <div class="grid-item"><img src={require('../assets/cheesecake.jpg')} width='100%' height='100%' style={{objectFit: 'cover'}}></img></div>
             <div class="grid-item"><img src={require('../assets/cake.jpg')} width='100%' height='100%' style={{objectFit: 'cover'}}></img></div>
             <div class="grid-item"><img src={require('../assets/pudding.jpg')} width='100%' height='100%' style={{objectFit: 'cover'}}></img></div>
-            <div class="grid-item">Cookies<hr></hr></div>
-            <div class="grid-item">Cheesecakes<hr></hr></div>
-            <div class="grid-item">Cakes<hr></hr></div>
-            <div class="grid-item">Puddings<hr></hr></div>
+            <div class="grid-item" style={{border: 'none'}}>Cookies<hr></hr></div>
+            <div class="grid-item" style={{border: 'none'}}>Cheesecakes<hr></hr></div>
+            <div class="grid-item" style={{border: 'none'}}>Cakes<hr></hr></div>
+            <div class="grid-item" style={{border: 'none'}}>Puddings<hr></hr></div>
         </div>
         <br></br><br></br>
             <Button variant="contained" color="primary"

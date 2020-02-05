@@ -17,11 +17,11 @@ const checkUser = (event, history) => {
         .then(data => {
             if(data.message){
                 localStorage.removeItem("token")
-                history.push("/");
             }
             else {
                 dispatch({type: "SET_CURRENT_USER", currentUser: data.user.data.attributes.username})
-                return data.user.data.attributes.username
+                // history.push("/");
+                // return data.user.data.attributes.username
             }
         })
     }

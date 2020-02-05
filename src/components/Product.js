@@ -92,7 +92,7 @@ let starRatings = (num) => {
           title="Donut"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography gutterBottom variant="h5" component="h2" style={{fontFamily: 'Montserrat'}}>
               {/* {match.params.product.id} */}
             {props.attributes.name}
           </Typography>
@@ -100,7 +100,7 @@ let starRatings = (num) => {
           {starRatings(props.attributes.rating)}
           </Typography>
           <br/>
-          <Typography variant="body2" color="primary" component="p">
+          <Typography variant="body2" color="primary" component="p" style={{fontFamily: 'Montserrat'}}>
             ${props.attributes.price}.00
           </Typography>
         </CardContent>

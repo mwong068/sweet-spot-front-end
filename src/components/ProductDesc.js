@@ -41,18 +41,21 @@ function a11yProps(index) {
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    width: 825,
+    width: '100%',
     backgroundColor: 'white',
-    padding: '0px 100px',
+    // padding: '0px 70px',
     textAlign: 'center',
+    boxShadow: 'none',
+    fontFamily: 'Montserrat',
   },
   indicator: {
     backgroundColor: '#dcead9',
-    border: 'none'
+    height: '5px',
+    // border: 'none'
   },
 }));
 
-export default function SimpleTabs() {
+export default function SimpleTabs(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -61,52 +64,48 @@ export default function SimpleTabs() {
   };
 
   return (
+    
     <div className={classes.root}>
-      <AppBar position="static" style={{backgroundColor: 'white', border: 'none', color: 'black' }}>
+      <center>
+      <AppBar position="static" style={{backgroundColor: 'white', border: 'none', color: 'black'}}>
         <Tabs value={value} onChange={handleChange} 
+        centered
               classes={{
-                indicator: classes.indicator
+                indicator: classes.indicator,
+                root: 'none',
               }}>       
               aria-label="simple tabs example" >
-          <Tab label="Ingredients" {...a11yProps(0)} />
-          <Tab label="Description" {...a11yProps(1)} />      
-          <Tab label="Shipping" {...a11yProps(2)} />    
-          <Tab label="Reviews" {...a11yProps(3)} />    
-          <Tab label="About" {...a11yProps(4)} />
+          <Tab label="Description" {...a11yProps(0)} style={{fontFamily: 'Montserrat', textTransform: 'capitalize' }} />      
+          <Tab label="Ingredients" {...a11yProps(1)} style={{fontFamily: 'Montserrat', textTransform: 'capitalize' }} />
+          <Tab label="Shipping" {...a11yProps(2)} style={{fontFamily: 'Montserrat', textTransform: 'capitalize' }} />    
+          <Tab label="Reviews" {...a11yProps(3)} style={{fontFamily: 'Montserrat', textTransform: 'capitalize' }} />    
+          <Tab label="About" {...a11yProps(4)} style={{fontFamily: 'Montserrat', textTransform: 'capitalize' }} />
         </Tabs>
       </AppBar>
-      <TabPanel value={value} index={0}>
-        Contains: nuts, egg, dairy
-        Contains: nuts, egg, dairy
-        Contains: nuts, egg, dairy
-        Contains: nuts, egg, dairy
-        Contains: nuts, egg, dairy
-        Contains: nuts, egg, dairy
-        Contains: nuts, egg, dairy
-        Contains: nuts, egg, dairy
-        Contains: nuts, egg, dairy
-        Contains: nuts, egg, dairy
-        Contains: nuts, egg, dairy
-        Contains: nuts, egg, dairy
-        Contains: nuts, egg, dairy
-        Contains: nuts, egg, dairy
-        Contains: nuts, egg, dairy
-        Contains: nuts, egg, dairy
-        Contains: nuts, egg, dairy
-        Contains: nuts, egg, dairy
+      <TabPanel value={value} index={0} style={{fontFamily: 'Montserrat'}}>
+        {console.log(Object.keys(props).length !== 0 ? 
+                    <p>{props.info}</p> : null)}
+        Each macaron is made with carefully selected ingredients to ensure the best quality for our customers. We're so certain you'll enjoy it that you'll be coming back for seconds.
+        <br></br><br></br>
+        The Macaron 12 piece Variety Pack comes with six flavors: strawberry, orange, pistachio, blueberry, cherry, and chocolate.
+        <br></br><br></br>
+        <b>NO RETURNS. ALL SALES ARE FINAL.</b>
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel value={value} index={1} style={{fontFamily: 'Montserrat'}}>
         Made with love!
       </TabPanel>
-      <TabPanel value={value} index={2}>
+      <TabPanel value={value} index={2} style={{fontFamily: 'Montserrat'}}>
         Shipping is a $7 flat rate fee.
       </TabPanel>
-      <TabPanel value={value} index={3}>
-        Shipping is a $7 flat rate fee.
+      <TabPanel value={value} index={3} style={{fontFamily: 'Montserrat'}}>
+        Coming Soon!
       </TabPanel>
-      <TabPanel value={value} index={4}>
-        Shipping is a $7 flat rate fee.
+      <TabPanel value={value} index={4} style={{fontFamily: 'Montserrat'}}>
+        Grace's Delights was founded in 2016 by Grace and Rebecca, two sisters who enjoy making pastries and sweet dessert snacks. The sisters would often gift their fresh homemade goodies to friends and family where it become instant crowd favorites. The sisters knew they had to get into the action and spread the same joy to others they did with their loved ones.
+        <br></br><br></br>
+        Today, Grace's Delights has over 27 pastry items sold online and is looking for new recipes to try out. Whether you've recently become a fan or have been there since the beginning, Grace's Delights is delighted to have a growing family that supports the sister duo.
       </TabPanel>
+      </center>
     </div>
   );
 }

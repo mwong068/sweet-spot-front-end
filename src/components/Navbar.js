@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
     boxShadow: 'none',
     borderBottom: '0.7px solid black',
     '&:hover': {
-      backgroundColor: fade(theme.palette.common.black, 0.1),
+      backgroundColor: fade(theme.palette.common.white, 0.1),
     },
     marginRight: theme.spacing(2),
     marginLeft: 100,
@@ -146,6 +146,7 @@ export default function Navbar() {
               <SearchIcon />
             </div>
             <InputBase
+              style={{fontFamily: 'Montserrat'}}
               placeholder="Find something sweet..."
               classes={{
                 root: classes.inputRoot,

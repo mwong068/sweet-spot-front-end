@@ -230,7 +230,7 @@ hr {
   text-align: center;
   background-color: #F0DAA1;
   padding: 30px 0 0 40px;
-  width: 97.2%;
+  width: 97.9%;
 }
 
 #newsletter-div div {
@@ -318,7 +318,7 @@ hr {
   display: grid;
   /* border: 1px solid black; */
   grid-template-columns: auto auto;
-  padding: 30px;
+  margin-top: -40px;
 }
 
 #product-image {
@@ -370,14 +370,16 @@ hr {
 #profile-header {
   text-decoration: none;
   color:black;
+  padding: 50px 50px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  width: 80%;
 }
 
 #profile-header div {
-  height: 5vh;
-  width: 25vh;
-  display: inline-block;
-  /* margin-left: -25px; */
-  /* padding: 0 60px 0 0; */
+  /* padding: 100px 0 0 0; */
+  /* width: 65vh; */
+  height: 100%;
   /* border: 1px solid black; */
 }
 
@@ -385,4 +387,26 @@ hr {
   /* content: ''; */
   width: 100%; 
   display: inline-block;
+}
+
+#social {
+  display: grid;
+  grid-template-columns: auto auto;
+  /* border: 1px solid black; */
+  /* height: 20px; */
+  width: 60%;
+}
+
+#social div {
+  /* border: 1px solid black; */
+  height: 20px;
+  
+}
+
+.fa fa-star checked {
+  font-size: 26px;
+}
+
+.fa fa-star {
+  font-size: 26px;
 }

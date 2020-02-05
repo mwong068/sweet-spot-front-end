@@ -11,8 +11,8 @@ function ProductContainer({ match, product }) {
 
         return (
             <div>
-                <ProductList />
                 <Route path={`${match.url}/:product`} render={routerProps => <ProductPage {...routerProps} product={product} />} />
+                <ProductList />
             </div>
         )
 }
