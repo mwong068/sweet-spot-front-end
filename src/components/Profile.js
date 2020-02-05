@@ -31,7 +31,18 @@ class Profile extends React.Component {
                     <div></div>
                     <div></div> */}
                     <div><br></br>
-                    <h1 style={{color: 'black', fontSize: '35px'}}>Hi there, {this.props.currentUser}!</h1><h3>@{this.props.currentUser}</h3>
+
+                    {/* {console.log(this.props.currentUser)} */}
+                    {/* {Object.keys(this.props.currentUser).length !== 0 ?  */}
+                    <h1 style={{color: 'black', fontSize: '35px'}}>Hi there, {this.props.currentUser} !</h1>
+                    {/* : null} */}
+                    
+                    {/* {Object.keys(this.props.currentUser).length !== 0 ?  */}
+                    <h3>@{this.props.currentUser}</h3> 
+                    {/* : null} */}
+
+                   
+
                     </div>
                     <div><br></br><br></br><br></br>
                     <Button variant="contained" type="submit"
@@ -63,7 +74,7 @@ class Profile extends React.Component {
                     </div>
                 </div>
                 <br></br><br></br>
-                <ProfileDesc />
+                <ProfileDesc info={this.props.currentUser}/>
                 </center>
             </div>
         )

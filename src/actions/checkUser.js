@@ -19,7 +19,8 @@ const checkUser = (event, history) => {
                 localStorage.removeItem("token")
             }
             else {
-                dispatch({type: "SET_CURRENT_USER", currentUser: data.user.data.attributes.username})
+                // console.log(data.user.data)
+                dispatch({type: "SET_CURRENT_USER", currentUser: data.user.data.attributes.name})
                 // history.push("/");
                 // return data.user.data.attributes.username
             }

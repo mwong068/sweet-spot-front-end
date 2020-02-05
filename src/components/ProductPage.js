@@ -116,10 +116,18 @@ class ProductPage extends React.Component {
                     {Object.keys(this.props.products).length !== 0 ? 
                     <h1 style={{color: 'black'}}>{(this.props.products.data.find(product => product.id === (this.props.match.params.product))).attributes.name}</h1>
                     : null}
+                    <div id='ratings'>
                     {/* rating */}
-                    {Object.keys(this.props.products).length !== 0 ? 
-                    <h3>{this.starRatings((this.props.products.data.find(product => product.id === (this.props.match.params.product))).attributes.rating)} ({Math.floor(Math.random() * 100) + 1} reviews)</h3>
-                    : null}
+                        <div>
+                        {Object.keys(this.props.products).length !== 0 ? 
+                        <p style={{fontSize: '24px',}}>{this.starRatings((this.props.products.data.find(product => product.id === (this.props.match.params.product))).attributes.rating)}</p>
+                        : null}
+                        </div>
+                        <div>
+                            <p style={{marginLeft: '-55px', fontSize: '15.5px'}}>({Math.floor(Math.random() * 100) + 1} reviews)</p>
+                        </div>
+                    </div>
+                    
                     {/* price */}
                     {Object.keys(this.props.products).length !== 0 ? 
                     <h3>${(this.props.products.data.find(product => product.id === (this.props.match.params.product))).attributes.price}</h3>

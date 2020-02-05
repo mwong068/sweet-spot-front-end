@@ -10,7 +10,7 @@ h1 {
 }
 
 h2 {
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-family: 'Montserrat';
 }
 
@@ -29,9 +29,11 @@ hr {
   margin-after: 0.5em;
   margin-start: auto;
   margin-end: auto;
-  overflow: hidden;
+  overflow: hidden; */
   border-style: inset;
-  border-width: 1px; */
+  border-width: 1px;
+  border: 0.5px solid #D3D3D3;
+
 }
 
 #main-container {
@@ -74,7 +76,7 @@ hr {
   }
 }
 
-/* Second Header or Navbar */
+/* Second Header or Navbar ------------------------------ */
 #container {
   text-align: center;
   background-color: #F0DAA1;
@@ -95,7 +97,7 @@ hr {
 }
 
 
-/* Main body of homepage */
+/* Main body of homepage --------------------------------------- */
 #landing-image {
   background-image: url('./assets/landing.jpeg');
   padding: 100px;
@@ -207,7 +209,7 @@ hr {
 }
 
 
-/* Footer */
+/* Footer -------------------------------------------*/
 #footer {
   background-color: #F0DAA1;
   margin: 0;
@@ -248,7 +250,7 @@ hr {
   border: 1px solid black;
 }
 
-/* contact buttons at bottom of footer */
+/* contact buttons at bottom of footer ----------------------*/
 #contact-div {
   height: 100%;
   padding: 40px 0 0 0;
@@ -269,7 +271,7 @@ hr {
   display: inline-block;
 }
 
-/*signup */
+/*signup ------------------------------------------------ */
 #signup-border {
   text-align: center;
   padding: 50px;
@@ -315,7 +317,7 @@ hr {
   padding: 25px;
 }
 
-/*Product page */
+/*Product page ------------------------------------------------ */
 #product-page {
   text-align: center;
   display: grid;
@@ -352,6 +354,28 @@ hr {
   /* border: 1px solid purple; */
 }
 
+.fa fa-star checked {
+  font-size: 26px;
+}
+
+.fa fa-star {
+  font-size: 26px;
+}
+
+#ratings {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: -10px;
+
+}
+
+#ratings div {
+  /* border: 1px solid black; */
+  height: 30px;
+  margin-top: -15px;
+  width: 120px;
+}
+
 .checked {
   color: pink;
 }
@@ -370,7 +394,7 @@ hr {
   padding: 20px;
 }
 
-/* PROFILE alignment */
+/* PROFILE alignment ------------------------------------------- */
 #profile-header {
   text-decoration: none;
   color:black;
@@ -407,26 +431,43 @@ hr {
   
 }
 
-.fa fa-star checked {
-  font-size: 26px;
-}
 
-.fa fa-star {
-  font-size: 26px;
-}
-
+/* Cart page ----------------------------------------------- */
 #cart-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  border: 1px solid D3D3D3;
+  /* grid-template-rows: 160px 35px; */
+  grid-gap: 20px;
+  border: 1px solid #D3D3D3;
   width: 80%;
   height: 70vh;
+  padding: 20px;
 }
 
 #cart-container div {
-  border: 1px solid #D3D3D3;
+  /* border: 1px solid red; */
+  text-align: left;
 }
 
 #item-1 {
   grid-column: 1 / 3;
+}
+
+#item-list {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  /* border: 1px solid black; */
+  /* height: 20vh; */
+}
+
+#item-3 {
+  grid-column: 2 / 4;
+}
+
+
+#total-list {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
 }
