@@ -1,5 +1,5 @@
 const initialState = {
-    currentUser: null,
+    currentUser: [],
     loading: false,
     products: [],
     cart: []

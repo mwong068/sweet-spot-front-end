@@ -1,21 +1,24 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import ProfileDesc from './ProfileDesc';
+import EditProfile from './EditProfile';
 import logoutUser from "../actions/logoutUser";
 
 
 class Profile extends React.Component {
 
-    // componentDidMount() {
-    //     fetch(http://127.0.0.1:3000/users)
-    // }
-
     handleClick = (event, history) => {
-        console.log('hi')
         event.preventDefault();
         localStorage.removeItem("token")
         this.props.logoutUser(event, history);
+    }
+
+    handleUpdate = (event, history) => {
+        console.log('hey')
+        event.preventDefault();
+        return (<EditProfile />)
     }
 
     render() {
@@ -32,20 +35,21 @@ class Profile extends React.Component {
                     <div></div> */}
                     <div><br></br>
 
-                    {/* {console.log(this.props.currentUser)} */}
-                    {/* {Object.keys(this.props.currentUser).length !== 0 ?  */}
-                    <h1 style={{color: 'black', fontSize: '35px'}}>Hi there, {this.props.currentUser} !</h1>
-                    {/* : null} */}
+                    {console.log(this.props.currentUser)}
+                    {Object.keys(this.props.currentUser).length !== 0 ? 
+                    <h1 style={{color: 'black', fontSize: '35px'}}>Hi there, {this.props.currentUser.name} !</h1>
+                    : null}
                     
-                    {/* {Object.keys(this.props.currentUser).length !== 0 ?  */}
-                    <h3>@{this.props.currentUser}</h3> 
-                    {/* : null} */}
+                    {Object.keys(this.props.currentUser).length !== 0 ? 
+                    <h3>@{this.props.currentUser.username}</h3>
+                    : null}
 
                    
 
                     </div>
                     <div><br></br><br></br><br></br>
                     <Button variant="contained" type="submit"
+                    onClick={(event) => this.handleUpdate(event, this.props.history)}
                         style={{
                             radius: '3',
                             border: '0.6px solid #D3D3D3',
@@ -54,9 +58,12 @@ class Profile extends React.Component {
                             fontWeight: 'bold',
                             padding: '10px 25px',
                             fontFamily: 'Montserrat',
-                        }}
-                        >edit profile</Button>
-                    <span style={{color: 'white'}}>    fdgfdfd</span>
+                        }}>
+                        {/* <Link to='/editprofile' style={{textDecoration: 'none', color: '#3e4e60'}}> */}
+                        edit profile
+                        {/* </Link> */}
+                        </Button>
+                    <span style={{color: 'white'}}> ----</span>
                     {this.props.currentUser ? 
                     <Button variant="contained" color="primary"
                     onClick={(event) => this.handleClick(event, this.props.history)}
@@ -69,7 +76,8 @@ class Profile extends React.Component {
                             border: '3px solid #f3e4b7',
                             fontFamily: 'Montserrat',
                         }}
-                        >SIGN OUT</Button>
+                        >
+                        sign out</Button>
                     : null }
                     </div>
                 </div>

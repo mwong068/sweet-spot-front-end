@@ -55,7 +55,7 @@ export default function Homepage() {
                 <center>
                 <AirplanemodeActiveOutlinedIcon style={{ fontSize: "32px", color: '#BDDCBC' }} />
                 <h3>Free Shipping</h3>
-                <p>Applies to orders over $50.</p>
+                <p>Automatically applies to orders over $50.</p>
                 </center>
             </div>
             <div>

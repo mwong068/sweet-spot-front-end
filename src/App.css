@@ -123,15 +123,18 @@ hr {
 #promises{
   /* background-color: #F0DAA1; */
   margin: 0;
-  padding: 10px 0 10px 100px;
+  /* padding: 10px 0 10px 100px; */
   height: 15vh; 
   text-align: left;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  justify-content: space-evenly;
 }
 
 #promises div {
-  width: 19%;
-  display: inline-block;
-  /* padding: 30px 0; */
+  width: 100%;
+  /* display: inline-block; */
+  /* padding: 30px; */
   /* border: 1px solid black; */
 }
 

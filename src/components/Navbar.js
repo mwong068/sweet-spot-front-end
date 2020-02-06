@@ -1,8 +1,7 @@
-
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 // import store from './redux/store.js';
+import { useSelector } from 'react-redux';
 
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -76,6 +75,8 @@ const useStyles = makeStyles(theme => ({
 
 export default function Navbar() {
   const classes = useStyles();
+
+  const user = useSelector(state => state.currentUser)
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -110,8 +111,10 @@ export default function Navbar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}><Link to="/login" style={{ color: 'black', textDecoration: 'none', fontFamily: 'Montserrat', }}>Login</Link></MenuItem>
-      <MenuItem onClick={handleMenuClose}><Link to="/signup" style={{ color: 'black', textDecoration: 'none', fontFamily: 'Montserrat',}}>Signup</Link></MenuItem>
+      {user === null ?
+      <MenuItem onClick={handleMenuClose}><Link to="/login" style={{ color: 'black', textDecoration: 'none', fontFamily: 'Montserrat', }}>Login</Link></MenuItem> : null}
+      {user === null ?
+      <MenuItem onClick={handleMenuClose}><Link to="/signup" style={{ color: 'black', textDecoration: 'none', fontFamily: 'Montserrat',}}>Signup</Link></MenuItem> : null}
       <MenuItem onClick={handleMenuClose}><Link to="/profile" style={{ color: 'black', textDecoration: 'none', fontFamily: 'Montserrat', }}>Profile</Link></MenuItem>
     </Menu>
   );

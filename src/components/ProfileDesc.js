@@ -6,6 +6,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import { useSelector } from 'react-redux';
 
 
 
@@ -58,6 +59,9 @@ const useStyles = makeStyles(theme => ({
 
 export default function SimpleTabs(props) {
   const classes = useStyles();
+
+  const user = useSelector(state => state.currentUser);
+
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -81,11 +85,11 @@ export default function SimpleTabs(props) {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0} style={{fontFamily: 'Montserrat', textAlign: 'left'}}>
-        <p><b>Name</b></p>
-        <p><b>Username</b></p>
-        <p><b>Email</b></p>
-        <p><b>Password</b></p>
-        <p><b>Bio</b></p>
+        <p><b>Name</b> {user.name}</p>
+        <p><b>Username:</b> {user.username}</p>
+        <p><b>Email:</b> {user.email}</p>
+        <p><b>Password:</b> ********</p>
+        <p><b>Bio:</b> {(user.bio === null) ? "Let the community know about you!" : null}{user.bio}</p>
       </TabPanel>
       <TabPanel value={value} index={1} style={{fontFamily: 'Montserrat', textAlign: 'left'}}>
         Made with love!
