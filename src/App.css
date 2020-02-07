@@ -434,6 +434,20 @@ hr {
   
 }
 
+#edit-user {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+#edit-user div{
+  border: 1px solid white;
+  height: 38%;
+}
+
+#user-stuff {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
 
 /* Cart page ----------------------------------------------- */
 #cart-container {

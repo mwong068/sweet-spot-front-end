@@ -7,6 +7,10 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { useSelector } from 'react-redux';
+import EditProfile from './EditProfile';
+import RenderUserInfo from './RenderUserInfo';
+import Button from '@material-ui/core/Button';
+
 
 
 
@@ -61,8 +65,10 @@ export default function SimpleTabs(props) {
   const classes = useStyles();
 
   const user = useSelector(state => state.currentUser);
+   
+  const [value, setValue] = React.useState(0)
 
-  const [value, setValue] = React.useState(0);
+    
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -81,15 +87,14 @@ export default function SimpleTabs(props) {
           <Tab label="Account" {...a11yProps(0)} style={{fontFamily: 'Montserrat', textTransform: 'capitalize' }} />      
           <Tab label="Notifications" {...a11yProps(1)} style={{fontFamily: 'Montserrat', textTransform: 'capitalize' }} />
           <Tab label="Favorites" {...a11yProps(2)} style={{fontFamily: 'Montserrat', textTransform: 'capitalize' }} />    
-          <Tab label="Settings" {...a11yProps(3)} style={{fontFamily: 'Montserrat', textTransform: 'capitalize' }} />    
+          <Tab label="Settings" {...a11yProps(3)} style={{fontFamily: 'Montserrat', textTransform: 'capitalize' }} />       
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0} style={{fontFamily: 'Montserrat', textAlign: 'left'}}>
-        <p><b>Name</b> {user.name}</p>
-        <p><b>Username:</b> {user.username}</p>
-        <p><b>Email:</b> {user.email}</p>
-        <p><b>Password:</b> ********</p>
-        <p><b>Bio:</b> {(user.bio === null) ? "Let the community know about you!" : null}{user.bio}</p>
+        {/* could have two components rendering conditionally here based on val change sent down from parent */}
+        
+        
+        {props.val === 4 ? <EditProfile info={props.info} history={props.history} /> : <RenderUserInfo info={props.info}/>}
       </TabPanel>
       <TabPanel value={value} index={1} style={{fontFamily: 'Montserrat', textAlign: 'left'}}>
         Made with love!

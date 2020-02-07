@@ -111,9 +111,9 @@ export default function Navbar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      {user === null ?
+      {user.length === 0 ?
       <MenuItem onClick={handleMenuClose}><Link to="/login" style={{ color: 'black', textDecoration: 'none', fontFamily: 'Montserrat', }}>Login</Link></MenuItem> : null}
-      {user === null ?
+      {user.length === 0 ?
       <MenuItem onClick={handleMenuClose}><Link to="/signup" style={{ color: 'black', textDecoration: 'none', fontFamily: 'Montserrat',}}>Signup</Link></MenuItem> : null}
       <MenuItem onClick={handleMenuClose}><Link to="/profile" style={{ color: 'black', textDecoration: 'none', fontFamily: 'Montserrat', }}>Profile</Link></MenuItem>
     </Menu>

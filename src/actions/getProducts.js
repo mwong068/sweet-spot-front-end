@@ -14,7 +14,7 @@ const getProducts = (event) => {
         })
         .then(resp => resp.json())
         .then(data => {
-            console.log(data.data)
+            // console.log(data.data)
                 dispatch({type: "SET_PRODUCTS", products: data})
             })
     }

@@ -10,12 +10,16 @@ import { Link } from 'react-router-dom';
 
 class EditProfile extends React.Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
+            name: '',
             username: '',
+            email: '',
             password: '',
-            password_confirmation: ''
+            // password_confirmation: '',
+            bio: '',
+            id: 0
         }
     }
 
@@ -28,90 +32,127 @@ class EditProfile extends React.Component {
 
 
     componentDidMount() {
-
+        this.setState ({
+            name: this.props.info.attributes.name,
+            username: this.props.currentUser.attributes.username,
+            email: this.props.currentUser.attributes.email,
+            password: this.props.currentUser.attributes.password,
+            bio: this.props.currentUser.attributes.bio,
+            id: this.props.currentUser.id
+        })
     }
 
 
     render() {
         return (
-            <div id="signup-border">
-                <div id="signup-container">
-                    <h1 style={{color: 'black'}}>Login</h1>
-                    <br></br>
-                    <div>    
+            <div>
+                <div id="edit-user">
+                    <div>
+                        <div><h4>Name:</h4></div>
+                        <div><h4>Username:</h4></div>
+                        <div><h4>Email:</h4></div>
+                        <div><h4>Password:</h4></div>
+                        <div><h4>Confirm Password:</h4></div>
+                        <div><h4>Bio:</h4></div>
                     </div>
                     <div>
-                    <hr style={{width: "0.1px", height: "400px" }}></hr>
-                    </div>
-                    <div>
-                    <form noValidate autoComplete="off" id="signup-form" onSubmit={ (event) => {this.props.updateUser(event, this.state, this.props.history)} }>            
-                        <TextField
-                        id="username"
-                        label="Username"
-                        variant="outlined"
-                        value={this.state.username} 
-                        onChange={this.handleChange}
-                        /> 
-                        <br></br><br></br>
-                        <TextField
-                        id="password"
-                        label="Password"
-                        type="password"
-                        variant="outlined"
-                        value={this.state.password} 
-                        onChange={this.handleChange}
-                        /> 
-                        <br></br><br></br>
-                        <TextField
-                        id="confirm-password"
-                        label="Confirm Password"
-                        type="password"
-                        // helperText="Some important text"
-                        variant="outlined"
-                        value={this.state.password_confirmation} 
-                        onChange={this.handleChange}
-                        /> 
-                        <br></br><br></br><br></br>     
+                        <form noValidate autoComplete="off" id="edit-user-form" onSubmit={ (event) => {this.props.updateUser(event, this.state, this.props.history)} }>            
+                            <div>
+                            <TextField
+                            id="name"
+                            label="Name"
+                            variant="outlined"
+                            value={this.state.name} 
+                            onChange={this.handleChange}
+                            style={{width: '500px'}}
+                            /> 
+                            </div>
+                            <div>
+                            <TextField
+                            id="username"
+                            label="Username"
+                            variant="outlined"
+                            value={this.state.username} 
+                            onChange={this.handleChange}
+                            style={{width: '500px'}}
+                            /> 
+                            </div>
+                            <div>
+                            <TextField
+                            id="email"
+                            label="Email"
+                            variant="outlined"
+                            value={this.state.email} 
+                            onChange={this.handleChange}
+                            style={{width: '500px'}}
+                            /> 
+                            </div>
+                            <div>
+                            <TextField
+                            required
+                            id="password"
+                            label="Password"
+                            type="password"
+                            variant="outlined"
+                            value={this.state.password} 
+                            onChange={this.handleChange}
+                            style={{width: '500px'}}
+                            /> 
+                            </div>
+                            <div>
+                            <TextField
+                            id="password_confirmation"
+                            label="Confirm Password"
+                            type="password"
+                            // helperText="Some important text"
+                            variant="outlined"
+                            value={this.state.password_confirmation} 
+                            onChange={this.handleChange}
+                            style={{width: '500px'}}
+                            /> 
+                            </div>             
+                            <div>                
+                            <TextField
+                            id="bio"
+                            label="Bio"
+                            type="textarea"
+                            // helperText="Some important text"
+                            variant="outlined"
+                            value={this.state.bio} 
+                            onChange={this.handleChange}
+                            style={{width: '500px'}}
+                            />      
+                            </div>
+                            <br></br>
+                        <center>
                         <Button variant="contained" type="submit"
                         style={{
-                            radius: '3',
-                            border: '0.6px solid #D3D3D3',
-                            backgroundColor: '#dcead9',
-                            color: '#3e4e60',
-                            fontWeight: 'bold',
-                            padding: '5px 25px',
-                        }}>Login</Button>
-                        <br></br><br></br>
-                        <h5>Not a member? <Link to="/signup" style={{fontSize: '14px'}}>Signup</Link></h5>
-                        <br></br><br></br><br></br><br/>
-                    </form>
+                        borderRadius: 5,
+                        backgroundColor: 'white',
+                        padding: "9px 27px",
+                        fontSize: "14px",
+                        color: 'black',
+                        border: '3px solid #f3e4b7',
+                        fontFamily: 'Montserrat',
+                        marginRight: '200px'
+                        }}>Save</Button>
+                    </center>
+                        </form>
                     </div>
-                    <br></br>
-                    <h3 style={{color: 'white'}}>.</h3>
                 </div>
             </div>
         )
-    }
+    } 
 }
+
+const mapStateToProps = (state) => ({
+    currentUser: state.currentUser
+})
 
 const mapDispatchToProps = dispatch => {
     return {
-        updateUser: (event, userData, history) => { dispatch(updateUser(event, userData, history)) }
+        updateUser: (event, userData, history) => dispatch(updateUser(event, userData, history))
     }
 }
 
-export default connect(null, mapDispatchToProps)(EditProfile);
-
-
-{/* <h1>Login</h1>
-
-<form onSubmit={ this.props.getExistingUser }>
-    <label>Username</label><br></br>
-    <input type="text" name="username" placeholder="Username" value={this.state.username} onChange={this.handleChange} ></input>
-    <br></br><br></br>
-    <label>Password</label><br></br>
-    <input type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange} ></input>
-    <br></br><br></br>
-    <input type="submit" value="Submit"></input>
-</form>
-</div> */}
+export default connect(mapStateToProps, mapDispatchToProps)(EditProfile);

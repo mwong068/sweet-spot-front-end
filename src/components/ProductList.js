@@ -12,9 +12,13 @@ removeList = (event) => {
 
     render() {
         return (
-            <div id="product-list">
-                {/* {console.log(this.props.products)} */}
-                {Object.keys(this.props.products).length !== 0 ? this.props.products.data.map(function (product) { return <div id="products"><Link key={product.id} to={`/products/${product.id}`} ><Product {...product} /></Link></div>}) : null }
+            <div>
+                <h2>Filter Sort by</h2><br></br>
+            
+                <div id="product-list">
+                    {/* {console.log(this.props.products)} */}
+                    {Object.keys(this.props.products).length !== 0 ? this.props.products.data.map(function (product) { return <div id="products"><Link key={product.id} to={`/products/${product.id}`} ><Product {...product} /></Link></div>}) : null }
+                </div>
             </div>
         )
     }

@@ -24,8 +24,8 @@ const checkUser = (event, history) => {
                 //     console.log(`${value}`);
                 //   }
                 // user.push(data.user.data.attributes)
-                // console.log(user)
-                dispatch({type: "SET_CURRENT_USER", currentUser: data.user.data.attributes})
+                console.log(data.user.data)
+                dispatch({type: "SET_CURRENT_USER", currentUser: data.user.data})
                 // history.push("/");
                 // return data.user.data.attributes.username
             }
