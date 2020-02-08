@@ -8,7 +8,7 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import PinterestIcon from '@material-ui/icons/Pinterest';
 import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
@@ -20,12 +20,12 @@ import addToCart from '../actions/addToCart';
 
 class ProductPage extends React.Component {
 
-    constructor() {
-        super();
-        this.state = {
-            item: ''
-        }
-    }
+    // constructor() {
+    //     super();
+    //     this.state = {
+    //         item: ''
+    //     }
+    // }
 
     componentDidMount () {
     //    if (Object.keys(this.props.products).length !== 0) { 
@@ -38,7 +38,8 @@ class ProductPage extends React.Component {
     
 
     handleClick = (event, productData) => {
-        console.log('hi')
+        console.log(event)
+        console.log(productData)
     }
 
     starRatings = (num) => {
@@ -107,8 +108,7 @@ class ProductPage extends React.Component {
                 <center>
                 <div id="product-image">
                     <img src={(Object.keys(this.props.products).length !== 0) ? (this.props.products.data.find(product => product.id === (this.props.match.params.product)).attributes.image) : null } 
-                    style={{width: '60vh', height: '50vh', objectFit: 'cover'}} />
-                    <br></br><br></br>
+                    style={{width: '40vh', height: '40vh', objectFit: 'cover'}} />
                 </div>
                 <div id="product-info">
                 
@@ -145,7 +145,7 @@ class ProductPage extends React.Component {
                     1-3 days for U.S. Residents.
                     <br/>Free delivery over $50.</p>
                     <br></br>
-                    <Button variant="contained" type="submit" value={this.state.item} onClick={this.handleClick(this.state.item)}
+                    <Button variant="contained" value={this.props.match.params.product} onClick={(event) => this.handleClick(event, this.props.match.params.product)}
                         style={{
                             radius: '3',
                             border: '0.6px solid #D3D3D3',

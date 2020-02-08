@@ -9,7 +9,7 @@ import Login from './components/Login';
 import Footer from './components/Footer'; 
 import Cart from './components/Cart'; 
 import ProductContainer from './components/ProductContainer'; 
-import ProductPage from './components/ProductPage'; 
+// import ProductPage from './components/ProductPage'; 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import checkUser from './actions/checkUser';

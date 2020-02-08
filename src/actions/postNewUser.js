@@ -2,7 +2,7 @@
 
 const postNewUser = (event, userData, history) => {
     event.preventDefault();
-    console.log(userData)
+    // console.log(userData)
     return (dispatch) => {
         dispatch({type: 'SIGNING_UP'})
         return fetch('http://127.0.0.1:3000/users', {

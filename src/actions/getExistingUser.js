@@ -2,7 +2,7 @@
 
 const getExistingUser = (event, userData, history) => {
     event.preventDefault();
-    console.log(history)
+    // console.log(history)
     return (dispatch) => {
         dispatch({type: 'LOGGING_IN'})
         return fetch('http://127.0.0.1:3000/login', {

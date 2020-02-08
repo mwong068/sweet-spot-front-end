@@ -4,8 +4,8 @@ const history = createHistory();
 
 const updateUser = (event, userData, history) => {
     event.preventDefault();
-    console.log(userData)
-    console.log(event)
+    // console.log(userData)
+    // console.log(event)
     const token = localStorage.token;
     return (dispatch) => {
         dispatch({type: 'UPDATING_USER'})

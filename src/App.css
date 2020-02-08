@@ -155,8 +155,8 @@ hr {
 #homepage-cards div {
   /* height: 125%; */
   display: inline-block;
-  width: 40vh;
-  padding: 25px 0;
+  /* width: 40vh; */
+  padding: 25px 0px;
   /* border: 1px solid black; */
   text-align: center;
 }
@@ -326,14 +326,11 @@ hr {
   display: grid;
   /* border: 1px solid black; */
   grid-template-columns: auto auto;
-  margin-top: -40px;
-  padding: 0 0 0 60px;
 }
 
 #product-image {
   display: inline-block;
-  width: 40%;
-  padding: 50px;
+  padding: 50px 25px;
   /* border: 1px solid pink; */
 }
 
@@ -345,15 +342,14 @@ hr {
 #product-info {
   display: inline-block;
   width: 30%;
-  padding: 50px;
   /* border: 1px solid orange; */
   text-align: left;
+  padding: 0 0 0 70px;
 }
 
 #extra-info {
   text-align: left;
-  padding: 10px;
-  width: 130vh;
+  width: 80%;
   /* border: 1px solid purple; */
 }
 
