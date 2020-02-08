@@ -40,6 +40,7 @@ class ProductPage extends React.Component {
     handleClick = (event, productData) => {
         console.log(event)
         console.log(productData)
+        this.props.addToCart(event, productData)
     }
 
     starRatings = (num) => {
