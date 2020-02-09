@@ -78,13 +78,15 @@ let starRatings = (num) => {
     }
 }
 
+  
+
 
 
   const classes = useStyles();
 
 
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} onClick={() => {props.history.push(`/products/${props.id}`)}}>
       <CardActionArea>
             <CardMedia
           className={classes.media}

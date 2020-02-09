@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import CartItem from './CartItem';
+import getCartItems from '../actions/getCartItems';
 
 class Cart extends React.Component {
     constructor() {
@@ -11,7 +13,7 @@ class Cart extends React.Component {
     }
     
     componentDidMount () {
-
+        
     }
 
     render () {
@@ -24,7 +26,9 @@ class Cart extends React.Component {
                         <h2 style={{textAlign: 'left'}}>My Cart</h2>
                         <hr></hr>
                         <div id="item-list">
-                            <CartItem />
+                        {/* {Object.keys(this.props.cart).length !== 0 ? {this.props.cart.map((item) => <CartItem {...item} />)} : null} */}
+                        {(event) => this.props.getCartItems(event, this.props.history)}
+                        {console.log(Object.keys((this.props.cart).length !== 0))}
                         </div>
                     </div>
                     {/* <hr style={{height: '450px'}}></hr> */}
@@ -76,4 +80,19 @@ class Cart extends React.Component {
     }
 }
 
-export default Cart
+//fetch to order items to display all of current cart
+//add mapstatetoprops
+const mapStateToProps = state => {
+    return {
+        cart:  state.cart
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+    getCartItems: (event, history) => { dispatch(getCartItems(event, history)) }
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

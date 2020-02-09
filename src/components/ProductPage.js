@@ -37,10 +37,19 @@ class ProductPage extends React.Component {
     }
     
 
-    handleClick = (event, productData) => {
-        console.log(event)
-        console.log(productData)
-        this.props.addToCart(event, productData)
+    handleClick = (event, productData, order) => {
+        // console.log(user)
+        // console.log(this.props)
+        if(Object.keys(this.props.products).length !== 0) {
+            let item = (this.props.products.data.find(product => product.id === (productData)))
+            // console.log(item)
+            // this.setState({
+            //     item: item
+            // })
+            this.props.addToCart(event, item, order)
+        }
+        // console.log(this.state.item)
+        
     }
 
     starRatings = (num) => {
@@ -108,20 +117,21 @@ class ProductPage extends React.Component {
             <div id="product-page">
                 <center>
                 <div id="product-image">
-                    <img src={(Object.keys(this.props.products).length !== 0) ? (this.props.products.data.find(product => product.id === (this.props.match.params.product)).attributes.image) : null } 
+                {console.log(this.props.products)}
+                    <img src={(Object.keys(this.props.products).length !== 0) ? (this.props.products.data.find(product => product.id == this.props.match.params.id).attributes.image) : null } 
                     style={{width: '40vh', height: '40vh', objectFit: 'cover'}} />
                 </div>
                 <div id="product-info">
                 
                     {/* name */}
                     {Object.keys(this.props.products).length !== 0 ? 
-                    <h1 style={{color: 'black'}}>{(this.props.products.data.find(product => product.id === (this.props.match.params.product))).attributes.name}</h1>
+                    <h1 style={{color: 'black'}}>{(this.props.products.data.find(product => product.id === this.props.match.params.id).attributes.name)}</h1>
                     : null}
                     <div id='ratings'>
                     {/* rating */}
                         <div>
                         {Object.keys(this.props.products).length !== 0 ? 
-                        <p style={{fontSize: '24px',}}>{this.starRatings((this.props.products.data.find(product => product.id === (this.props.match.params.product))).attributes.rating)}</p>
+                        <p style={{fontSize: '24px',}}>{this.starRatings((this.props.products.data.find(product => product.id === this.props.match.params.id).attributes.rating))}</p>
                         : null}
                         </div>
                         <div>
@@ -129,24 +139,25 @@ class ProductPage extends React.Component {
                         </div>
                     </div>
                     
-                    {/* price */}
-                    {Object.keys(this.props.products).length !== 0 ? 
-                    <h3>${(this.props.products.data.find(product => product.id === (this.props.match.params.product))).attributes.price}</h3>
+                    
+                    {
+                    Object.keys(this.props.products).length !== 0 ? 
+                    <h3>${(this.props.products.data.find(product => product.id === this.props.match.params.id).attributes.price)}</h3>
                     : null}
                     {/* quantity */}
                     {Object.keys(this.props.products).length !== 0 ? 
-                    <h3>{(this.props.products.data.find(product => product.id === (this.props.match.params.product))).attributes.quantity} pieces per order</h3>
+                    <h3>{(this.props.products.data.find(product => product.id === this.props.match.params.id).attributes.quantity)} pieces per order</h3>
                     : null}
 
                     {Object.keys(this.props.products).length !== 0 ? 
-                    <h3>{(this.props.products.data.find(product => product.id === (this.props.match.params.product))).attributes.ingredients}</h3>
+                    <h3>{(this.props.products.data.find(product => product.id === this.props.match.params.id).attributes.ingredients)}</h3>
                     : console.log('not cool')}
         
                     <p><b>Delivery estimates:</b><br/>
                     1-3 days for U.S. Residents.
                     <br/>Free delivery over $50.</p>
                     <br></br>
-                    <Button variant="contained" value={this.props.match.params.product} onClick={(event) => this.handleClick(event, this.props.match.params.product)}
+                    <Button variant="contained" value={this.props.match.params.id} onClick={(event) => this.handleClick(event, this.props.match.params.id, this.props.order)}
                         style={{
                             radius: '3',
                             border: '0.6px solid #D3D3D3',
@@ -181,9 +192,9 @@ class ProductPage extends React.Component {
                 <div id="extra-info">
                 <ProductDesc 
                     desc={Object.keys(this.props.products).length !== 0 ? 
-                    (this.props.products.data.find(product => product.id === (this.props.match.params.product))).attributes.description : null}
+                    (this.props.products.data.find(product => product.id === this.props.match.params.id).attributes.description) : null}
                     ingred={Object.keys(this.props.products).length !== 0 ? 
-                        (this.props.products.data.find(product => product.id === (this.props.match.params.product))).attributes.description : null}
+                        (this.props.products.data.find(product => product.id === this.props.match.params.id).attributes.description) : null}
                     />
               <br></br><br></br><br></br>
 
@@ -400,12 +411,14 @@ class ProductPage extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    products: state.products
+    products: state.products,
+    user: state.currentUser,
+    order: state.currentOrder
 })
 
 const mapDispatchToProps = dispatch => {
     return {
-        addToCart: (event, productData) => { dispatch(addToCart(event, productData)) }
+        addToCart: (event, productData, order) => { dispatch(addToCart(event, productData, order)) }
     }
 }
 
