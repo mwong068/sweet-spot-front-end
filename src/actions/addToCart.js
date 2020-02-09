@@ -27,7 +27,7 @@ const addToCart = (event, productData, order) => {
             }
             else {
                 console.log(data)
-                // dispatch({type: 'ADDED_TO_CART', cart: data})
+                dispatch({type: 'ADDED_TO_CART', loading: false})
                 // history.push('/')
             }
         

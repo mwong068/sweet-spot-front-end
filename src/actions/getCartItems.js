@@ -1,6 +1,7 @@
 
-const getCartItems = (event, history) => {
-    console.log(event)
+const getCartItems = (order) => {
+    // console.log(event)
+    console.log(order.id)
     return (dispatch) => {
         const token = localStorage.token;
         dispatch({type: 'FETCHING_ITEMS'})
@@ -18,8 +19,17 @@ const getCartItems = (event, history) => {
                 console.log(data.message)
             }
             else {
-                console.log(data)
-                dispatch({type: 'SHOW_CART_ITEMS', cart: data})
+                console.log(data.data)
+                let newItems = []
+                let items = data.data.find(item => item.attributes.order.id == order.id )
+                if (items === undefined) {
+                    dispatch({type: 'SHOW_CART_ITEMS', cart: {}})
+                }
+                else {
+                    
+                    newItems.push(items)
+                    dispatch({type: 'SHOW_CART_ITEMS', cart: {data: newItems}})
+                }
             }
         })
         

@@ -7,6 +7,7 @@ import Signup from './components/Signup';
 import Profile from './components/Profile'; 
 import Login from './components/Login'; 
 import Footer from './components/Footer'; 
+import CartContainer from './components/CartContainer'; 
 import Cart from './components/Cart'; 
 import ProductPage from './components/ProductPage'; 
 import ProductList from './components/ProductList'; 
@@ -23,7 +24,7 @@ class App extends React.Component {
   componentDidMount () {
     this.props.checkUser(this.props.history);
     this.props.getProducts();
-    this.props.getCartItems();
+    
   }
   
   
@@ -44,7 +45,7 @@ class App extends React.Component {
               <Route path='/login' render={(props) => <Login {...props} />} />
               <Route exact path='/products' render={routerProps => <ProductList {...routerProps} />} />
               <Route path='/products/:id' render={(props) => <ProductPage {...props} />} />
-              <Route path='/cart' render={(props) => <Cart {...props} />} />
+              <Route path='/cart' render={(props) => <CartContainer {...props} />} />
               {/* <Route path='/about'>
                 <About />
               </Route>
@@ -68,9 +69,12 @@ const mapDispatchToProps = dispatch => {
   return {
       checkUser: () => { dispatch(checkUser()) },
       getProducts: (event) => { dispatch(getProducts(event)) },
-      getCartItems: (event, history) => { dispatch(getCartItems(event, history)) }
+     
     }
   }
+
+  //use current cart id from state to find order items
+  //make new comp for fetching cart items? and then pass down cart information to cart
 
   
 

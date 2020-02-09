@@ -33,7 +33,7 @@ const rootReducer = (state = initialState, action) => {
         case 'ADDING_PRODUCT_TO_CART':
             return {...state, loading: true}
         case 'ADDED_TO_CART':
-            return {...state, cart: action.cart, loading: false}
+            return {...state, loading: false}
         // case 'ADD_TO_CART':
         //     return {...state, cart: this.state.cart += action.cart}
         case 'FETCHING_ITEMS':

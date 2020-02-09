@@ -4,7 +4,7 @@ const checkUser = (event, history) => {
     return (dispatch) => {
         const token = localStorage.token;
         // console.log(token)
-        dispatch({type: 'AUTHENTICATING'})
+        dispatch({type: 'AUTHENTICATING', loading: true})
         return fetch('http://127.0.0.1:3000/profile', {
         method: 'GET',
         headers: {

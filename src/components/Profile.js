@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import ProfileDesc from './ProfileDesc';
 import EditProfile from './EditProfile';
 import logoutUser from "../actions/logoutUser";
+import createNewOrder from '../actions/createNewOrder';
 
 
 class Profile extends React.Component {
@@ -19,6 +20,7 @@ class Profile extends React.Component {
         event.preventDefault();
         localStorage.removeItem("token")
         this.props.logoutUser(event, history);
+        this.props.createNewOrder();
     }
 
     handleUpdate = (event, history) => {
@@ -101,7 +103,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    logoutUser: (event, history) => { dispatch(logoutUser(event, history)) }
+    logoutUser: (event, history) => { dispatch(logoutUser(event, history)) },
+    createNewOrder: (userInfo) => { dispatch(createNewOrder(userInfo)) }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

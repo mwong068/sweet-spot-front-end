@@ -143,7 +143,7 @@ class Signup extends React.Component {
                         /> 
                         <br></br><br></br>
                         <TextField
-                        id="confirm-password"
+                        id="password_confirmation"
                         label="Confirm Password"
                         type="password"
                         // helperText="Some important text"

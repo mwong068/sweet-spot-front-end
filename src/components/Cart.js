@@ -2,23 +2,46 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import CartItem from './CartItem';
+import getCartItems from '../actions/getCartItems';
 
 
 class Cart extends React.Component {
-    // constructor() {
-    //     super();
-    //     this.state = {
-    //         cart: []
-    //     }
-    // }
+    constructor() {
+        super();
+        this.state = {
+            sub_total: 0,
+            delivery_fee: 7,
+            total_price: 0
+        }
+    }
     
-    // componentDidMount () {
-        
-    // }
+    componentDidMount () {
+        this.props.getCartItems(this.props.order)
+    }
+
+
+    calculateSubtotal = (items) => {
+        console.log(items)
+        let prices = items.map(item => (item.attributes.product.price))
+        let total = prices.reduce((a, b) => a + b, 0)
+        return(total)
+    }
+    
+    calculateFinalTotal = (items) => {
+        console.log(items)
+        let prices = items.map(item => (item.attributes.product.price))
+        let total = prices.reduce((a, b) => a + b, 0)
+        return(total+7)
+    }
+
+    handleCheckout = () => {
+        console.log('hey')
+    }
 
     render () {
         return (
             <div>
+                {/* {Object.keys(this.props.order).length !==0 ? this.getCart(this.props.getCartItems(), this.props.order) : null} */}
                 <center>
                 <h1 style={{color: 'black'}}>{Object.keys(this.props.cart).length !== 0 ? (this.props.cart.data.length) : null} item(s) currently in your Cart</h1>
                 <div id="cart-container">
@@ -41,7 +64,11 @@ class Cart extends React.Component {
                                 <h4>Subtotal</h4>
                             </div>
                             <div>
-                                <p>$40.00</p>
+                            <p>${Object.keys(this.props.cart).length !== 0 ? 
+                        // this.props.cart.data.map(item => console.log(item.attributes.product.attributes.price))
+                        this.calculateSubtotal(this.props.cart.data)
+                        : 0.00 }
+                        </p>
                             </div>
                         </div>
                         <div id="total-list">
@@ -58,12 +85,16 @@ class Cart extends React.Component {
                                 <h3>Final Total</h3>
                             </div>
                             <div>
-                                <p>$47.00</p>
+                                <p>${Object.keys(this.props.cart).length !== 0 ? 
+                        // this.props.cart.data.map(item => console.log(item.attributes.product.attributes.price))
+                        this.calculateFinalTotal(this.props.cart.data)
+                        : 0.00 }</p>
                             </div>
                         </div>
                         <br></br>
                         <center>
-                        <Button variant="contained" type="submit"
+                        <Button variant="contained"
+                        onClick={this.handleCheckout}
                         style={{
                             radius: '3',
                             border: '0.6px solid #D3D3D3',
@@ -86,11 +117,18 @@ class Cart extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        cart:  state.cart
+        cart:  state.cart,
+        order: state.currentOrder
     }
 }
 
 
+const mapDispatchToProps = dispatch => {
+    return {
+        getCartItems: (event, history) => { dispatch(getCartItems(event, history)) }
+      }
+    }
 
 
-export default connect(mapStateToProps, null)(Cart);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

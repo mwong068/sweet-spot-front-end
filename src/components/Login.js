@@ -16,8 +16,7 @@ class Login extends React.Component {
         super()
         this.state = {
             username: '',
-            password: '',
-            password_confirmation: ''
+            password: ''
         }
     }
 
@@ -113,16 +112,6 @@ class Login extends React.Component {
                         type="password"
                         variant="outlined"
                         value={this.state.password} 
-                        onChange={this.handleChange}
-                        /> 
-                        <br></br><br></br>
-                        <TextField
-                        id="confirm-password"
-                        label="Confirm Password"
-                        type="password"
-                        // helperText="Some important text"
-                        variant="outlined"
-                        value={this.state.password_confirmation} 
                         onChange={this.handleChange}
                         /> 
                         <br></br><br></br><br></br>     

@@ -1,16 +1,17 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import { useDispatch } from 'react-redux';
-import deleteItem from '../actions/deleteItem';
-import { Link } from 'react-router-dom';
- 
-export default function CartItem(props) {
-    const dispatch = useDispatch();
+import Cart from './Cart';
+import { useSelector } from 'react-redux';
+import getCartItems from '../actions/getCartItems';
+
+
+export default function CartContainer(props) {
+    const order = useSelector( state => state.currentOrder);
 
     return(
-        <div id="cart-item">
+        <div>
             <div>
-                {console.log(props)}
+                <Cart order={order} />
+                {/* {console.log(props)}
                 <br></br>
                 <img src={ props.attributes.product.image } style={{width: '90%', height: '90%', objectFit: 'cover'}}></img>
             </div>
@@ -31,7 +32,7 @@ export default function CartItem(props) {
                 color: 'black',
                 border: '3px solid #f3e4b7',
                 fontFamily: 'Montserrat',
-                }}>Delete</Button>
+                }}>Delete</Button> */}
             </div>
         </div>
 )

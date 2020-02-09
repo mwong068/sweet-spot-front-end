@@ -42,7 +42,7 @@ class ProductPage extends React.Component {
         // console.log(this.props)
         if(Object.keys(this.props.products).length !== 0) {
             let item = (this.props.products.data.find(product => product.id === (productData)))
-            // console.log(item)
+            console.log(order)
             // this.setState({
             //     item: item
             // })
@@ -117,7 +117,7 @@ class ProductPage extends React.Component {
             <div id="product-page">
                 <center>
                 <div id="product-image">
-                {console.log(this.props.products)}
+                {/* {console.log(this.props.products)} */}
                     <img src={(Object.keys(this.props.products).length !== 0) ? (this.props.products.data.find(product => product.id == this.props.match.params.id).attributes.image) : null } 
                     style={{width: '40vh', height: '40vh', objectFit: 'cover'}} />
                 </div>
