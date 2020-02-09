@@ -40,6 +40,10 @@ const rootReducer = (state = initialState, action) => {
             return {...state, loading: true}
         case 'SHOW_CART_ITEMS':
             return {...state, cart: action.cart, loading: false}
+        case 'DELETING_ITEMS':
+            return {...state, loading: true}
+        case 'ITEM_DELETED':
+            return {...state, cart: action.cart, loading: false}
         default:
             return state;
     }

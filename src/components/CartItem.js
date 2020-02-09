@@ -1,12 +1,15 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-
-
+import { useDispatch } from 'react-redux';
+import deleteItem from '../actions/deleteItem';
+ 
 export default function CartItem(props) {
+    const dispatch = useDispatch();
+
     return(
         <div id="cart-item">
             <div>
-                {console.log(props.attributes.product)}
+                {console.log(props)}
                 <br></br>
                 <img src={ props.attributes.product.image } style={{width: '90%', height: '90%', objectFit: 'cover'}}></img>
             </div>
@@ -15,7 +18,9 @@ export default function CartItem(props) {
                 <h4>{props.attributes.product.name}</h4>
                 <p>{props.attributes.product.description}</p>
                 <h4>Quantity: <select></select></h4>
-                <Button style={{
+                <Button 
+                onClick={(event) => dispatch(deleteItem(event, props.id))}
+                style={{
                 borderRadius: 5,
                 backgroundColor: 'white',
                 // padding: "9px 27px",
