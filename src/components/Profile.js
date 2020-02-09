@@ -16,11 +16,14 @@ class Profile extends React.Component {
         }
     }
 
+    componentDidMount () {
+        // this.props.createNewOrder();
+    }
+
     handleClick = (event, history) => {
         event.preventDefault();
         localStorage.removeItem("token")
         this.props.logoutUser(event, history);
-        this.props.createNewOrder();
     }
 
     handleUpdate = (event, history) => {
@@ -40,8 +43,9 @@ class Profile extends React.Component {
                     <img src={require('../assets/felicia.jpg')} width='150px' height='150px' style={{borderRadius: '50%', objectFit: 'cover'}}></img>
                     </div>
                     <div><br></br>
-
-                    {/* {console.log(this.props.currentUser.attributes)} */}
+                    {/* get order */}
+                    {(Object.keys(this.props.currentUser).length !== 0) ? this.props.createNewOrder(this.props.currentUser) : null}
+                    {console.log(this.props.currentUser)}
                     {Object.keys(this.props.currentUser).length !== 0 ? 
                     <h1 style={{color: 'black', fontSize: '35px'}}>Hi there, {this.props.currentUser.attributes.name}!</h1>
                     : null}

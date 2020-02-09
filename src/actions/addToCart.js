@@ -4,7 +4,7 @@ const addToCart = (event, productData, order) => {
      console.log(order)
      return (dispatch) => {
         const token = localStorage.token;
-        dispatch({type: 'ADDING_PRODUCT_TO_CART'})
+        dispatch({type: 'ADDING_PRODUCT_TO_CART', loading: true})
         return fetch('http://127.0.0.1:3000/order_items', {
         method: 'POST',
         headers: {

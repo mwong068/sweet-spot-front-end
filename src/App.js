@@ -69,7 +69,7 @@ const mapDispatchToProps = dispatch => {
   return {
       checkUser: () => { dispatch(checkUser()) },
       getProducts: (event) => { dispatch(getProducts(event)) },
-     
+      
     }
   }
 

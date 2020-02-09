@@ -24,14 +24,14 @@ class Cart extends React.Component {
         console.log(items)
         let prices = items.map(item => (item.attributes.product.price))
         let total = prices.reduce((a, b) => a + b, 0)
-        return(total)
+        return(total.toFixed(2))
     }
     
     calculateFinalTotal = (items) => {
         console.log(items)
         let prices = items.map(item => (item.attributes.product.price))
         let total = prices.reduce((a, b) => a + b, 0)
-        return(total+7)
+        return((total+7).toFixed(2))
     }
 
     handleCheckout = () => {
