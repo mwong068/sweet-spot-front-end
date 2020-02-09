@@ -15,6 +15,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import checkUser from './actions/checkUser';
 import getProducts from './actions/getProducts';
+import getCartItems from './actions/getCartItems';
 
 
 class App extends React.Component {
@@ -22,7 +23,7 @@ class App extends React.Component {
   componentDidMount () {
     this.props.checkUser(this.props.history);
     this.props.getProducts();
-
+    this.props.getCartItems();
   }
   
   
@@ -66,9 +67,11 @@ class App extends React.Component {
 const mapDispatchToProps = dispatch => {
   return {
       checkUser: () => { dispatch(checkUser()) },
-      getProducts: (event) => { dispatch(getProducts(event)) }
+      getProducts: (event) => { dispatch(getProducts(event)) },
+      getCartItems: (event, history) => { dispatch(getCartItems(event, history)) }
     }
   }
+
   
 
 export default connect(null, mapDispatchToProps)(App);

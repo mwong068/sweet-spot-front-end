@@ -2,33 +2,33 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import CartItem from './CartItem';
-import getCartItems from '../actions/getCartItems';
+
 
 class Cart extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            cart: []
-        }
-    }
+    // constructor() {
+    //     super();
+    //     this.state = {
+    //         cart: []
+    //     }
+    // }
     
-    componentDidMount () {
+    // componentDidMount () {
         
-    }
+    // }
 
     render () {
         return (
             <div>
                 <center>
-                <h1 style={{color: 'black'}}>1 item currently in your Cart</h1>
+                <h1 style={{color: 'black'}}>{Object.keys(this.props.cart).length !== 0 ? (this.props.cart.data.length) : null} item(s) currently in your Cart</h1>
                 <div id="cart-container">
                     <div id="item-1">
                         <h2 style={{textAlign: 'left'}}>My Cart</h2>
                         <hr></hr>
                         <div id="item-list">
-                        {/* {Object.keys(this.props.cart).length !== 0 ? {this.props.cart.map((item) => <CartItem {...item} />)} : null} */}
-                        {(event) => this.props.getCartItems(event, this.props.history)}
-                        {console.log(Object.keys((this.props.cart).length !== 0))}
+                        {Object.keys(this.props.cart).length !== 0 ? 
+                        this.props.cart.data.map(item => <CartItem {...item} />) 
+                        : <h1>Your cart is currently empty! Why don't you go find something in the shop?</h1> }
                         </div>
                     </div>
                     {/* <hr style={{height: '450px'}}></hr> */}
@@ -60,18 +60,20 @@ class Cart extends React.Component {
                                 <p>$47.00</p>
                             </div>
                         </div>
+                        <br></br>
+                        <center>
                         <Button variant="contained" type="submit"
                         style={{
                             radius: '3',
                             border: '0.6px solid #D3D3D3',
-                            backgroundColor: '#dcead9',
+                            backgroundColor: 'white',
                             color: '#3e4e60',
                             fontWeight: 'bold',
                             padding: '10px 25px',
                             fontFamily: 'Montserrat',
                         }}
                         >continue to checkout</Button>
-                        <p></p>
+                        </center>
                     </div>
                 </div>
                 </center>
@@ -80,19 +82,14 @@ class Cart extends React.Component {
     }
 }
 
-//fetch to order items to display all of current cart
-//add mapstatetoprops
+
 const mapStateToProps = state => {
     return {
         cart:  state.cart
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-    getCartItems: (event, history) => { dispatch(getCartItems(event, history)) }
-    }
-}
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+
+export default connect(mapStateToProps, null)(Cart);

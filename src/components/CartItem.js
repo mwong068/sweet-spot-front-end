@@ -2,15 +2,18 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 
 
-export default function CartItem() {
+export default function CartItem(props) {
     return(
-        <div id="item-3">
+        <div id="cart-item">
             <div>
-                <img src={ require('../assets/chocolatecake.jpg') } style={{width: '150px', height: '250x'}}></img>
+                {console.log(props.attributes.product)}
+                <br></br>
+                <img src={ props.attributes.product.image } style={{width: '90%', height: '90%', objectFit: 'cover'}}></img>
             </div>
-                <h3>$40.00</h3>
-                <h4>Chocolate cake</h4>
-                <p>delicious, rich chocolate cake perfect for a party or celebration</p>
+            <div>
+                <h3>${props.attributes.product.price}</h3>
+                <h4>{props.attributes.product.name}</h4>
+                <p>{props.attributes.product.description}</p>
                 <h4>Quantity: <select></select></h4>
                 <Button style={{
                 borderRadius: 5,
@@ -21,7 +24,7 @@ export default function CartItem() {
                 border: '3px solid #f3e4b7',
                 fontFamily: 'Montserrat',
                 }}>Delete</Button>
-            
+            </div>
         </div>
 )
 }
