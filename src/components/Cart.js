@@ -26,6 +26,7 @@ class Cart extends React.Component {
                         <h2 style={{textAlign: 'left'}}>My Cart</h2>
                         <hr></hr>
                         <div id="item-list">
+                            {console.log(Object.keys(this.props.cart)[0])}
                         {Object.keys(this.props.cart).length !== 0 ? 
                         this.props.cart.data.map(item => <CartItem {...item} />) 
                         : <h1>Your cart is currently empty! Why don't you go find something in the shop?</h1> }
