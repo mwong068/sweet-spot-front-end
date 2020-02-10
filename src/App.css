@@ -499,19 +499,61 @@ hr {
   grid-gap: 20px;
 }
 
+/* checkout */
+#checkout {
+  /* background-color: green; */
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  /* border: 1px solid black; */
+  width: 80%;
+
+  box-shadow: 0 1px 3px 0 #6A6C6E;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+  padding: 10px;
+}
+
+#checkout div {
+  /* border: 1px solid orange; */
+  /* background-color: #dcead9; */
+  /* padding: 0 0 0 10px; */
+}
+
+#payment {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+#customer {
+  color: #D3D3D3;
+}
+
 /* Stripe styling */
 .MyCardElement {
-  height: 40px;
+  /* height: 40px;
   padding: 10px 12px;
   width: 40%;
   color: #32325d;
   background-color: white;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 4px; */
 
-  box-shadow: 0 1px 3px 0 #e6ebf1;
+  /* box-shadow: 0 1px 3px 0 black;
   -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease; */
+ 
+  width: 50%;
+  padding: 4px;
+  border-bottom: 1px solid #A9A9A9;
+}
+
+#checkout-label {
+  /* position: absolute; */
+  width: 100%;
+  /* left: 0; */
+  /* bottom: 8px; */
+  color: #dcead9;
+  
 }
 
 .MyCardElement--focus {
