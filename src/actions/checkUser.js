@@ -15,7 +15,7 @@ const checkUser = (event, history) => {
         })
         .then(resp => resp.json())
         .then(data => {
-            if(data.error){
+            if(data.message){
                 localStorage.removeItem("token")
             }
             else {
@@ -26,8 +26,6 @@ const checkUser = (event, history) => {
                 // user.push(data.user.data.attributes)
                 // console.log(data.user.data)
                 dispatch({type: "SET_CURRENT_USER", currentUser: data.user.data})
-                // history.push("/");
-                // return data.user.data.attributes.username
             }
         })
     }
