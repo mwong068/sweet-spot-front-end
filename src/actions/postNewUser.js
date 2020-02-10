@@ -24,11 +24,11 @@ const postNewUser = (event, userData, history) => {
             else {
                 localStorage.setItem('token', data.jwt);
                 dispatch({type: "SET_CURRENT_USER", currentUser: data.user.data.attributes})
-                history.push('/profile')
+                
                 // return data.user.data.attributes.username
             }
         })
-        // .then((username) => typeof username === 'string' ? history.push(`/users/${username}`) : null )
+        .then(history.push('/profile'))
     }
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Cart from './Cart';
 import { useSelector } from 'react-redux';
-import getCartItems from '../actions/getCartItems';
+import getCartItems from '../../actions/getCartItems';
 
 
 export default function CartContainer(props) {

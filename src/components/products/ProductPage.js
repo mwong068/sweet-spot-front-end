@@ -14,7 +14,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import addToCart from '../actions/addToCart';
+import addToCart from '../../actions/addToCart';
 
 
 
@@ -207,7 +207,7 @@ class ProductPage extends React.Component {
                         <CardMedia
                         // className={classes.media}
                         title="Donut"
-                        image={ require('../assets/macarons.jpg') }
+                        image={ require('../../assets/macarons.jpg') }
                         style={{width: '290px', height: '280px'}}
                         /><br></br>
                         <CardContent style={{height: '5px', textAlign: 'left', padding: '10px'}}>
@@ -233,7 +233,7 @@ class ProductPage extends React.Component {
                     <CardActionArea>
                         <CardMedia
                         // className={classes.media}
-                        image={ require('../assets/chocolatecake.jpg') }
+                        image={ require('../../assets/chocolatecake.jpg') }
                         title="Donut"
                         style={{width: '290px', height: '280px'}}
                         /><br></br>
@@ -241,7 +241,7 @@ class ProductPage extends React.Component {
                         <Typography gutterBottom variant="h5" style={{fontFamily: 'Montserrat'}}>
                             Chocolate Raspberry C...
                         </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p" image={ require('../assets/sweetspot.png') }>
+                        <Typography variant="body2" color="textSecondary" component="p" image={ require('../../assets/sweetspot.png') }>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
@@ -260,7 +260,7 @@ class ProductPage extends React.Component {
                     <CardActionArea>
                     <CardMedia
                 // className={classes.media}
-                image={ require('../assets/pannacotta.jpg') }
+                image={ require('../../assets/pannacotta.jpg') }
                 title="Donut"
                 style={{width: '290px', height: '280px'}}
                 /><br></br>
@@ -310,7 +310,7 @@ class ProductPage extends React.Component {
                         <CardMedia
                         // className={classes.media}
                         title="Donut"
-                        image={ require('../assets/macarons.jpg') }
+                        image={ require('../../assets/macarons.jpg') }
                         style={{width: '290px', height: '280px'}}
                         /><br></br>
                         <CardContent style={{height: '5px', textAlign: 'left', padding: '10px'}}>
@@ -336,7 +336,7 @@ class ProductPage extends React.Component {
                     <CardActionArea>
                         <CardMedia
                         // className={classes.media}
-                        image={ require('../assets/chocolatecake.jpg') }
+                        image={ require('../../assets/chocolatecake.jpg') }
                         title="Donut"
                         style={{width: '290px', height: '280px'}}
                         /><br></br>
@@ -344,7 +344,7 @@ class ProductPage extends React.Component {
                         <Typography gutterBottom variant="h5" style={{fontFamily: 'Montserrat'}}>
                             Chocolate Raspberry C...
                         </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p" image={ require('../assets/sweetspot.png') }>
+                        <Typography variant="body2" color="textSecondary" component="p" image={ require('../../assets/sweetspot.png') }>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
@@ -363,7 +363,7 @@ class ProductPage extends React.Component {
                     <CardActionArea>
                     <CardMedia
                 // className={classes.media}
-                image={ require('../assets/pannacotta.jpg') }
+                image={ require('../../assets/pannacotta.jpg') }
                 title="Donut"
                 style={{width: '290px', height: '280px'}}
                 /><br></br>

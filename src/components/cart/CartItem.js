@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import { useDispatch } from 'react-redux';
-import deleteItem from '../actions/deleteItem';
+import deleteItem from '../../actions/deleteItem';
 import { Link } from 'react-router-dom';
  
 export default function CartItem(props) {
@@ -22,7 +22,7 @@ export default function CartItem(props) {
                 <p>{props.attributes.product.description}</p>
                 <h4>Quantity: <select></select></h4>
                 <Button 
-                onClick={(event) => dispatch(deleteItem(event, props.id))}
+                onClick={(event) => dispatch(deleteItem(event, props.id, props.attributes.order.id))}
                 style={{
                 borderRadius: 5,
                 backgroundColor: 'white',

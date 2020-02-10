@@ -1,25 +1,24 @@
-// technically this action is checking for an existing order with active status and no quantity or total but also creating a new one if none such orders exist
 
-const createNewOrder = (userInfo) => {
-    console.log('making new order!')
-    console.log(userInfo)
+const closeOrder = (event, total, order) => {
+    console.log('closing order')
+    console.log(order)
     return (dispatch) => {
         const token = localStorage.token;
-        dispatch({type: 'MAKING_NEW_ORDER'})
-        return fetch('http://127.0.0.1:3000/orders', {
-        method: 'POST',
+        dispatch({type: 'CLOSING_ORDER'})
+        return fetch('http://127.0.0.1:3000/orders/' + `${order.id}`, {
+        method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
             Accept: 'application/json',
             'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify({
-            user_id: userInfo.id,
-            active: true,
+            user_id: order.attributes.user.id,
+            active: false,
             shipped: false,
             tracking_id: null,
             quantity: 0,
-            total: 0
+            total: total
         })
         })
         .then(resp => resp.json())
@@ -28,8 +27,8 @@ const createNewOrder = (userInfo) => {
                 console.log(data.message)
             }
             else {
-                console.log(data.data)
-                dispatch({type: "CREATE_NEW_ORDER", currentOrder: data.data})
+                console.log(data)
+                dispatch({type: "ORDER_COMPLETED"})
                 // history.push("/");
                 // return data.user.data.attributes.username
             }
@@ -37,4 +36,4 @@ const createNewOrder = (userInfo) => {
     }
 }
 
-export default createNewOrder
+export default closeOrder

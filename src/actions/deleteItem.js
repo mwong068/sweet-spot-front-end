@@ -1,5 +1,5 @@
 
-const deleteItem = (event, product) => {
+const deleteItem = (event, product, order) => {
     console.log(product)
     return (dispatch) => {
         const token = localStorage.token;
@@ -19,7 +19,10 @@ const deleteItem = (event, product) => {
             }
             else {
                 console.log(data)
-                dispatch({type: 'ITEM_DELETED', cart: data})
+                // let newItems = []
+                let items = data.data.filter(item => item.attributes.order.id == order )
+                // newItems.push(items)
+                dispatch({type: 'ITEM_DELETED', cart: {data: items}})
             }
         })
         

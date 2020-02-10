@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import ProfileDesc from './ProfileDesc';
 import EditProfile from './EditProfile';
-import logoutUser from "../actions/logoutUser";
-import createNewOrder from '../actions/createNewOrder';
+import logoutUser from "../../actions/logoutUser";
+import createNewOrder from '../../actions/createNewOrder';
 
 
 class Profile extends React.Component {
@@ -40,7 +40,7 @@ class Profile extends React.Component {
                 <center>
                 <div id="profile-header">
                     <div>
-                    <img src={require('../assets/felicia.jpg')} width='150px' height='150px' style={{borderRadius: '50%', objectFit: 'cover'}}></img>
+                    <img src={require('../../assets/felicia.jpg')} width='150px' height='150px' style={{borderRadius: '50%', objectFit: 'cover'}}></img>
                     </div>
                     <div><br></br>
                     {/* get order */}

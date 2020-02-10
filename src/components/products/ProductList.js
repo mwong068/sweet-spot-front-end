@@ -2,8 +2,8 @@ import React from 'react';
 import Product from './Product';
 import { connect } from 'react-redux';
 import { Link, Route } from 'react-router-dom';
-import checkOrders from '../actions/checkOrders';
-import createNewOrder from '../actions/createNewOrder';
+import checkOrders from '../../actions/checkOrders';
+import createNewOrder from '../../actions/createNewOrder';
 
 
 class ProductList extends React.Component {

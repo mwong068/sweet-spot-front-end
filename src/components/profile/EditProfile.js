@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import getExistingUser from '../actions/getExistingUser';
-import updateUser from '../actions/updateUser';
+import getExistingUser from '../../actions/getExistingUser';
+import updateUser from '../../actions/updateUser';
 import TextField from '@material-ui/core/TextField';
 // import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';

@@ -20,15 +20,15 @@ const getCartItems = (order) => {
             }
             else {
                 console.log(data.data)
-                let newItems = []
-                let items = data.data.find(item => item.attributes.order.id == order.id )
+                // let newItems = []
+                let items = data.data.filter(item => item.attributes.order.id == order.id )
                 if (items === undefined) {
                     dispatch({type: 'SHOW_CART_ITEMS', cart: {}})
                 }
                 else {
                     
-                    newItems.push(items)
-                    dispatch({type: 'SHOW_CART_ITEMS', cart: {data: newItems}})
+                    // newItems.push(items)
+                    dispatch({type: 'SHOW_CART_ITEMS', cart: {data: items}})
                 }
             }
         })

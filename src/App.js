@@ -4,19 +4,20 @@ import Homepage from './components/Homepage';
 import Navbar from './components/Navbar'; 
 import Header from './components/Header'; 
 import Signup from './components/Signup'; 
-import Profile from './components/Profile'; 
+import Profile from './components/profile/Profile'; 
 import Login from './components/Login'; 
 import Footer from './components/Footer'; 
-import CartContainer from './components/CartContainer'; 
-import Cart from './components/Cart'; 
-import ProductPage from './components/ProductPage'; 
-import ProductList from './components/ProductList'; 
+import CartContainer from './components/cart/CartContainer'; 
+import Checkout from './components/checkout/Checkout'; 
+import ProductPage from './components/products/ProductPage'; 
+import ProductList from './components/products/ProductList'; 
 // import ProductPage from './components/ProductPage'; 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import checkUser from './actions/checkUser';
 import getProducts from './actions/getProducts';
 import getCartItems from './actions/getCartItems';
+import { StripeProvider } from 'react-stripe-elements';
 
 
 class App extends React.Component {
@@ -30,6 +31,7 @@ class App extends React.Component {
   
   render () {
     return (
+      <StripeProvider apiKey="pk_test_cRRsSyQG1P5OIPHaqKE9WCle00cRU8M7Bu">
       <div className="App">
           <Router>
             <div>
@@ -46,6 +48,7 @@ class App extends React.Component {
               <Route exact path='/products' render={routerProps => <ProductList {...routerProps} />} />
               <Route path='/products/:id' render={(props) => <ProductPage {...props} />} />
               <Route path='/cart' render={(props) => <CartContainer {...props} />} />
+              <Route path='/checkout' render={(props) => <Checkout {...props} />} />
               {/* <Route path='/about'>
                 <About />
               </Route>
@@ -60,6 +63,7 @@ class App extends React.Component {
             </div>
           </Router>
       </div>
+      </StripeProvider>
     );
   }
 
