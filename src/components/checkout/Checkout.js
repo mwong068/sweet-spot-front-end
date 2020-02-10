@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Elements } from 'react-stripe-elements';
 import PaymentForm from './PaymentForm';
 
@@ -9,11 +10,17 @@ class Checkout extends React.Component {
         return (
             <div>
                 <Elements>
-                    <PaymentForm />
+                    <PaymentForm orderId={this.props.order} />
                 </Elements>
                 </div>
         )
     }
 }
 
-export default Checkout;
+const mapStateToProps = state => {
+    return {
+    order: state.completedOrder
+    }
+}
+
+export default connect(mapStateToProps, null)(Checkout);

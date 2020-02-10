@@ -137,7 +137,7 @@ export default function Homepage() {
             </CardActionArea>
             </Card>
                
-            <Card className={classes.card}>
+            <Card className={classes.root}>
       <CardActionArea>
             <CardMedia
           className={classes.media}

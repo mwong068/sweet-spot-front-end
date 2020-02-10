@@ -15,7 +15,7 @@ const checkUser = (event, history) => {
         })
         .then(resp => resp.json())
         .then(data => {
-            if(data.message){
+            if(data.error){
                 localStorage.removeItem("token")
             }
             else {

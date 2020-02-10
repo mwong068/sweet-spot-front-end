@@ -28,7 +28,7 @@ const closeOrder = (event, total, order) => {
             }
             else {
                 console.log(data)
-                dispatch({type: "ORDER_COMPLETED"})
+                dispatch({type: "ORDER_COMPLETED", order: data})
                 // history.push("/");
                 // return data.user.data.attributes.username
             }

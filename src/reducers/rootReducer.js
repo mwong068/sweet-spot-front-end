@@ -3,7 +3,8 @@ const initialState = {
     loading: false,
     products: [],
     cart: [],
-    currentOrder: []
+    currentOrder: [],
+    completedOrder: []
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -34,8 +35,6 @@ const rootReducer = (state = initialState, action) => {
             return {...state, loading: true}
         case 'ADDED_TO_CART':
             return {...state, loading: false}
-        // case 'ADD_TO_CART':
-        //     return {...state, cart: this.state.cart += action.cart}
         case 'FETCHING_ITEMS':
             return {...state, loading: true}
         case 'SHOW_CART_ITEMS':
@@ -44,6 +43,10 @@ const rootReducer = (state = initialState, action) => {
             return {...state, loading: true}
         case 'ITEM_DELETED':
             return {...state, cart: action.cart, loading: false}
+        case 'CLOSING_ORDER':
+            return {...state, loading: false}
+        case 'ORDER_COMPLETED':
+            return {...state, completedOrder: action.order, loading: false}
         default:
             return state;
     }
