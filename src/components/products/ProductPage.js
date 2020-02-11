@@ -194,7 +194,7 @@ class ProductPage extends React.Component {
                     desc={Object.keys(this.props.products).length !== 0 ? 
                     (this.props.products.data.find(product => product.id === this.props.match.params.id).attributes.description) : null}
                     ingred={Object.keys(this.props.products).length !== 0 ? 
-                        (this.props.products.data.find(product => product.id === this.props.match.params.id).attributes.description) : null}
+                        (this.props.products.data.find(product => product.id === this.props.match.params.id).attributes.ingredients) : null}
                     />
               <br></br><br></br><br></br>
 

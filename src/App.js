@@ -11,12 +11,14 @@ import CartContainer from './components/cart/CartContainer';
 import Checkout from './components/checkout/Checkout'; 
 import ProductPage from './components/products/ProductPage'; 
 import ProductList from './components/products/ProductList'; 
+import AddProduct from './components/products/AddProduct'; 
 // import ProductPage from './components/ProductPage'; 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import checkUser from './actions/checkUser';
 import getProducts from './actions/getProducts';
 import getCartItems from './actions/getCartItems';
+import createNewOrder from './actions/createNewOrder';
 import { StripeProvider } from 'react-stripe-elements';
 
 
@@ -25,6 +27,7 @@ class App extends React.Component {
   componentDidMount () {
     this.props.checkUser(this.props.history);
     this.props.getProducts();
+    // this.props.createNewOrder();
     
   }
   
@@ -49,6 +52,7 @@ class App extends React.Component {
               <Route path='/products/:id' render={(props) => <ProductPage {...props} />} />
               <Route path='/cart' render={(props) => <CartContainer {...props} />} />
               <Route path='/checkout' render={(props) => <Checkout {...props} />} />
+              <Route path='/addproduct' render={(props) => <AddProduct {...props} />} />
               {/* <Route path='/about'>
                 <About />
               </Route>
@@ -73,7 +77,7 @@ const mapDispatchToProps = dispatch => {
   return {
       checkUser: () => { dispatch(checkUser()) },
       getProducts: (event) => { dispatch(getProducts(event)) },
-      
+      // createNewOrder: (userInfo) => { dispatch(createNewOrder(userInfo)) }
     }
   }
 

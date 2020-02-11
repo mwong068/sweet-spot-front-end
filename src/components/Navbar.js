@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 // import store from './redux/store.js';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -17,6 +17,8 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import InputBase from '@material-ui/core/InputBase';
+// import createNewOrder from '../actions/createNewOrder';
+
 
 
 const useStyles = makeStyles(theme => ({
@@ -35,7 +37,10 @@ const useStyles = makeStyles(theme => ({
     borderRadius: theme.shape.borderRadius,
     // backgroundColor: fade(theme.palette.common.black, 0.15),
     boxShadow: 'none',
-    borderBottom: '0.7px solid black',
+    borderBottom: '2px solid #ddd',
+    WebkitAppearance: 'none',
+    borderRadius: '0',
+    paddingBottom: '9px',
     '&:hover': {
       backgroundColor: fade(theme.palette.common.white, 0.1),
     },
@@ -55,6 +60,9 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    color: '#999',
+    // paddingBottom: '10px',
+    marginTop: '-3px',
   },
   inputRoot: {
     color: 'inherit',
@@ -76,7 +84,9 @@ const useStyles = makeStyles(theme => ({
 export default function Navbar() {
   const classes = useStyles();
 
-  const user = useSelector(state => state.currentUser)
+  const user = useSelector(state => state.currentUser);
+  const dispatch = useDispatch();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -124,6 +134,8 @@ export default function Navbar() {
 
   return (
     <div className={classes.root}>
+        {/* {dispatch(createNewOrder(user))} */}
+
       <AppBar position="static" elevation={0} style={{ background: 'white',  padding: '20px', color: 'black' }}>
         <Toolbar>
           {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">

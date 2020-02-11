@@ -57,7 +57,7 @@ class Cart extends React.Component {
             <div>
                 {/* {Object.keys(this.props.order).length !==0 ? this.getCart(this.props.getCartItems(), this.props.order) : null} */}
                 <center>
-                <h1 style={{color: 'black'}}>{Object.keys(this.props.cart).length !== 0 ? (this.props.cart.data.length) : 0} item(s) currently in your Cart</h1>
+                <h1 style={{color: '#6A6C6E'}}>{Object.keys(this.props.cart).length !== 0 ? (this.props.cart.data.length) : 0} item(s) currently in your Cart</h1>
                 <div id="cart-container">
                     <div id="item-1">
                         <h2 style={{textAlign: 'left'}}>My Cart</h2>
@@ -118,7 +118,7 @@ class Cart extends React.Component {
                             padding: '10px 25px',
                             fontFamily: 'Montserrat',
                         }}
-                        ><Link to ='/checkout'>continue to checkout</Link></Button>
+                        ><Link to ='/checkout' style={{textDecoration: 'none', color: '#3e4e60'}}>continue to checkout</Link></Button>
                         </center>
                     </div>
                 </div>

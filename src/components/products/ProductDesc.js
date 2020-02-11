@@ -40,8 +40,8 @@ function a11yProps(index) {
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1,
-    width: '100%',
+    // flexGrow: 1,
+    width: '1200px',
     backgroundColor: 'white',
     // padding: '0px 70px',
     textAlign: 'center',
@@ -90,7 +90,8 @@ export default function SimpleTabs(props) {
       </TabPanel>
       <TabPanel value={value} index={1} style={{fontFamily: 'Montserrat'}}>
       {(Object.keys(props).length !== 0 ? 
-                    <p>{props.desc}</p> : null)}
+                    <p>{props.ingred}</p> : null)}
+                    {console.log(props)}
       </TabPanel>
       <TabPanel value={value} index={2} style={{fontFamily: 'Montserrat'}}>
         Shipping is a $7 flat rate fee.

@@ -113,6 +113,8 @@ class EditProfile extends React.Component {
                             </div>             
                             <div>                
                             <TextField
+                            multiline
+                            rows="4"
                             id="bio"
                             label="Bio"
                             type="textarea"

@@ -85,7 +85,7 @@ hr {
 }
 
 #container div {
-  width: 8%;
+  width: 10%;
   display: inline-block;
   margin-top: -16px;
 }
@@ -437,7 +437,7 @@ hr {
 
 #edit-user div{
   border: 1px solid white;
-  height: 38%;
+  height: 34%;
 }
 
 #user-stuff {
@@ -566,4 +566,32 @@ hr {
 
 .MyCardElement--webkit-autofill {
   background-color: #fefde5 !important;
+}
+
+
+
+/* add a product page */
+#add-a-product-container {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  /* border: 1px solid black; */
+  width: 80%;
+
+  box-shadow: 0 1px 3px 0 #a9a9a9;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+  background-color: #ced8d9;
+  /* padding: 10px; */
+}
+
+#add-a-product-container div {
+  /* padding: 2px; */
+  /* border: 1px solid black; */
+  
+}
+
+#add-product {
+  /* width: 30vh; */
+  /* height: 20vh; */
+  /* padding: 25px; */
 }

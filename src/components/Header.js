@@ -38,14 +38,14 @@ class Header extends React.Component {
                 </div>
                 <div></div>
                 <div>
-                    <h3><Link to="/" style={{ textDecoration: 'none' }}><Button
+                    <h3><Link to="/addproduct" style={{ textDecoration: 'none' }}><Button
                     style={{
                         fontSize: "16px",
                         color: 'black',
                         textTransform: 'capitalize',
                         fontWeight: '700',
                         fontFamily: 'Montserrat',
-                    }}>Brands</Button></Link></h3>
+                    }}>Add a Product</Button></Link></h3>
                 </div>
                 <div></div>
                 <div>
