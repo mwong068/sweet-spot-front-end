@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
+import { useSelector } from "react-redux";
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -58,6 +59,7 @@ const useStyles = makeStyles(theme => ({
 export default function SimpleTabs(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const reviews =  useSelector(state => state.reviews);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -85,24 +87,25 @@ export default function SimpleTabs(props) {
       <TabPanel value={value} index={0} style={{fontFamily: 'Montserrat'}}>
         {(Object.keys(props).length !== 0 ? 
                     <p>{props.desc}</p> : null)}
-    
-        <b>NO RETURNS. ALL SALES ARE FINAL.</b>
       </TabPanel>
       <TabPanel value={value} index={1} style={{fontFamily: 'Montserrat'}}>
       {(Object.keys(props).length !== 0 ? 
                     <p>{props.ingred}</p> : null)}
-                    {console.log(props)}
+                
       </TabPanel>
       <TabPanel value={value} index={2} style={{fontFamily: 'Montserrat'}}>
         Shipping is a $7 flat rate fee.
+        
       </TabPanel>
       <TabPanel value={value} index={3} style={{fontFamily: 'Montserrat'}}>
-        Coming Soon!
+        {/* {console.log(reviews)} */}
+        {(Object.keys(reviews).length !== 0 ?
+        reviews.data.map(fav => <p><b>{fav.attributes.user.name}</b>: {fav.attributes.review}</p>) : null)}
+        
+        {/* {reviews.data.map(fav => <p><b>{fav.attributes.user.name}</b>: {fav.attributes.review}</p>)} */}
       </TabPanel>
       <TabPanel value={value} index={4} style={{fontFamily: 'Montserrat'}}>
-        Grace's Delights was founded in 2016 by Grace and Rebecca, two sisters who enjoy making pastries and sweet dessert snacks. The sisters would often gift their fresh homemade goodies to friends and family where it become instant crowd favorites. The sisters knew they had to get into the action and spread the same joy to others they did with their loved ones.
-        <br></br><br></br>
-        Today, Grace's Delights has over 27 pastry items sold online and is looking for new recipes to try out. Whether you've recently become a fan or have been there since the beginning, Grace's Delights is delighted to have a growing family that supports the sister duo.
+      <h3>NO RETURNS. ALL SALES ARE FINAL.</h3>
       </TabPanel>
       </center>
     </div>

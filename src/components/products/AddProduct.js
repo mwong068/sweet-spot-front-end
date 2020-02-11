@@ -16,8 +16,8 @@ class AddProduct extends React.Component {
     state = {
         name: '',
         price: '',
-        quantity: 0,
-        rating: 0,
+        quantity: '',
+        rating: '',
         description: '',
         ingredients: '',
         image: ''

@@ -83,6 +83,7 @@ export default function Homepage() {
             <h1>Featured Products</h1>
             <br></br>
             <div id="homepage-cards">
+                
             <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia

@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 class Header extends React.Component {
 
     componentDidMount() {
-        this.props.checkUser();
+        // this.props.checkUser();
     }
 
     render () {
@@ -69,7 +69,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    checkUser: () => { dispatch(checkUser()) }
+    // checkUser: () => { dispatch(checkUser()) }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

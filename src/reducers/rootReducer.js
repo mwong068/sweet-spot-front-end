@@ -4,7 +4,9 @@ const initialState = {
     products: [],
     cart: [],
     currentOrder: [],
-    completedOrder: []
+    completedOrder: [],
+    favorites: [],
+    reviews: [],
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -44,9 +46,21 @@ const rootReducer = (state = initialState, action) => {
         case 'ITEM_DELETED':
             return {...state, cart: action.cart, loading: false}
         case 'CLOSING_ORDER':
-            return {...state, loading: false}
+            return {...state, loading: true}
         case 'ORDER_COMPLETED':
             return {...state, completedOrder: action.order, loading: false}
+        case 'CHECKING_FOR_FAVORITES':
+            return {...state, loading: true}
+        case 'NO_FAVORITES':
+            return {...state, favorites: action.favorites, loading: false}
+        case 'DISPLAY_FAVORITES':
+            return {...state, favorites: action.favorites, loading: false}
+        case 'CHECKING_FOR_REVIEWS':
+            return {...state, loading: true}
+        case 'NO_REVIEWS':
+            return {...state, reviews: action.reviews, loading: false}
+        case 'DISPLAY_REVIEWS':
+            return {...state, reviews: action.reviews, loading: false}
         default:
             return state;
     }

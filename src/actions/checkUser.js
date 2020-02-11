@@ -27,6 +27,7 @@ const checkUser = (event, history) => {
                 // console.log(data.user.data)
                 dispatch({type: "SET_CURRENT_USER", currentUser: data.user.data})
             }
+            
         })
     }
 }

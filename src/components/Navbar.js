@@ -17,7 +17,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import InputBase from '@material-ui/core/InputBase';
-// import createNewOrder from '../actions/createNewOrder';
+import createNewOrder from '../actions/createNewOrder';
 
 
 
@@ -85,6 +85,7 @@ export default function Navbar() {
   const classes = useStyles();
 
   const user = useSelector(state => state.currentUser);
+  const order = useSelector( state => state.currentOrder);
   const dispatch = useDispatch();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -147,7 +148,7 @@ export default function Navbar() {
 
           <Typography edge="start" variant="h3" className={classes.title}>
           {/* <span style={{color: 'teal'}}>Sweet</span> <span style={{color: 'orange'}}>Spot</span> */}
-          <img src={ require('../assets/sweetspot.png') } />
+          <Link to='/'><img src={ require('../assets/sweetspot.png') } /></Link>
           </Typography>
           
           <Typography edge="start" variant="h3" className={classes.title}>
@@ -204,7 +205,7 @@ export default function Navbar() {
           </IconButton>
 
           <IconButton aria-label="cart" color="inherit">
-            <Link to="/cart">
+            <Link to="/cart" onClick={() => {dispatch(createNewOrder(user))}}>
             <ShoppingCartIcon className={classes.largeIcon}/>
             </Link>
           </IconButton>

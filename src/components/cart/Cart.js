@@ -23,7 +23,7 @@ class Cart extends React.Component {
 
 
     calculateSubtotal = (items) => {
-        console.log(items)
+        // console.log(items)
         if(items.length !== 0){
         let prices = items.map(item => (item.attributes.product.price))
         let total = prices.reduce((a, b) => a + b, 0)
@@ -35,7 +35,7 @@ class Cart extends React.Component {
     }
     
     calculateFinalTotal = (items) => {
-        console.log(items)
+        // console.log(items)
         if(items.length !== 0){
         let prices = items.map(item => (item.attributes.product.price))
         let total = prices.reduce((a, b) => a + b, 0)
@@ -52,6 +52,17 @@ class Cart extends React.Component {
         this.props.closeOrder(event, total, order)
     }
 
+    displayEmpty = (cart) => {
+        console.log(cart)
+        if(Object.keys(cart).length !== 0){
+            if(cart.data.length === 0)
+            return <h1>Your cart is currently empty! :(<br></br><br></br>Why don't you go find something in the shop?</h1> 
+            }
+            else{
+                return null
+            }
+    }
+
     render () {
         return (
             <div>
@@ -63,10 +74,14 @@ class Cart extends React.Component {
                         <h2 style={{textAlign: 'left'}}>My Cart</h2>
                         <hr></hr>
                         <div id="item-list">
-                            {console.log(Object.keys(this.props.cart)[0])}
-                        {Object.keys(this.props.cart).length !== 0 ? 
+                            {/* {console.log(Object.keys(this.props.cart)[0])} */}
+                        {(Object.keys(this.props.cart).length !== 0) ? 
                         this.props.cart.data.map(item => <CartItem {...item} />) 
-                        : <h1>Your cart is currently empty! Why don't you go find something in the shop?</h1> }
+                        : null}
+                        
+                        
+                        {this.displayEmpty(this.props.cart)}
+                        
                         </div>
                     </div>
                     {/* <hr style={{height: '450px'}}></hr> */}
@@ -119,6 +134,7 @@ class Cart extends React.Component {
                             fontFamily: 'Montserrat',
                         }}
                         ><Link to ='/checkout' style={{textDecoration: 'none', color: '#3e4e60'}}>continue to checkout</Link></Button>
+                        <br></br><br></br><br></br>
                         </center>
                     </div>
                 </div>

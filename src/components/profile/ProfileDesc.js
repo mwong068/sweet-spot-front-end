@@ -9,6 +9,7 @@ import Box from '@material-ui/core/Box';
 import { useSelector } from 'react-redux';
 import EditProfile from './EditProfile';
 import RenderUserInfo from './RenderUserInfo';
+import { Link } from '@material-ui/core';
 // import Button from '@material-ui/core/Button';
 
 
@@ -65,6 +66,7 @@ export default function SimpleTabs(props) {
   const classes = useStyles();
 
   const user = useSelector(state => state.currentUser);
+  const favorites = useSelector(state => state.favorites);
    
   const [value, setValue] = React.useState(0)
 
@@ -85,7 +87,7 @@ export default function SimpleTabs(props) {
               }}>       
               aria-label="simple tabs example" >
           <Tab label="Account" {...a11yProps(0)} style={{fontFamily: 'Montserrat', textTransform: 'capitalize' }} />      
-          <Tab label="Notifications" {...a11yProps(1)} style={{fontFamily: 'Montserrat', textTransform: 'capitalize' }} />
+          <Tab label="Past Orders" {...a11yProps(1)} style={{fontFamily: 'Montserrat', textTransform: 'capitalize' }} />
           <Tab label="Favorites" {...a11yProps(2)} style={{fontFamily: 'Montserrat', textTransform: 'capitalize' }} />    
           <Tab label="Settings" {...a11yProps(3)} style={{fontFamily: 'Montserrat', textTransform: 'capitalize' }} />       
         </Tabs>
@@ -97,10 +99,11 @@ export default function SimpleTabs(props) {
         {props.val === 4 ? <EditProfile info={props.info} history={props.history} /> : <RenderUserInfo info={props.info}/>}
       </TabPanel>
       <TabPanel value={value} index={1} style={{fontFamily: 'Montserrat', textAlign: 'left'}}>
-        Made with love!
+        Your past orders:
       </TabPanel>
       <TabPanel value={value} index={2} style={{fontFamily: 'Montserrat', textAlign: 'left'}}>
-        Coming Soon!
+        {console.log(favorites)}
+        {Object.keys(favorites).length !== 0 ? favorites.data.map(item => <Link to='/products/`${item.id}`'><p>{item.attributes.product.name}</p></Link>) : null}
       </TabPanel>
       <TabPanel value={value} index={3} style={{fontFamily: 'Montserrat', textAlign: 'left'}}>
         <p><b>Email Preferences</b></p>

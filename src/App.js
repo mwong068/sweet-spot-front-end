@@ -7,6 +7,7 @@ import Signup from './components/Signup';
 import Profile from './components/profile/Profile'; 
 import Login from './components/Login'; 
 import Footer from './components/Footer'; 
+import Favorites from './components/Favorites'; 
 import CartContainer from './components/cart/CartContainer'; 
 import Checkout from './components/checkout/Checkout'; 
 import ProductPage from './components/products/ProductPage'; 
@@ -55,10 +56,8 @@ class App extends React.Component {
               <Route path='/addproduct' render={(props) => <AddProduct {...props} />} />
               {/* <Route path='/about'>
                 <About />
-              </Route>
-              <Route path='/favorites'>
-                <Favorites />
-              </Route> */}
+               </Route> */}
+              <Route path='/favorites' render={(props) => <Favorites {...props} />} />
               <Route path='/profile' render={(props) => <Profile {...props} />} />
             </Switch>
             </div>
@@ -81,9 +80,5 @@ const mapDispatchToProps = dispatch => {
     }
   }
 
-  //use current cart id from state to find order items
-  //make new comp for fetching cart items? and then pass down cart information to cart
-
-  
 
 export default connect(null, mapDispatchToProps)(App);

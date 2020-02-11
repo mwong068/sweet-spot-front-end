@@ -12,6 +12,7 @@ h1 {
 h2 {
   text-transform: capitalize;
   font-family: 'Montserrat';
+  color: '#343434';
 }
 
 p {
@@ -82,6 +83,7 @@ hr {
   background-color: #F0DAA1;
   height: 45px;
   border-bottom: 1px solid #D3D3D3;
+  color: '#343434';
 }
 
 #container div {
@@ -393,6 +395,23 @@ hr {
   padding: 20px;
 }
 
+#deal-of-the-day {
+  background-image: url('https://images.unsplash.com/photo-1517683551739-7f3f08efba84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+  width: 100%;
+  height: 50vh;
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-repeat: no-repeat;
+  background-position: 0px -250px;
+  background-size: cover;
+}
+
+#deal-of-the-day div {
+  /* border: 1px solid black; */
+  padding: 10px 0;
+}
+
 /* PROFILE alignment ------------------------------------------- */
 #profile-header {
   text-decoration: none;
@@ -454,7 +473,7 @@ hr {
   border: 1px solid #D3D3D3;
   width: 80%;
   /* height: 70vh; */
-  /* padding: 20px; */
+  /* padding: 20px 0 0 0 ; */
 }
 
 #cart-container div {
@@ -594,4 +613,23 @@ hr {
   /* width: 30vh; */
   /* height: 20vh; */
   /* padding: 25px; */
+}
+
+/* wishlist / favorite */
+#favorites {
+  width: 80%;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 20px;
+  grid-gap: 30px;
+  background-color: #dcead9;
+}
+
+#wishlist {
+  box-shadow: 0 1px 3px 0 #a9a9a9;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+  padding: 20px 0;
+  width: 80%;
 }

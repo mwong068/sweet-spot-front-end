@@ -15,6 +15,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import addToCart from '../../actions/addToCart';
+import favoriteProduct from '../../actions/favoriteProduct';
+import getReviews from '../../actions/getReviews';
 
 
 
@@ -50,6 +52,13 @@ class ProductPage extends React.Component {
         }
         // console.log(this.state.item)
         
+    }
+
+    handleFavorite = (event, productData, user) => {
+        console.log('hi')
+        if(Object.keys(this.props.products).length !== 0) {
+            this.props.favoriteProduct(event, productData, user)
+        }
     }
 
     starRatings = (num) => {
@@ -116,8 +125,10 @@ class ProductPage extends React.Component {
         return (
             <div id="product-page">
                 <center>
+                    {Object.keys(this.props.products).length !== 0 ? this.props.getReviews(this.props.match.params.id) : null}
                 <div id="product-image">
                 {/* {console.log(this.props.products)} */}
+                
                     <img src={(Object.keys(this.props.products).length !== 0) ? (this.props.products.data.find(product => product.id == this.props.match.params.id).attributes.image) : null } 
                     style={{width: '40vh', height: '40vh', objectFit: 'cover'}} />
                 </div>
@@ -148,10 +159,10 @@ class ProductPage extends React.Component {
                     {Object.keys(this.props.products).length !== 0 ? 
                     <h3>{(this.props.products.data.find(product => product.id === this.props.match.params.id).attributes.quantity)} pieces per order</h3>
                     : null}
-
+{/* 
                     {Object.keys(this.props.products).length !== 0 ? 
                     <h3>{(this.props.products.data.find(product => product.id === this.props.match.params.id).attributes.ingredients)}</h3>
-                    : console.log('not cool')}
+                    : console.log('not cool')} */}
         
                     <p><b>Delivery estimates:</b><br/>
                     1-3 days for U.S. Residents.
@@ -169,6 +180,7 @@ class ProductPage extends React.Component {
                         }}>add to cart</Button>
                     <span>     </span>
                     <Button variant="contained" color="primary"
+                    onClick={(event) => this.handleFavorite(event, this.props.match.params.id, this.props.user)}
                     style={{
                     borderRadius: 5,
                     backgroundColor: 'white',
@@ -190,6 +202,7 @@ class ProductPage extends React.Component {
                     </div>
                 </div>
                 <div id="extra-info">
+        
                 <ProductDesc 
                     desc={Object.keys(this.props.products).length !== 0 ? 
                     (this.props.products.data.find(product => product.id === this.props.match.params.id).attributes.description) : null}
@@ -413,12 +426,15 @@ class ProductPage extends React.Component {
 const mapStateToProps = (state) => ({
     products: state.products,
     user: state.currentUser,
-    order: state.currentOrder
+    order: state.currentOrder,
+    favorites: state.favorites
 })
 
 const mapDispatchToProps = dispatch => {
     return {
-        addToCart: (event, productData, order) => { dispatch(addToCart(event, productData, order)) }
+        addToCart: (event, productData, order) => { dispatch(addToCart(event, productData, order)) },
+        favoriteProduct: (event, productData, user) => { dispatch(favoriteProduct(event, productData, user)) },
+        getReviews: (event, productData) => { dispatch(getReviews(event, productData)) }
     }
 }
 
