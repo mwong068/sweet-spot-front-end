@@ -21,6 +21,10 @@ class Cart extends React.Component {
         this.props.getCartItems(this.props.order)
     }
 
+    componentDidUpdate () {
+        // this.props.getCartItems(this.props.order)
+    }
+
 
     calculateSubtotal = (items) => {
         // console.log(items)
@@ -66,19 +70,34 @@ class Cart extends React.Component {
     render () {
         return (
             <div>
-                {/* {Object.keys(this.props.order).length !==0 ? this.getCart(this.props.getCartItems(), this.props.order) : null} */}
+                {/* {Object.keys(this.props.order).length !==0 ? this.props.getCartItems(this.props.order) : null} */}
                 <center>
                 <h1 style={{color: '#6A6C6E'}}>{Object.keys(this.props.cart).length !== 0 ? (this.props.cart.data.length) : 0} item(s) currently in your Cart</h1>
                 <div id="cart-container">
                     <div id="item-1">
-                        <h2 style={{textAlign: 'left'}}>My Cart</h2>
+                        <div id="cart-refresh">
+                            <div>
+                                <h2 style={{textAlign: 'left', fontSize: '30px'}}>My Cart</h2>
+                            </div>
+                            <div>
+                                <br></br>
+                                <Button onClick={() => this.props.getCartItems(this.props.order)}
+                                style={{borderRadius: 5,
+                                    backgroundColor: 'white',
+                                    padding: "9px 27px",
+                                    fontSize: "14px",
+                                    color: 'black',
+                                    border: '3px solid #f3e4b7',
+                                    fontFamily: 'Montserrat',}}>Refresh</Button>
+                            </div>
+                        </div>
                         <hr></hr>
                         <div id="item-list">
-                            {/* {console.log(Object.keys(this.props.cart)[0])} */}
+
+                        {console.log((this.props.cart))}
                         {(Object.keys(this.props.cart).length !== 0) ? 
                         this.props.cart.data.map(item => <CartItem {...item} />) 
                         : null}
-                        
                         
                         {this.displayEmpty(this.props.cart)}
                         
@@ -86,14 +105,14 @@ class Cart extends React.Component {
                     </div>
                     {/* <hr style={{height: '450px'}}></hr> */}
                     <div id="item-2">
-                        <h2 style={{textAlign: 'left'}}>Total</h2>
+                        <h2 style={{textAlign: 'left', fontSize: '30px'}}>Total</h2>
                         <hr></hr>
                         <div id="total-list">
                             <div>
                                 <h4>Subtotal</h4>
                             </div>
                             <div>
-                            <p>${Object.keys(this.props.cart).length !== 0 ? 
+                            <p style={{padding: '5px 0 0 0'}}>${Object.keys(this.props.cart).length !== 0 ? 
                         // this.props.cart.data.map(item => console.log(item.attributes.product.attributes.price))
                         this.calculateSubtotal(this.props.cart.data)
                         : 0.00 }
@@ -105,16 +124,17 @@ class Cart extends React.Component {
                                 <h4>Delivery</h4>
                             </div>
                             <div>
-                                <p>$7.00</p>
+                                <p style={{padding: '5px 0 0 0'}}>$7.00</p>
                             </div>
                         </div>
                         <hr></hr>
                         <div id="total-list">
                             <div>
-                                <h3>Final Total</h3>
+                                <h3 style={{fontSize: '25px'}}>Final Total</h3>
                             </div>
                             <div>
-                                <p>${Object.keys(this.props.cart).length !== 0 ? 
+                                
+                                <p style={{fontSize: '22px', padding: '5px 0 0 0'}}>${Object.keys(this.props.cart).length !== 0 ? 
                         // this.props.cart.data.map(item => console.log(item.attributes.product.attributes.price))
                         this.calculateFinalTotal(this.props.cart.data)
                         : 7.00 }</p>

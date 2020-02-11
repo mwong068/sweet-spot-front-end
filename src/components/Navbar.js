@@ -205,7 +205,7 @@ export default function Navbar() {
           </IconButton>
 
           <IconButton aria-label="cart" color="inherit">
-            <Link to="/cart" onClick={() => {dispatch(createNewOrder(user))}}>
+            <Link to="/cart" onClick={() => dispatch(createNewOrder(user))}>
             <ShoppingCartIcon className={classes.largeIcon}/>
             </Link>
           </IconButton>

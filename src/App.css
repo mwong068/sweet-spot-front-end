@@ -511,11 +511,21 @@ hr {
   border-bottom: 1px solid #D3D3D3;
 }
 
+#cart-refresh {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 40%;
+}
 
 #total-list {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 20px;
+  /* border: 1px solid black; */
+}
+
+#total-list div {
+  /* padding: 5px; */
 }
 
 /* checkout */
