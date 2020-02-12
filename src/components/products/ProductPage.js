@@ -33,12 +33,7 @@ class ProductPage extends React.Component {
     }
 
     componentDidMount () {
-    //    if (Object.keys(this.props.products).length !== 0) { 
-    //         console.log(this.props.products.data.find(product => product.id === (this.props.match.params.product)))
-    //    }
-    //    else {
-    //        console.log('noooooo')
-    //    }
+        this.props.getReviews(this.props.match.params.id)
     }
     
 
@@ -69,8 +64,8 @@ class ProductPage extends React.Component {
         // event.forceUpdate()
     }
 
-    handleDelete = (event, productId, user) => {
-        this.props.deleteReview(event, productId, user)
+    handleDelete = (event, reviews, user) => {
+        this.props.deleteReview(event, reviews, user)
     }
 
 
@@ -145,7 +140,6 @@ class ProductPage extends React.Component {
         return (
             <div id="product-page">
                 <center>
-                    {Object.keys(this.props.products).length !== 0 ? this.props.getReviews(this.props.match.params.id) : null}
                 <div id="product-image">
                 {/* {console.log(this.props.products)} */}
                 
@@ -253,7 +247,7 @@ class ProductPage extends React.Component {
                     </form>
                     <br></br>
                     <Button type="submit"
-                        onClick={(event) => this.handleDelete(event, this.props.match.params.id, this.props.user)}
+                        onClick={(event) => this.handleDelete(event, this.props.reviews, this.props.user)}
                         style={{borderRadius: 5,
                             backgroundColor: 'white',
                             padding: "6px 20px",
@@ -377,7 +371,8 @@ const mapStateToProps = (state) => ({
     products: state.products,
     user: state.currentUser,
     order: state.currentOrder,
-    favorites: state.favorites
+    favorites: state.favorites,
+    reviews: state.reviews
 })
 
 const mapDispatchToProps = dispatch => {
@@ -386,7 +381,7 @@ const mapDispatchToProps = dispatch => {
         favoriteProduct: (event, productData, user) => { dispatch(favoriteProduct(event, productData, user)) },
         getReviews: (event, productData) => { dispatch(getReviews(event, productData)) },
         addReview: (event, productId, user, review) => { dispatch(addReview(event, productId, user, review)) },
-        deleteReview: (event, productId, user) => { dispatch(deleteReview(event, productId, user)) },
+        deleteReview: (event, reviews, user) => { dispatch(deleteReview(event, reviews, user)) },
     }
 }
 
