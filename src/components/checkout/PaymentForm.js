@@ -3,6 +3,7 @@ import { injectStripe } from 'react-stripe-elements';
 import CardSection from './CardSection';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import Complete from './Complete'
 
 class PaymentForm extends React.Component {
 
@@ -54,7 +55,7 @@ class PaymentForm extends React.Component {
     }
 
     render() {
-        if (this.state.complete) return <h1>Purchase Complete!<br></br><br></br>Thanks for your order :)<br></br><br></br> Please check your email shortly for a confirmation of your delivery date.</h1>
+        if (this.state.complete) return <Complete />
 
         
         return (

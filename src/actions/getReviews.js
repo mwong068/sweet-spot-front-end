@@ -21,13 +21,15 @@ const getReviews = (productId) => {
             else {
                 console.log(data)
                 let reviews = data.data.filter(item => item.attributes.product.id == productId )
+                console.log(reviews)
+                let actualReviews = reviews.filter(review => review.attributes.review !== null)
                 if (reviews === undefined) {
                     dispatch({type: 'NO_REVIEWS', reviews: {}})
                 }
                 else {
                     
                     // newItems.push(items)
-                    dispatch({type: 'DISPLAY_REVIEWS', reviews: {data: reviews}})
+                    dispatch({type: 'DISPLAY_REVIEWS', reviews: {data: actualReviews}})
                 }
             }
         })

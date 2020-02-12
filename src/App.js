@@ -8,6 +8,7 @@ import Profile from './components/profile/Profile';
 import Login from './components/Login'; 
 import Footer from './components/Footer'; 
 import Favorites from './components/Favorites'; 
+import About from './components/About'; 
 import CartContainer from './components/cart/CartContainer'; 
 import Checkout from './components/checkout/Checkout'; 
 import ProductPage from './components/products/ProductPage'; 
@@ -54,9 +55,7 @@ class App extends React.Component {
               <Route path='/cart' render={(props) => <CartContainer {...props} />} />
               <Route path='/checkout' render={(props) => <Checkout {...props} />} />
               <Route path='/addproduct' render={(props) => <AddProduct {...props} />} />
-              {/* <Route path='/about'>
-                <About />
-               </Route> */}
+              <Route path='/about'><About /></Route>
               <Route path='/favorites' render={(props) => <Favorites {...props} />} />
               <Route path='/profile' render={(props) => <Profile {...props} />} />
             </Switch>

@@ -21,7 +21,7 @@ export default function Footer() {
             <div>
                 <div id="newsletter-div">
                     <div>
-                    <h2>Subscribe our Newsletter</h2>
+                    <h2>Subscribe to our Newsletter</h2>
                     <p>Subscribe to recieve the latest updates and special offers.</p>
                     </div>
                     {/* <div></div> */}
