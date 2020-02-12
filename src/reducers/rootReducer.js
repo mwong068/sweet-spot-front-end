@@ -2,6 +2,7 @@ const initialState = {
     currentUser: [],
     loading: false,
     products: [],
+    displayProducts: [],
     cart: [],
     currentOrder: [],
     completedOrder: [],
@@ -28,7 +29,7 @@ const rootReducer = (state = initialState, action) => {
         case 'GETTING_PRODUCTS':
             return {...state, loading: true}
         case 'SET_PRODUCTS':
-            return {...state, products: action.products, loading: false}
+            return {...state, products: action.products, displayProducts: action.products, loading: false}
         case 'MAKING_NEW_ORDER':
             return {...state, loading: true}
         case 'CREATE_NEW_ORDER':
@@ -61,6 +62,16 @@ const rootReducer = (state = initialState, action) => {
             return {...state, reviews: action.reviews, loading: false}
         case 'DISPLAY_REVIEWS':
             return {...state, reviews: action.reviews, loading: false}
+        case 'ADDING_REVIEW':
+            return {...state, loading: true}
+        case 'ADDED_REVIEW':
+            return {...state, loading: false}
+        case 'DELETING_REVIEW':
+            return {...state, loading: true}
+        case 'DELETED_REVIEW':
+            return {...state, loading: false}
+        case 'FILTERED_PRODUCTS':
+            return {...state, displayProducts: action.products}
         default:
             return state;
     }

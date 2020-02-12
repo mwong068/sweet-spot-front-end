@@ -40,7 +40,7 @@ class App extends React.Component {
       <div className="App">
           <Router>
             <div>
-              <Navbar />
+            <Route path='/' render={(props) => <Navbar {...props} /> } />
               {/* <hr></hr> */}
             <Route path='/' render={ (props) => <Header {...props} /> } />
               {/* <hr></hr> */}
@@ -53,11 +53,11 @@ class App extends React.Component {
               <Route exact path='/products' render={routerProps => <ProductList {...routerProps} />} />
               <Route path='/products/:id' render={(props) => <ProductPage {...props} />} />
               <Route path='/cart' render={(props) => <CartContainer {...props} />} />
-              <Route path='/checkout' render={(props) => <Checkout {...props} />} />
               <Route path='/addproduct' render={(props) => <AddProduct {...props} />} />
               <Route path='/about'><About /></Route>
               <Route path='/favorites' render={(props) => <Favorites {...props} />} />
               <Route path='/profile' render={(props) => <Profile {...props} />} />
+              <Route path='/checkout' render={(props) => <Checkout {...props} />} />
             </Switch>
             </div>
             <div id="footer-div">

@@ -21,18 +21,18 @@ const getExistingUser = (event, userData, history) => {
         .then(resp => resp.json())
         .then(data => {
             console.log(data)
-            if(data.error){
-                console.log(data.error)
+            if(data.message){
+                console.log(data.message)
             }
             else {
                 localStorage.setItem('token', data.jwt);
                 dispatch({type: "SET_CURRENT_USER", currentUser: data.user.data})
-               
+                history.push('/profile')
                 // return data.user.data.attributes.username
             }
         })
         // console.log(data.user.data.attributes.username)
-        .then(history.push('/profile'))
+        // .then(history.push('/profile'))
     }
 }
 

@@ -150,7 +150,7 @@ export default function Homepage() {
           <Typography gutterBottom variant="h5" style={{fontFamily: 'Montserrat'}}>
             Strawberry Panna Cotta
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="h2">
+          <Typography variant="body2" color="textSecondary" component="h2" style={{fontSize: '24px'}}>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>

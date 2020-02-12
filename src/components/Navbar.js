@@ -1,23 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 // import store from './redux/store.js';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-// import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-// import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import InputBase from '@material-ui/core/InputBase';
 import createNewOrder from '../actions/createNewOrder';
+import filterProducts from '../actions/filterProducts';
 
 
 
@@ -81,11 +79,12 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Navbar() {
+export default function Navbar(props) {
   const classes = useStyles();
 
   const user = useSelector(state => state.currentUser);
   const order = useSelector( state => state.currentOrder);
+  const products = useSelector( state => state.products);
   const dispatch = useDispatch();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -110,6 +109,14 @@ export default function Navbar() {
   const handleMobileMenuOpen = event => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+
+  const handleSearch = (event, history) => {
+    if(event.key === 'Enter') {
+      dispatch(filterProducts(event.target.value, products, history))
+    }
+  }
+
+  const [input, setInput] = useState( '' );
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -160,16 +167,19 @@ export default function Navbar() {
           </Typography> */}
           <div className={classes.search}>
             <div className={classes.searchIcon}>
-              <SearchIcon />
+                <SearchIcon />
             </div>
             <InputBase
               style={{fontFamily: 'Montserrat'}}
               placeholder="Find something sweet..."
+              value={input}
+              onChange={(event) => setInput(event.target.value)}
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
+              onKeyDown={(event) => handleSearch(event, props.history)}
             />
             </div>
 

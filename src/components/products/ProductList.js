@@ -80,12 +80,13 @@ class ProductList extends React.Component {
                 </div>
                 <div id="break"></div>
                 <div>
-                <h2>Filter Sort by</h2><br></br>
+                {/* filtering and sorting for another time */}
+                {/* <h2>Filter Sort by</h2><br></br> */}
                 </div>
 
                 <div id="product-list">
                     {/* {console.log(this.props.products)} */}
-                    {Object.keys(this.props.products).length !== 0 ? this.props.products.data.map((product) => { return <div id="products"><Product {...product} {...this.props} /></div>}) : null }
+                    {Object.keys(this.props.products).length !== 0 ? this.props.displayProducts.data.map((product) => { return <div id="products"><Product {...product} {...this.props} /></div>}) : null }
                 </div>
                 {/* {console.log(Object.keys(this.props.user))} */}
                 {(Object.keys(this.props.user).length !== 0) ? this.props.createNewOrder(this.props.user) : null}
@@ -101,7 +102,8 @@ class ProductList extends React.Component {
 
 const mapStateToProps = (state) => ({
     products: state.products,
-    user: state.currentUser
+    user: state.currentUser,
+    displayProducts: state.displayProducts
 })
 
 const mapDispatchToProps = (dispatch) => ({

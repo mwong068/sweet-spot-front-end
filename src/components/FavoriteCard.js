@@ -11,7 +11,7 @@ export default function FavoriteCard(props) {
     const useStyles = makeStyles({
         root: {
           maxWidth: 305,
-          height: 400,
+          height: 420,
           padding: '20px 0 0 0',
         },
         media: {
@@ -87,19 +87,19 @@ export default function FavoriteCard(props) {
             <CardMedia
             className={classes.media}
             title="Donut"
-            image={ props.product.image }
+            image={ props.image }
             style={{width: '250px', height: '240px'}}
             /><br></br>
             <CardContent style={{height: '5px', textAlign: 'left', padding: '0 30px'}}>
             <Typography gutterBottom variant="h5" style={{fontFamily: 'Montserrat'}}>
-                { props.product.name }
+                { props.name }
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-            {starRatings(props.product.rating)}
+            <Typography variant="body2" color="textSecondary" component="p" style={{fontSize: '24px'}}>
+            {starRatings(props.rating)}
             </Typography>
             <br/>
             <Typography variant="body2" component="h2" style={{fontFamily: 'Montserrat', fontSize: '20px', fontWeight: 'bold'}}>
-                ${ props.product.price }
+                ${ props.price }
             </Typography>
             </CardContent>
         </CardActionArea>

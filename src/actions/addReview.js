@@ -1,3 +1,5 @@
+import createHistory from 'history/createBrowserHistory'
+const history = createHistory();
 
 const addReview = (event, productId, user, review) => {
     console.log(productId)
@@ -26,8 +28,8 @@ const addReview = (event, productId, user, review) => {
            }
            else {
                console.log(data)
-            //    dispatch({type: 'ADDED_TO_CART', loading: false})
-               // history.push('/')
+               dispatch({type: 'ADDED_RVIEW', loading: false})
+                history.go(0)
            }
        
        })

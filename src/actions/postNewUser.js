@@ -17,8 +17,7 @@ const postNewUser = (event, userData, history) => {
         })
         .then(resp => resp.json())
         .then(data => {
-            console.log(data)
-            if(data.error){
+            if(data.message){
                 console.log("uh-oh")
             }
             else {

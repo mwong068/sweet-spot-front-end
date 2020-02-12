@@ -40,20 +40,24 @@ class Cart extends React.Component {
     
     calculateFinalTotal = (items) => {
         // console.log(items)
-        if(items.length !== 0){
-        let prices = items.map(item => (item.attributes.product.price))
-        let total = prices.reduce((a, b) => a + b, 0)
-        return((total+7).toFixed(2))
+        if(items !== undefined){
+            if(items.length !== 0){
+                let prices = items.map(item => (item.attributes.product.price))
+                let total = prices.reduce((a, b) => a + b, 0)
+                return((total+7).toFixed(2))
+            }
+            else{
+                return(7)
+            }
         }
-        else{
-            return(7)
+        else {
+            return null
         }
     }
 
     handleCheckout = (event, total, order) => {
-        // console.log(total)
-        // console.log(order)
-        this.props.closeOrder(event, total, order)
+        console.log(order)
+        // this.props.closeOrder(event, total, order)
     }
 
     displayEmpty = (cart) => {
@@ -63,7 +67,7 @@ class Cart extends React.Component {
             return <h1>Your cart is currently empty! :(<br></br><br></br>Why don't you go find something in the shop?</h1> 
             }
             else{
-                return null
+                return <h1>Your cart is currently empty! :(<br></br><br></br>Why don't you go find something in the shop?</h1> 
             }
     }
 
@@ -153,7 +157,13 @@ class Cart extends React.Component {
                             padding: '10px 25px',
                             fontFamily: 'Montserrat',
                         }}
-                        ><Link to ='/checkout' style={{textDecoration: 'none', color: '#3e4e60'}}>continue to checkout</Link></Button>
+                        >
+                        {console.log(Object.keys(this.props.order).length !== 0)}
+                        {Object.keys(this.props.order).length !== 0 ? 
+                        <Link to ='/checkout' style={{textDecoration: 'none', color: '#3e4e60'}}>continue to checkout</Link> :
+                        <p>continue to checkout</p> }
+                    
+                        </Button>
                         <br></br><br></br><br></br>
                         </center>
                     </div>

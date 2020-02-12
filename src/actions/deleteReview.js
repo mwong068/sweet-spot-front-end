@@ -1,6 +1,6 @@
+import createHistory from 'history/createBrowserHistory'
+const history = createHistory();
 
-//string fetches to first get all of favorite_reviews and then find which one using productid and userid and then fetch to delete that particular
-//one using the id of it
 const deleteReview = (event, reviews, user)  => {
     let userReviews = reviews.data.filter(review => review.attributes.user.id == user.id)
     console.log(userReviews[0].id)
@@ -22,8 +22,8 @@ const deleteReview = (event, reviews, user)  => {
            }
            else {
                console.log(data)
-            //    dispatch({type: 'ADDED_TO_CART', loading: false})
-            //    history.push('/')
+               dispatch({type: 'DELETED_REVIEW', loading: false})
+                history.go(0)
            }
        
        })

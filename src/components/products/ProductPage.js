@@ -8,18 +8,13 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import PinterestIcon from '@material-ui/icons/Pinterest';
 import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined';
-// import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
 import addToCart from '../../actions/addToCart';
 import addReview from '../../actions/addReview';
 import deleteReview from '../../actions/deleteReview';
 import favoriteProduct from '../../actions/favoriteProduct';
 import getReviews from '../../actions/getReviews';
 import TextField from '@material-ui/core/TextField';
+import FancyCard from './FancyCard';
 
 
 
@@ -74,6 +69,17 @@ class ProductPage extends React.Component {
         if(Object.keys(this.props.products).length !== 0) {
             this.props.favoriteProduct(event, productData, user)
         }
+    }
+
+    limitFavorites = (event) => {
+        let cards = []
+        if (Object.keys(this.props.products).length !== 0){
+            for (let i=0; i < 3; i++){
+                let cool = (Math.floor(Math.random() * this.props.products.data.length))
+                cards.push(<FancyCard {...this.props.products.data[cool].attributes} />)
+            }
+         }
+         return cards
     }
 
     starRatings = (num) => {
@@ -160,7 +166,10 @@ class ProductPage extends React.Component {
                         : null}
                         </div>
                         <div>
-                            <p style={{marginLeft: '-55px', fontSize: '15.5px'}}>({Math.floor(Math.random() * 100) + 1} reviews)</p>
+                            <p style={{marginLeft: '-75px', fontSize: '15.5px'}}>
+                                {/* ({Math.floor(Math.random() * 100) + 1} reviews) */}
+                                ({Object.keys(this.props.reviews).length !== 0 ? (this.props.reviews.data.length) : null } reviews)
+                            </p>
                         </div>
                     </div>
                     
@@ -236,17 +245,22 @@ class ProductPage extends React.Component {
                         onChange={this.handleReview}
                         style={{width: '100%', height: '100%'}}></TextField> 
                         <br></br><br></br>
+                        
                         <Button type="submit"
-                        style={{borderRadius: 5,
-                            backgroundColor: 'white',
-                            padding: "6px 20px",
-                            fontSize: "14px",
-                            color: '#808080',
+                        style={{
+                            radius: '3',
+                            border: '0.6px solid #D3D3D3',
+                            backgroundColor: '#dcead9',
+                            color: '#3e4e60',
                             fontWeight: 'bold',
-                            border: '3px solid #ECD189',}}>Add Review</Button>
+                            padding: '7.5px 30px',
+                            }}>Add Review</Button>
+                        
                     </form>
                     <br></br>
-                    <Button type="submit"
+                    
+                    <div>
+                        <Button type="submit"
                         onClick={(event) => this.handleDelete(event, this.props.reviews, this.props.user)}
                         style={{borderRadius: 5,
                             backgroundColor: 'white',
@@ -255,95 +269,21 @@ class ProductPage extends React.Component {
                             color: '#808080',
                             fontWeight: 'bold',
                             border: '3px solid #ECD189',}}>Delete Review</Button>
+                    </div>
+                
                 </div>
-              <br></br><br></br><br></br>
+              
                 <div id="break"></div>
-                <div>
+                <div id="break"></div>
+
+                <div id="featured">
                     <h1>Featured Products</h1>
                     <br></br>
                     <div id="homepage-cards">
-                    <Card >
-                    <CardActionArea>
-                        <CardMedia
-                        // className={classes.media}
-                        title="Donut"
-                        image={ require('../../assets/macarons.jpg') }
-                        style={{width: '290px', height: '280px'}}
-                        /><br></br>
-                        <CardContent style={{height: '5px', textAlign: 'left', padding: '10px'}}>
-                        <Typography gutterBottom variant="h5" style={{fontFamily: 'Montserrat'}}>
-                            Macarons (Assorted)
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        </Typography>
-                        <br/>
-                        <Typography variant="body2" component="h2" style={{fontFamily: 'Montserrat', fontSize: '20px', fontWeight: 'bold'}}>
-                            $30.00
-                        </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                    </Card>
-                    
-                    <Card >
-                    <CardActionArea>
-                        <CardMedia
-                        // className={classes.media}
-                        image={ require('../../assets/chocolatecake.jpg') }
-                        title="Donut"
-                        style={{width: '290px', height: '280px'}}
-                        /><br></br>
-                        <CardContent style={{height: '5px', textAlign: 'left', padding: '10px'}}>
-                        <Typography gutterBottom variant="h5" style={{fontFamily: 'Montserrat'}}>
-                            Chocolate Raspberry C...
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p" image={ require('../../assets/sweetspot.png') }>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        </Typography>
-                        <br/>
-                        <Typography variant="body2" component="h2" style={{fontFamily: 'Montserrat', fontSize: '20px', fontWeight: 'bold'}}>
-                            $40.00
-                        </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                    </Card>
-                    
-                    <Card >
-                    <CardActionArea>
-                    <CardMedia
-                // className={classes.media}
-                image={ require('../../assets/pannacotta.jpg') }
-                title="Donut"
-                style={{width: '290px', height: '280px'}}
-                /><br></br>
-                <CardContent style={{height: '5px', textAlign: 'left', padding: '10px'}}>
-                <Typography gutterBottom variant="h5" style={{fontFamily: 'Montserrat'}}>
-                    Strawberry Panna Cotta
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="h2">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                </Typography>
-                <br/>
-                <Typography variant="body2" component="h2" style={{fontFamily: 'Montserrat', fontSize: '20px', fontWeight: 'bold'}}>
-                    $20.00
-                </Typography>
-                </CardContent>
-            </CardActionArea>
-            </Card>
+                        {this.limitFavorites().map(card => <div>{card}</div>)}
+
                     </div>
-                    <br></br><br></br><br></br><br></br>
+                    <div id="break"></div>
                     <center>
                     <Button variant="contained" color="primary"
                         style={{
