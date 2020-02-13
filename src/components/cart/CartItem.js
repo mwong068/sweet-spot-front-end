@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
 export default function CartItem(props) {
     const dispatch = useDispatch();
     const classes = useStyles();
-    const [rating, setRating] = React.useState('');
+    const [quantity, setQuantity] = React.useState('');
 
     const inputLabel = React.useRef(null);
     const [labelWidth, setLabelWidth] = React.useState(0);
@@ -35,7 +35,9 @@ export default function CartItem(props) {
         }, []);
 
     const handleChange = event => {
-        setRating(event.target.value);
+        event.preventDefault();
+        setQuantity(event.target.value);
+        dispatch(increaseQuantity(props, event.target.value))
       };
 
     return(
@@ -45,7 +47,7 @@ export default function CartItem(props) {
                 <br></br>
                 <img src={ props.attributes.product.image } style={{width: '90%', height: '90%', objectFit: 'cover'}}></img>
             </div>
-            <div>
+            <div id="item-info">
                 <h3>${props.attributes.product.price}</h3>
                 <h4><Link to={'products/' + (props.attributes.product.id)}>
                     {props.attributes.product.name}
@@ -54,23 +56,24 @@ export default function CartItem(props) {
                 <h4>Quantity:</h4>
                 <FormControl className={classes.formControl}>
                     <InputLabel variant="outlined" ref={inputLabel} id="demo-simple-select-outlined-label">
-                    Rating
+                    Quantity
                     </InputLabel>
                     <Select
                     labelId="demo-simple-select-outlined-label"
                     id="demo-simple-select-outlined"
-                    value={rating}
+                    value={quantity}
                     onChange={handleChange}
                     labelWidth={labelWidth}
+                    style={{padding: '0px', border: 'none'}}
                     >
                     <MenuItem value="">
                         <em>None</em>
                     </MenuItem>
-                    <MenuItem value={1}>hey</MenuItem>
-                    <MenuItem value={2}>hi</MenuItem>
-                    <MenuItem value={3}>hey</MenuItem>
-                    <MenuItem value={4}>woah</MenuItem>
-                    <MenuItem value={5}>cool</MenuItem>
+                    <MenuItem value={1}>1</MenuItem>
+                    <MenuItem value={2}>2</MenuItem>
+                    <MenuItem value={3}>3</MenuItem>
+                    <MenuItem value={4}>4</MenuItem>
+                    <MenuItem value={5}>5</MenuItem>
                     </Select>
                 </FormControl>
             

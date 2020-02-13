@@ -2,8 +2,12 @@ import React from 'react';
 
 export default function Complete() {
     return(
-        <div>
-            <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"></img>
+        <div id="completed-purchase">
+            <h1 style={{color: '#3e4e60'}}>Thanks for your purchase!</h1>
+            <br></br>
+            <h2 style={{color: '#3e4e60'}}>We appreciate you supporting this community of amazing bakers!</h2>
+            <br></br>
+            <h3 style={{color: '#3e4e60'}}>You should be recieving a confirmation email shortly with your estimated delivery date.</h3>
         </div>
     )
 }
