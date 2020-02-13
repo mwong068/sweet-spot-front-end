@@ -6,7 +6,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import EditProfile from './EditProfile';
 import RenderUserInfo from './RenderUserInfo';
 import { Link } from '@material-ui/core';
@@ -67,6 +67,8 @@ export default function SimpleTabs(props) {
 
   const user = useSelector(state => state.currentUser);
   const favorites = useSelector(state => state.favorites);
+  const orders = useSelector(state => state.previousOrders);
+  const dispatch = useDispatch();
    
   const [value, setValue] = React.useState(0)
 
@@ -99,14 +101,15 @@ export default function SimpleTabs(props) {
         {props.val === 4 ? <EditProfile info={props.info} history={props.history} /> : <RenderUserInfo info={props.info}/>}
       </TabPanel>
       <TabPanel value={value} index={1} style={{fontFamily: 'Montserrat', textAlign: 'left'}}>
-        Your past orders:
+        {console.log(orders)}
+        {Object.keys(orders).length !== 0 ? orders.map(item => <p><b>{item.type} {item.id}:</b> Total ${item.attributes.total}</p>) : null}
       </TabPanel>
       <TabPanel value={value} index={2} style={{fontFamily: 'Montserrat', textAlign: 'left'}}>
         {console.log(favorites)}
         {Object.keys(favorites).length !== 0 ? favorites.data.map(item => <Link to='/products/`${item.id}`'><p>{item.attributes.product.name}</p></Link>) : null}
       </TabPanel>
       <TabPanel value={value} index={3} style={{fontFamily: 'Montserrat', textAlign: 'left'}}>
-        <p><b>Email Preferences</b></p>
+        <p><b>Email Preferences</b>: Not Subscribed</p>
       </TabPanel>
     </div>
   );

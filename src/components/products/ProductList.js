@@ -66,7 +66,7 @@ class ProductList extends React.Component {
                 <center>
                 <div id="filters">
                     <div>
-                        <h2>Filters</h2>
+                        <h2>Filter by Ratings</h2>
                     </div>
                     <div>
                         <ProductFilter {...this.props.products} />

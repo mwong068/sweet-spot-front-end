@@ -150,7 +150,7 @@ class ProductPage extends React.Component {
                 {/* {console.log(this.props.products)} */}
                 
                     <img src={(Object.keys(this.props.products).length !== 0) ? (this.props.products.data.find(product => product.id == this.props.match.params.id).attributes.image) : null } 
-                    style={{width: '40vh', height: '40vh', objectFit: 'cover'}} />
+                    style={{width: '50vh', height: '50vh', objectFit: 'cover'}} />
                 </div>
                 <div id="product-info">
                 
@@ -285,18 +285,20 @@ class ProductPage extends React.Component {
                     </div>
                     <div id="break"></div>
                     <center>
-                    <Button variant="contained" color="primary"
-                        style={{
-                            borderRadius: 5,
-                            backgroundColor: 'white',
-                            padding: "6px 20px",
-                            fontSize: "14px",
-                            color: 'black',
-                            border: '3px solid #f3e4b7',
-                            fontFamily: 'Montserrat',
-                            // boxShadow: 'none'
-                        }}
-                        ><Link to="/products" style={{color: 'black', textDecoration: 'none'}}>view all</Link></Button>
+                        <div style={{marginLeft: '105px'}}>
+                            <Button variant="contained" color="primary"
+                            style={{
+                                borderRadius: 5,
+                                backgroundColor: 'white',
+                                padding: "6px 20px",
+                                fontSize: "14px",
+                                color: 'black',
+                                border: '3px solid #f3e4b7',
+                                fontFamily: 'Montserrat',
+                                // boxShadow: 'none'
+                            }}
+                            ><Link to="/products" style={{color: 'black', textDecoration: 'none', }}>view all</Link></Button>
+                        </div>
                         </center>
                 </div>
                 <br></br><br></br><br></br><br></br><br></br><br></br>

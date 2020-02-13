@@ -16,7 +16,7 @@ class Favorites extends React.Component{
                 <div>
                     {this.props.getFavorites(this.props.user)}
                     <h1>Your Wishlist:</h1>
-                    <FavoritesList />
+                    <FavoritesList history={this.props.history} />
                     <br></br><br></br>
                 </div>
             </div>

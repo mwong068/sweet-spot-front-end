@@ -81,7 +81,7 @@ export default function SimpleTabs(props) {
           <Tab label="Ingredients" {...a11yProps(1)} style={{fontFamily: 'Montserrat', textTransform: 'capitalize' }} />
           <Tab label="Shipping" {...a11yProps(2)} style={{fontFamily: 'Montserrat', textTransform: 'capitalize' }} />    
           <Tab label="Reviews" {...a11yProps(3)} style={{fontFamily: 'Montserrat', textTransform: 'capitalize' }} />    
-          <Tab label="About" {...a11yProps(4)} style={{fontFamily: 'Montserrat', textTransform: 'capitalize' }} />
+          <Tab label="Extra Information" {...a11yProps(4)} style={{fontFamily: 'Montserrat', textTransform: 'capitalize' }} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0} style={{fontFamily: 'Montserrat'}}>

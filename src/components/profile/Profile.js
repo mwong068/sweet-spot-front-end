@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import ProfileDesc from './ProfileDesc';
 import EditProfile from './EditProfile';
 import logoutUser from "../../actions/logoutUser";
+import previousOrders from "../../actions/previousOrders";
 import createNewOrder from '../../actions/createNewOrder';
 
 
@@ -27,7 +28,7 @@ class Profile extends React.Component {
     }
 
     handleUpdate = (event, history) => {
-        console.log('hey')
+        // console.log('hey')
         event.preventDefault();
         this.setState({
             value: 4
@@ -45,6 +46,7 @@ class Profile extends React.Component {
                     <div><br></br>
                     {/* get order */}
                     {(Object.keys(this.props.currentUser).length !== 0) ? this.props.createNewOrder(this.props.currentUser) : null}
+                    {(Object.keys(this.props.currentUser).length !== 0) ? this.props.previousOrders(this.props.currentUser) : null}
                     {console.log(this.props.currentUser)}
                     {Object.keys(this.props.currentUser).length !== 0 ? 
                     <h1 style={{color: 'black', fontSize: '35px'}}>Hi there, {this.props.currentUser.attributes.name}!</h1>
@@ -108,7 +110,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => ({
     logoutUser: (event, history) => { dispatch(logoutUser(event, history)) },
-    createNewOrder: (userInfo) => { dispatch(createNewOrder(userInfo)) }
+    createNewOrder: (userInfo) => { dispatch(createNewOrder(userInfo)) },
+    previousOrders: (userInfo) => { dispatch(previousOrders(userInfo)) }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

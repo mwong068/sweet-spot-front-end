@@ -17,17 +17,17 @@ const postNewUser = (event, userData, history) => {
         })
         .then(resp => resp.json())
         .then(data => {
-            if(data.message){
-                console.log("uh-oh")
+            if(data.error){
+                return Error
             }
             else {
                 localStorage.setItem('token', data.jwt);
                 dispatch({type: "SET_CURRENT_USER", currentUser: data.user.data})
-                
+                history.push('/profile')
                 // return data.user.data.attributes.username
             }
         })
-        .then(history.push('/profile'))
+        // .then(history.push('/profile'))
     }
 }
 

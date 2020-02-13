@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -26,14 +27,15 @@ export default function Footer() {
                     </div>
                     {/* <div></div> */}
                     <div>
-                    <input type="text" id="newsletter"
+                    <input type="text" id="newsletter" onFocus={{color: 'black'}}
                     style={{
                         borderRadius: 2,
                         backgroundColor: 'white',
-                        padding: "4px 80px",
+                        padding: "5.5px 80px",
                         fontSize: "14px",
                         border: '1px solid white',
                         fontFamily: 'Montserrat',
+                        color: 'orange'
                     }}></input>
                     <Button variant="contained" color="primary" 
                     style={{
@@ -45,7 +47,7 @@ export default function Footer() {
                     fontWeight: 'bold',
                     border: 'none',
                     fontFamily: 'Montserrat',
-                }}>subscribe</Button>
+                }}><Link to="/subscribe" style={{textDecoration: 'none', color: '#3e4e60'}}>subscribe</Link></Button>
                 <br></br><br/>
                     </div>
                 </div>
@@ -90,7 +92,7 @@ export default function Footer() {
                 <div></div>
                 <div><h3>Returns</h3></div>
                 <div></div>
-                <div><h3>FAQ</h3></div>
+                <div><h3><Link to='/faq' style={{color: 'black', textDecoration: 'none'}}>FAQ</Link></h3></div>
             </div>
             </div>
         )

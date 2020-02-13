@@ -6,6 +6,7 @@ const initialState = {
     cart: [],
     currentOrder: [],
     completedOrder: [],
+    previousOrders: [],
     favorites: [],
     reviews: [],
     orderTotal: 0
@@ -75,6 +76,8 @@ const rootReducer = (state = initialState, action) => {
             return {...state, displayProducts: action.products}
         case 'SET_TOTAL':
             return {...state, orderTotal: action.total}
+        case 'USER_ORDERS':
+            return {...state, previousOrders: action.previousOrders}
         default:
             return state;
     }

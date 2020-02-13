@@ -81,8 +81,8 @@ export default function FavoriteCard(props) {
 
     return (
         <div>
-            {console.log(props)}
-        <Card className={classes.root}>
+            {console.log(props.history)}
+        <Card className={classes.root} onClick={() => {props.history.push(`/products/${props.id}`)}}>
         <CardActionArea>
             <CardMedia
             className={classes.media}

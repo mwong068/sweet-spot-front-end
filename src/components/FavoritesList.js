@@ -8,7 +8,7 @@ class FavoritesList extends React.Component{
             <center>
             <div id='favorites'>
                 {Object.keys(this.props.favorites).length !== 0 ?
-                (this.props.favorites.data.map(item => <FavoriteCard {...item.attributes.product} />))
+                (this.props.favorites.data.map(item => <FavoriteCard {...item.attributes.product} history={this.props.history} />))
             : <h2>No favorites yet!<br></br>Why don't you go add some products?</h2> }
             </div>
             </center>
