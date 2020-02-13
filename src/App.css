@@ -496,7 +496,7 @@ hr {
 #cart-container div {
   /* border: 1px solid red; */
   text-align: left;
-  padding: 0 15px 0 15px;
+  padding: 0 15px 5px 10px;
 }
 
 #item-1 {
@@ -530,11 +530,11 @@ hr {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   height: 10vh;
-  /* justify-content: center; */
+  /* padding-bottom: 1px; */
 }
 
 #cart-item div {
-  /* padding: 5px 5px 5px 0; */
+  /* padding-bottom: 10px; */
   /* border: 1px solid black; */
 }
 

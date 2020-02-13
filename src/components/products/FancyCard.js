@@ -82,6 +82,7 @@ export default function FancyCard(props) {
     return (
         <div>
             {console.log(props.history)}
+            {console.log(props)}
         <Card className={classes.root} onClick={() => {props.history.push(`/products/${props.id}`)}}>
         <CardActionArea>
             <CardMedia

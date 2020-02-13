@@ -15,7 +15,8 @@ const useStyles = makeStyles(theme => ({
     formControl: {
       margin: theme.spacing(1),
       minWidth: 40,
-      height: 15
+      height: 15,
+      margin: 'normal'
     },
     selectEmpty: {
       marginTop: theme.spacing(2),
@@ -30,9 +31,9 @@ export default function CartItem(props) {
 
     const inputLabel = React.useRef(null);
     const [labelWidth, setLabelWidth] = React.useState(0);
-    React.useEffect(() => {
-        setLabelWidth(inputLabel.current.offsetWidth);
-        }, []);
+    // React.useEffect(() => {
+    //     setLabelWidth(inputLabel.current.offsetWidth);
+    //     }, []);
 
     const handleChange = event => {
         event.preventDefault();
@@ -54,25 +55,28 @@ export default function CartItem(props) {
                     </Link></h4>
                 <p>{props.attributes.product.description}</p>
                 <div id="item-info">
-                    <div>
+                    <div style={{marginTop: '-10px'}}>
                         <h4>Quantity:</h4>
                         <br></br><br></br>
                     </div>
-                    <div>
+                    <div style={{marginTop: '-10px', marginLeft: '-35px'}}>
                         <FormControl className={classes.formControl}>
-                            <InputLabel variant="outlined" ref={inputLabel} >
+                            {/* <InputLabel variant="filled" ref={inputLabel} disableAnimation="true">
                             {props.attributes.quantity}
-                            </InputLabel>
+                            </InputLabel> */}
                             <Select
                             labelId="demo-simple-select-outlined-label"
                             id="demo-simple-select-outlined"
+                            className={classes.selectEmpty}
+                            displayEmpty
                             value={quantity}
                             onChange={handleChange}
                             labelWidth={labelWidth}
-                            style={{padding: '0px', border: 'none'}}
+                            margin="dense"
+                            style={{padding: '5px 5px', border: 'none'}}
                             >
                             <MenuItem value="">
-                                Currently: {props.attributes.quantity}
+                                {props.attributes.quantity}
                             </MenuItem>
                             <MenuItem value={1}>1</MenuItem>
                             <MenuItem value={2}>2</MenuItem>
@@ -81,7 +85,7 @@ export default function CartItem(props) {
                             <MenuItem value={5}>5</MenuItem>
                             </Select>
                         </FormControl>
-                        <br></br><br></br>
+                        
                     </div>
                     <div>
                         <Button 
@@ -96,6 +100,7 @@ export default function CartItem(props) {
                         fontFamily: 'Montserrat',
                         }}>Delete</Button>
                     </div>
+                    <br></br><br></br>
                 </div>
             </div>
         </div>

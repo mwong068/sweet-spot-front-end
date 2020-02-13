@@ -76,7 +76,7 @@ class ProductPage extends React.Component {
         if (Object.keys(this.props.products).length !== 0){
             for (let i=0; i < 3; i++){
                 let cool = (Math.floor(Math.random() * this.props.products.data.length))
-                cards.push(<FancyCard {...this.props.products.data[cool].attributes} />)
+                cards.push(<FancyCard {...this.props.products.data[cool].attributes} history={this.props.history} id={this.props.products.data[cool].id} />)
             }
          }
          return cards
