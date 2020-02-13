@@ -14,7 +14,7 @@ import Select from '@material-ui/core/Select';
 const useStyles = makeStyles(theme => ({
     formControl: {
       margin: theme.spacing(1),
-      minWidth: 120,
+      minWidth: 40,
       height: 15
     },
     selectEmpty: {
@@ -47,47 +47,56 @@ export default function CartItem(props) {
                 <br></br>
                 <img src={ props.attributes.product.image } style={{width: '90%', height: '90%', objectFit: 'cover'}}></img>
             </div>
-            <div id="item-info">
+            <div>
                 <h3>${props.attributes.product.price}</h3>
                 <h4><Link to={'products/' + (props.attributes.product.id)}>
                     {props.attributes.product.name}
                     </Link></h4>
                 <p>{props.attributes.product.description}</p>
-                <h4>Quantity:</h4>
-                <FormControl className={classes.formControl}>
-                    <InputLabel variant="outlined" ref={inputLabel} id="demo-simple-select-outlined-label">
-                    Quantity
-                    </InputLabel>
-                    <Select
-                    labelId="demo-simple-select-outlined-label"
-                    id="demo-simple-select-outlined"
-                    value={quantity}
-                    onChange={handleChange}
-                    labelWidth={labelWidth}
-                    style={{padding: '0px', border: 'none'}}
-                    >
-                    <MenuItem value="">
-                        <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={1}>1</MenuItem>
-                    <MenuItem value={2}>2</MenuItem>
-                    <MenuItem value={3}>3</MenuItem>
-                    <MenuItem value={4}>4</MenuItem>
-                    <MenuItem value={5}>5</MenuItem>
-                    </Select>
-                </FormControl>
-            
-                <Button 
-                onClick={(event) => dispatch(deleteItem(event, props.id, props.attributes.order.id))}
-                style={{
-                borderRadius: 5,
-                backgroundColor: 'white',
-                // padding: "9px 27px",
-                fontSize: "14px",
-                color: 'black',
-                border: '3px solid #f3e4b7',
-                fontFamily: 'Montserrat',
-                }}>Delete</Button>
+                <div id="item-info">
+                    <div>
+                        <h4>Quantity:</h4>
+                        <br></br><br></br>
+                    </div>
+                    <div>
+                        <FormControl className={classes.formControl}>
+                            <InputLabel variant="outlined" ref={inputLabel} >
+                            {props.attributes.quantity}
+                            </InputLabel>
+                            <Select
+                            labelId="demo-simple-select-outlined-label"
+                            id="demo-simple-select-outlined"
+                            value={quantity}
+                            onChange={handleChange}
+                            labelWidth={labelWidth}
+                            style={{padding: '0px', border: 'none'}}
+                            >
+                            <MenuItem value="">
+                                Currently: {props.attributes.quantity}
+                            </MenuItem>
+                            <MenuItem value={1}>1</MenuItem>
+                            <MenuItem value={2}>2</MenuItem>
+                            <MenuItem value={3}>3</MenuItem>
+                            <MenuItem value={4}>4</MenuItem>
+                            <MenuItem value={5}>5</MenuItem>
+                            </Select>
+                        </FormControl>
+                        <br></br><br></br>
+                    </div>
+                    <div>
+                        <Button 
+                        onClick={(event) => dispatch(deleteItem(event, props.id, props.attributes.order.id))}
+                        style={{
+                        borderRadius: 5,
+                        backgroundColor: 'white',
+                        // padding: "9px 27px",
+                        fontSize: "14px",
+                        color: 'black',
+                        border: '3px solid #f3e4b7',
+                        fontFamily: 'Montserrat',
+                        }}>Delete</Button>
+                    </div>
+                </div>
             </div>
         </div>
     )

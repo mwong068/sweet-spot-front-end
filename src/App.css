@@ -526,12 +526,16 @@ hr {
 }
 
 #item-info {
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  height: 10vh;
+  /* justify-content: center; */
 }
 
 #cart-item div {
-  padding: 0px 0px 15px 0px;
-  border: 1px solid black;
+  /* padding: 5px 5px 5px 0; */
+  /* border: 1px solid black; */
 }
 
 #cart-refresh {
