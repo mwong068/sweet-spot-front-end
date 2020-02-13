@@ -3,7 +3,8 @@ import { injectStripe } from 'react-stripe-elements';
 import CardSection from './CardSection';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import Complete from './Complete'
+import Complete from './Complete';
+import { connect } from 'react-redux';
 
 class PaymentForm extends React.Component {
 
@@ -95,7 +96,7 @@ class PaymentForm extends React.Component {
                     <div id="payment">
                         <div>
                             {(this.props.orderId).length !== 0 ? 
-                            <h3>Total: ${this.props.orderId.data.attributes.total}</h3>
+                            <h2>Total: ${this.props.total}</h2>
                             : console.log('not cool')}
                         </div>
                         <div>
@@ -119,4 +120,10 @@ class PaymentForm extends React.Component {
     }
 }
 
-export default injectStripe(PaymentForm);
+const mapStateToProps = state => {
+    return {
+        total: state.orderTotal
+    }
+}
+
+export default connect(mapStateToProps, null)(injectStripe(PaymentForm));

@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import CartItem from './CartItem';
 import getCartItems from '../../actions/getCartItems';
 import closeOrder from '../../actions/closeOrder';
+import setTotal from '../../actions/setTotal';
 import { Link } from 'react-router-dom';
 
 
@@ -44,6 +45,7 @@ class Cart extends React.Component {
             if(items.length !== 0){
                 let prices = items.map(item => (item.attributes.product.price))
                 let total = prices.reduce((a, b) => a + b, 0)
+                this.props.setTotal((total+7).toFixed(2))
                 return((total+7).toFixed(2))
             }
             else{
@@ -57,7 +59,7 @@ class Cart extends React.Component {
 
     handleCheckout = (event, total, order) => {
         console.log(order)
-        // this.props.closeOrder(event, total, order)
+        this.props.closeOrder(event, total, order)
     }
 
     displayEmpty = (cart) => {
@@ -158,7 +160,7 @@ class Cart extends React.Component {
                             fontFamily: 'Montserrat',
                         }}
                         >
-                        {console.log(Object.keys(this.props.order).length !== 0)}
+                        {/* {console.log(Object.keys(this.props.order).length !== 0)} */}
                         {Object.keys(this.props.order).length !== 0 ? 
                         <Link to ='/checkout' style={{textDecoration: 'none', color: '#3e4e60'}}>continue to checkout</Link> :
                         <p>continue to checkout</p> }
@@ -186,7 +188,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         getCartItems: (event, history) => { dispatch(getCartItems(event, history)) },
-        closeOrder: (event, total, order) => { dispatch(closeOrder(event, total, order))}
+        closeOrder: (event, total, order) => { dispatch(closeOrder(event, total, order))},
+        setTotal: (total) => { dispatch(setTotal(total))}
       }
     }
 

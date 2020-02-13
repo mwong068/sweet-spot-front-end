@@ -27,6 +27,7 @@ const closeOrder = (event, total, order) => {
                 console.log(data.message)
             }
             else {
+                
                 console.log(data)
                 dispatch({type: "ORDER_COMPLETED", order: data})
                 // history.push("/");

@@ -8,6 +8,7 @@ const initialState = {
     completedOrder: [],
     favorites: [],
     reviews: [],
+    orderTotal: 0
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -72,6 +73,8 @@ const rootReducer = (state = initialState, action) => {
             return {...state, loading: false}
         case 'FILTERED_PRODUCTS':
             return {...state, displayProducts: action.products}
+        case 'SET_TOTAL':
+            return {...state, orderTotal: action.total}
         default:
             return state;
     }

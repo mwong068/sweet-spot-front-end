@@ -7,28 +7,12 @@ import createNewOrder from '../../actions/createNewOrder';
 import Button from '@material-ui/core/Button';
 import getFavorites from '../../actions/getFavorites';
 import getReviews from '../../actions/getReviews';
+import ProductFilter from './ProductFilter';
 
 
 
 
 class ProductList extends React.Component {
-
-// removeList = (event) => {
-//     React.unmountComponentAtNode(document.getElementById('product-list'));  
-// }
-
-// handleOrders = (event, user) => {
-//     console.log(user)
-//     if(Object.keys(user).length !== 0){
-//         if(user.attributes.orders.length === 0) {
-//         this.props.createNewOrder(event, user);
-//         }
-//         else {
-//             this.props.checkOrders(event, user);
-//         }
-//     }
-// }
-
 
     render() {
         return (
@@ -79,10 +63,24 @@ class ProductList extends React.Component {
                     </div>
                 </div>
                 <div id="break"></div>
-                <div>
-                {/* filtering and sorting for another time */}
-                {/* <h2>Filter Sort by</h2><br></br> */}
+                <center>
+                <div id="filters">
+                    <div>
+                        <h2>Filters</h2>
+                    </div>
+                    <div>
+                        <ProductFilter {...this.props.products} />
+                    </div>
+                    <div><h1 style={{color: 'white'}}>filters yay</h1></div>
+                    <div>
+                    <h2>Sort by</h2>
+                    </div>
+                    <div>
+                        <ProductFilter {...this.props.products} />
+                    </div>
+                <br></br>
                 </div>
+                </center>
 
                 <div id="product-list">
                     {/* {console.log(this.props.products)} */}
