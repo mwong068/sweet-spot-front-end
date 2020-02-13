@@ -19,15 +19,17 @@ const getFavorites = (user) => {
                 console.log(data.message)
             }
             else {
-                console.log(data)
+                
                 let favorites = data.data.filter(item => item.attributes.user.id == user.id )
                 if (favorites === undefined) {
                     dispatch({type: 'NO_FAVORITES', favorites: {}})
                 }
                 else {
-                    
-                    // newItems.push(items)
-                    dispatch({type: 'DISPLAY_FAVORITES', favorites: {data: favorites}})
+                    console.log(favorites)
+                    let realFavorites = favorites.filter(item => item.attributes.favorited == true)
+                    console.log(realFavorites)
+
+                    dispatch({type: 'DISPLAY_FAVORITES', favorites: {data: realFavorites}})
                 }
             }
         })

@@ -5,13 +5,17 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import { useDispatch } from 'react-redux';
+import Button from '@material-ui/core/Button';
+import deleteFavorite from '../actions/deleteFavorite';
+
 
 export default function FavoriteCard(props) {
 
     const useStyles = makeStyles({
         root: {
           maxWidth: 305,
-          height: 420,
+          height: 450,
           padding: '20px 0 0 0',
         },
         media: {
@@ -79,12 +83,15 @@ export default function FavoriteCard(props) {
         }
     }
 
+    const dispatch = useDispatch();
+
     return (
         <div>
-            {console.log(props.history)}
-        <Card className={classes.root} onClick={() => {props.history.push(`/products/${props.id}`)}}>
+            {console.log(props)}
+        <Card className={classes.root} >
         <CardActionArea>
             <CardMedia
+            onClick={() => {props.history.push(`/products/${props.id}`)}}
             className={classes.media}
             title="Donut"
             image={ props.image }
@@ -101,6 +108,17 @@ export default function FavoriteCard(props) {
             <Typography variant="body2" component="h2" style={{fontFamily: 'Montserrat', fontSize: '20px', fontWeight: 'bold'}}>
                 ${ props.price }
             </Typography>
+            <Button 
+                onClick={(event) => dispatch(deleteFavorite(event, props))}
+                style={{
+                borderRadius: 5,
+                backgroundColor: 'white',
+                // padding: "9px 27px",
+                fontSize: "14px",
+                color: 'black',
+                border: '3px solid #f3e4b7',
+                fontFamily: 'Montserrat',
+                }}>Delete</Button>
             </CardContent>
         </CardActionArea>
         </Card>
