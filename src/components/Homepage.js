@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
     root: {
-      maxWidth: 345,
+      maxWidth: 310,
     },
     media: {
         // will not work for some reason
@@ -82,7 +82,7 @@ export default function Homepage() {
         <div id="featured">
             <h1>Featured Products</h1>
             <br></br>
-            <div id="homepage-cards">
+            <div id="homepage-cards" style={{paddingLeft: '50px'}}>
                 
             <Card className={classes.root}>
             <CardActionArea>
@@ -96,7 +96,7 @@ export default function Homepage() {
                 <Typography gutterBottom variant="h5" style={{fontFamily: 'Montserrat'}}>
                     Macarons (Assorted)
                 </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography variant="body2" color="textSecondary" component="p" style={{fontSize: '20px'}}>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
@@ -123,7 +123,7 @@ export default function Homepage() {
                 <Typography gutterBottom variant="h5" style={{fontFamily: 'Montserrat'}}>
                     Chocolate Raspberry C...
                 </Typography>
-                <Typography variant="body2" color="textSecondary" component="p" image={ require('../assets/sweetspot.png') }>
+                <Typography variant="body2" color="textSecondary" component="p" style={{fontSize: '20px'}} >
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
@@ -150,7 +150,7 @@ export default function Homepage() {
           <Typography gutterBottom variant="h5" style={{fontFamily: 'Montserrat'}}>
             Strawberry Panna Cotta
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="h2" style={{fontSize: '24px'}}>
+          <Typography variant="body2" color="textSecondary" component="h2" style={{fontSize: '20px'}}>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>

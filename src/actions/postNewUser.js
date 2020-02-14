@@ -18,7 +18,7 @@ const postNewUser = (event, userData, history) => {
         .then(resp => resp.json())
         .then(data => {
             if(data.error){
-                return Error
+                window.alert(data.error)
             }
             else {
                 localStorage.setItem('token', data.jwt);

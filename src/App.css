@@ -430,7 +430,7 @@ hr {
 #filters {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
-  width: 45%;
+  width: 65%;
 }
 
 

@@ -132,7 +132,7 @@ export default function Navbar(props) {
       {user.length === 0 ?
       <MenuItem onClick={handleMenuClose}><Link to="/login" style={{ color: 'black', textDecoration: 'none', fontFamily: 'Montserrat', }}>Login</Link></MenuItem> : null}
       {user.length === 0 ?
-      <MenuItem onClick={handleMenuClose}><Link to="/signup" style={{ color: 'black', textDecoration: 'none', fontFamily: 'Montserrat',}}>Signup</Link></MenuItem> : null}
+      <MenuItem onClick={handleMenuClose}><Link to="/signup" style={{ color: 'black', textDecoration: 'none', fontFamily: 'Montserrat',}}>Sign Up</Link></MenuItem> : null}
       {user.length !== 0 ?
       <MenuItem onClick={handleMenuClose}><Link to="/profile" style={{ color: 'black', textDecoration: 'none', fontFamily: 'Montserrat', }}>Profile</Link></MenuItem> : null}
     </Menu>

@@ -35,7 +35,7 @@ export default function Footer() {
                         fontSize: "14px",
                         border: '1px solid white',
                         fontFamily: 'Montserrat',
-                        color: 'orange'
+                        // color: 'orange'
                     }}></input>
                     <Button variant="contained" color="primary" 
                     style={{

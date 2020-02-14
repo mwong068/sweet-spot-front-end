@@ -28,6 +28,7 @@ const addToCart = (event, productData, order) => {
             else {
                 console.log(data)
                 dispatch({type: 'ADDED_TO_CART', loading: false})
+                window.alert('item added to cart!')
                 // history.push('/')
             }
         

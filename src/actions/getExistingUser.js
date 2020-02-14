@@ -22,7 +22,7 @@ const getExistingUser = (event, userData, history) => {
         .then(data => {
             console.log(data)
             if(data.message){
-                console.log(data.message)
+                window.alert(data.message)
             }
             else {
                 localStorage.setItem('token', data.jwt);

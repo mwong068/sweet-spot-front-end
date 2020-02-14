@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import getFavorites from '../../actions/getFavorites';
 import getReviews from '../../actions/getReviews';
 import ProductFilter from './ProductFilter';
+import SortByFilter from './SortByFilter';
 
 
 
@@ -73,10 +74,10 @@ class ProductList extends React.Component {
                     </div>
                     <div><h1 style={{color: 'white'}}>filters yay</h1></div>
                     <div>
-                    <h2>Sort by</h2>
+                    <h2>Sort by Price</h2>
                     </div>
                     <div>
-                        <ProductFilter {...this.props.products} />
+                        <SortByFilter {...this.props.products} />
                     </div>
                 <br></br>
                 </div>

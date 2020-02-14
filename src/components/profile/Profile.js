@@ -41,7 +41,7 @@ class Profile extends React.Component {
                 <center>
                 <div id="profile-header">
                     <div>
-                    <img src={require('../../assets/felicia.jpg')} width='150px' height='150px' style={{borderRadius: '50%', objectFit: 'cover'}}></img>
+                    <img src={require('../../assets/pie.jpg')} width='150px' height='150px' style={{borderRadius: '50%', objectFit: 'cover'}}></img>
                     </div>
                     <div><br></br>
                     {/* get order */}
