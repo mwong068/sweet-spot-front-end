@@ -700,7 +700,7 @@ hr {
 /* faq page */
 #faq {
   background-color: #white;
-  padding: 100px;
+  padding: 10px 100px 150px;
   text-align: right;
   background-image: url('./assets/cheesecake.jpg');
   height: 400px;

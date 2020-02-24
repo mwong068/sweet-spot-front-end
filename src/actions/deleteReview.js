@@ -3,6 +3,8 @@ const history = createHistory();
 
 const deleteReview = (event, reviews, user)  => {
     let userReviews = reviews.data.filter(review => review.attributes.user.id == user.id)
+    console.log(userReviews.length > 0)
+    if (userReviews.length > 0) {
     console.log(userReviews[0].id)
     return (dispatch) => {
        const token = localStorage.token;
@@ -28,6 +30,10 @@ const deleteReview = (event, reviews, user)  => {
        
        })
    }
+    }
+    else {
+        return (dispatch) => { dispatch({ type: "NONE" })}
+    }
 }
 
 export default deleteReview

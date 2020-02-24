@@ -55,16 +55,24 @@ export default function Footer() {
                     <div>
                         <h2>Follow Us</h2>
                         <IconButton aria-label="search" color="inherit" >
+                        <a rel={'external'} href={"https://www.facebook.com"} style={{color: 'black'}}>
                         <FacebookIcon className={classes.largeIcon}/>
+                        </a>
                         </IconButton>
                         <IconButton aria-label="search" color="inherit" >
+                        <a rel={'external'} href={"https://www.twitter.com"} style={{color: 'black'}}>
                         <TwitterIcon className={classes.largeIcon}/>
+                        </a>
                         </IconButton>
                         <IconButton aria-label="search" color="inherit" >
+                        <a rel={'external'} href={"https://www.instagram.com"} style={{color: 'black'}}>
                         <InstagramIcon className={classes.largeIcon}/>
+                        </a>
                         </IconButton>
                         <IconButton aria-label="search" color="inherit" >
+                        <a rel={'external'} href={"https://www.pinterest.com"} style={{color: 'black'}}>
                         <PinterestIcon className={classes.largeIcon}/>
+                        </a>
                         </IconButton>
                         <br></br><br></br>
                     </div>
