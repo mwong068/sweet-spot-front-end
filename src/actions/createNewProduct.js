@@ -1,3 +1,6 @@
+import createHistory from 'history/createBrowserHistory'
+const historyToo = createHistory();
+
 const createNewProduct = (event, productData, history) => {
     event.preventDefault();
     console.log(productData)
@@ -31,6 +34,7 @@ const createNewProduct = (event, productData, history) => {
                console.log(data)
                dispatch({type: 'ADDED_TO_PRODUCTS', products: data})
                history.push('/products')
+               historyToo.go(0)
            }
        
        })

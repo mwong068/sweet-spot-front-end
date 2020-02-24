@@ -102,11 +102,11 @@ export default function SimpleTabs(props) {
       </TabPanel>
       <TabPanel value={value} index={1} style={{fontFamily: 'Montserrat', textAlign: 'left'}}>
         {console.log(orders)}
-        {Object.keys(orders).length !== 0 ? orders.map(item => <p><b>{item.type} {item.id}:</b> Total ${item.attributes.total}</p>) : null}
+        {Object.keys(orders).length !== 0 ? orders.map(item => <p><b>{item.type} {item.id}:</b> Total ${(item.attributes.total).toFixed(2)}</p>) : null}
       </TabPanel>
       <TabPanel value={value} index={2} style={{fontFamily: 'Montserrat', textAlign: 'left'}}>
         {console.log(favorites)}
-        {Object.keys(favorites).length !== 0 ? favorites.data.map(item => <Link to='/products/`${item.id}`'><p>{item.attributes.product.name}</p></Link>) : null}
+        {Object.keys(favorites).length !== 0 ? favorites.data.map(item =><p>{item.attributes.product.name}</p>) : null}
       </TabPanel>
       <TabPanel value={value} index={3} style={{fontFamily: 'Montserrat', textAlign: 'left'}}>
         <p><b>Email Preferences</b>: Not Subscribed</p>

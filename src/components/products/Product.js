@@ -103,7 +103,7 @@ let starRatings = (num) => {
           </Typography>
           <br/>
           <Typography variant="body2" color="primary" component="p" style={{fontFamily: 'Montserrat', textDecoration: 'none'}}>
-            ${props.attributes.price}
+            ${(props.attributes.price).toFixed(2)}
           </Typography>
         </CardContent>
       </CardActionArea>

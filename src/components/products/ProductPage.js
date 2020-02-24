@@ -28,6 +28,7 @@ class ProductPage extends React.Component {
     }
 
     componentDidMount () {
+        window.scrollTo(0, 0)
         this.props.getReviews(this.props.match.params.id)
     }
     
@@ -176,7 +177,7 @@ class ProductPage extends React.Component {
                     
                     {
                     Object.keys(this.props.products).length !== 0 ? 
-                    <h3>${(this.props.products.data.find(product => product.id === this.props.match.params.id).attributes.price)}</h3>
+                    <h3>${(this.props.products.data.find(product => product.id === this.props.match.params.id).attributes.price).toFixed(2)}</h3>
                     : null}
                     {/* quantity */}
                     {Object.keys(this.props.products).length !== 0 ? 
@@ -279,10 +280,12 @@ class ProductPage extends React.Component {
                 <div id="featured">
                     <h1>Featured Products</h1>
                     <br></br>
+                    
                     <div id="homepage-cards">
                         {this.limitFavorites().map(card => <div>{card}</div>)}
-
+                        {window.scrollTo(0, 0)}
                     </div>
+
                     <div id="break"></div>
                     <center>
                         <div style={{marginLeft: '105px'}}>

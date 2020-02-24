@@ -100,7 +100,7 @@ export default function FancyCard(props) {
             </Typography>
             <br/>
             <Typography variant="body2" component="h2" style={{fontFamily: 'Montserrat', fontSize: '20px', fontWeight: 'bold'}}>
-                ${ props.price }
+                ${ (props.price).toFixed(2) }
             </Typography>
             </CardContent>
         </CardActionArea> 

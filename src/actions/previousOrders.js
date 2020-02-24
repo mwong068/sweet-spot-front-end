@@ -1,11 +1,11 @@
 // technically this action is checking for an existing order with active status and no quantity or total but also creating a new one if none such orders exist
 
 const getPreviousOrders = (userInfo) => {
-    console.log('making new order!')
+    console.log('getting old orders')
     console.log(userInfo)
     return (dispatch) => {
         const token = localStorage.token;
-        dispatch({type: 'MAKING_NEW_ORDER'})
+        dispatch({type: 'GETTING_PREVIOUS_ORDERS'})
         return fetch('http://127.0.0.1:3000/orders', {
         method: 'GET',
         headers: {

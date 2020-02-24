@@ -24,7 +24,7 @@ const useStyles = makeStyles({
   
   
 
-export default function Homepage() {
+export default function Homepage(props) {
 
     const classes = useStyles();
 
@@ -54,8 +54,8 @@ export default function Homepage() {
             <div>
                 <center>
                 <AirplanemodeActiveOutlinedIcon style={{ fontSize: "32px", color: '#BDDCBC' }} />
-                <h3>Free Shipping</h3>
-                <p>Automatically applies to orders over $50.</p>
+                <h3>Flat Rate Shipping</h3>
+                <p>All orders will ship with a flat rate of just $7.</p>
                 </center>
             </div>
             <div>
@@ -88,9 +88,10 @@ export default function Homepage() {
             <CardActionArea>
                 <CardMedia
                 className={classes.media}
-                title="Donut"
+                title="macarons"
                 image={ require('../assets/macarons.jpg') }
                 style={{width: '290px', height: '280px'}}
+                onClick={() => {props.history.push(`/products/2`)}}
                 /><br></br>
                 <CardContent style={{height: '5px', textAlign: 'left', padding: '10px'}}>
                 <Typography gutterBottom variant="h5" style={{fontFamily: 'Montserrat'}}>
@@ -116,8 +117,9 @@ export default function Homepage() {
                 <CardMedia
                 className={classes.media}
                 image={ require('../assets/chocolatecake.jpg') }
-                title="Donut"
+                title="chocolate cake with raspberries"
                 style={{width: '290px', height: '280px'}}
+                onClick={() => {props.history.push(`/products/12`)}}
                 /><br></br>
                 <CardContent style={{height: '5px', textAlign: 'left', padding: '10px'}}>
                 <Typography gutterBottom variant="h5" style={{fontFamily: 'Montserrat'}}>
@@ -143,8 +145,9 @@ export default function Homepage() {
             <CardMedia
           className={classes.media}
           image={ require('../assets/pannacotta.jpg') }
-          title="Donut"
+          title="strawberry panna cotta"
           style={{width: '290px', height: '280px'}}
+          onClick={() => {props.history.push(`/products/13`)}}
         /><br></br>
         <CardContent style={{height: '5px', textAlign: 'left', padding: '10px'}}>
           <Typography gutterBottom variant="h5" style={{fontFamily: 'Montserrat'}}>

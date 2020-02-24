@@ -93,7 +93,7 @@ export default function FavoriteCard(props) {
             <CardMedia
             onClick={() => {props.history.push(`/products/${props.id}`)}}
             className={classes.media}
-            title="Donut"
+            title={ props.name }
             image={ props.image }
             style={{width: '250px', height: '240px'}}
             /><br></br>
@@ -106,7 +106,7 @@ export default function FavoriteCard(props) {
             </Typography>
             <br/>
             <Typography variant="body2" component="h2" style={{fontFamily: 'Montserrat', fontSize: '20px', fontWeight: 'bold'}}>
-                ${ props.price }
+                ${ (props.price).toFixed(2) }
             </Typography>
             <Button 
                 onClick={(event) => dispatch(deleteFavorite(event, props))}

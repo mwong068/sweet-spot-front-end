@@ -8,14 +8,14 @@ export default function Subscribe() {
     return(
         <div>
              <div id="subscribe">
-                <h1 style={{color: '#C3DBBF'}}>Welcome to the family!</h1>
+                <h1 style={{color: '#C3DBBF', fontSize: '40px'}}>Welcome to the family!</h1>
                 <br></br>
-                <h2 style={{textTransform: 'none'}}>Thanks for subscribing {(Object.keys(user).length !== 0 ? (user.attributes.name) : null)}!</h2>
-                <p>We appreciate your support.</p>
+                <h2 style={{textTransform: 'none', fontSize: '28px'}}>Thanks for subscribing {(Object.keys(user).length !== 0 ? (user.attributes.name) : null)}!</h2>
+                <p style={{fontSize: '23px'}}>We appreciate your support.</p>
                 <br></br>
-                <p>Keep an eye on your inbox for fun newletters,</p>
-                <p>updates on the latest sales, and information</p>
-                <p>about new products being added everyday!</p>
+                <p style={{fontSize: '18px'}}>Keep an eye on your inbox for fun newletters,</p>
+                <p style={{fontSize: '18px'}}>updates on the latest sales, and information</p>
+                <p style={{fontSize: '18px'}}>about new products being added everyday!</p>
             </div>
         </div>
     )

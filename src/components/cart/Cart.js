@@ -30,7 +30,7 @@ class Cart extends React.Component {
     calculateSubtotal = (items) => {
         // console.log(items)
         if(items.length !== 0){
-        let prices = items.map(item => (item.attributes.product.price))
+        let prices = items.map(item => (item.attributes.product.price) * (item.attributes.quantity))
         let total = prices.reduce((a, b) => a + b, 0)
         return(total.toFixed(2))
         }
