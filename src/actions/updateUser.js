@@ -9,7 +9,7 @@ const updateUser = (event, userData, history) => {
     const token = localStorage.token;
     return (dispatch) => {
         dispatch({type: 'UPDATING_USER'})
-        return fetch('http://127.0.0.1:3000/users/' + `${userData.id}`, {
+        return fetch('https://sweet-spot-back-end.herokuapp.com/users/' + `${userData.id}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',

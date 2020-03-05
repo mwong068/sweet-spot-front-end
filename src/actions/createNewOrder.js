@@ -6,7 +6,7 @@ const createNewOrder = (userInfo) => {
     return (dispatch) => {
         const token = localStorage.token;
         dispatch({type: 'MAKING_NEW_ORDER'})
-        return fetch('http://127.0.0.1:3000/orders', {
+        return fetch('https://sweet-spot-back-end.herokuapp.com/orders', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

@@ -5,7 +5,7 @@ const getReviews = (productId) => {
     return (dispatch) => {
         const token = localStorage.token;
         dispatch({type: 'CHECKING_FOR_REVIEWS'})
-        return fetch('http://127.0.0.1:3000/favorite_reviews', {
+        return fetch('https://sweet-spot-back-end.herokuapp.com/favorite_reviews', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

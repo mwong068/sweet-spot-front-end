@@ -5,7 +5,7 @@ const getExistingUser = (event, userData, history) => {
     // console.log(history)
     return (dispatch) => {
         dispatch({type: 'LOGGING_IN'})
-        return fetch('http://127.0.0.1:3000/login', {
+        return fetch('https://sweet-spot-back-end.herokuapp.com/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

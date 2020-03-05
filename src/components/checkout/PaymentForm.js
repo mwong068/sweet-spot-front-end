@@ -31,7 +31,7 @@ class PaymentForm extends React.Component {
         let {token} = await this.props.stripe.createToken({name: 'Name'});
         console.log(token)
         const tokenId = localStorage.token;
-        let response = await fetch('http://127.0.0.1:3000/charges', {
+        let response = await fetch('https://sweet-spot-back-end.herokuapp.com/charges', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

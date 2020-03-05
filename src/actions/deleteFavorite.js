@@ -6,7 +6,7 @@ const deleteFavorite = (event, product) => {
     return (dispatch) => {
         const token = localStorage.token;
         dispatch({type: 'CHECKING_FOR_FAVORITES'})
-        return fetch('http://127.0.0.1:3000/favorite_reviews/' + `${product.productId}`, {
+        return fetch('https://sweet-spot-back-end.herokuapp.com/favorite_reviews/' + `${product.productId}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',

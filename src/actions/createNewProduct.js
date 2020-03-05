@@ -8,7 +8,7 @@ const createNewProduct = (event, productData, history) => {
     return (dispatch) => {
        const token = localStorage.token;
        dispatch({type: 'ADDING_TO_PRODUCTS', loading: true})
-       return fetch('http://127.0.0.1:3000/products', {
+       return fetch('https://sweet-spot-back-end.herokuapp.com/products', {
        method: 'POST',
        headers: {
            'Content-Type': 'application/json',

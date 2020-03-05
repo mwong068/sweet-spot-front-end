@@ -5,7 +5,7 @@ const getCartItems = (order) => {
     return (dispatch) => {
         const token = localStorage.token;
         dispatch({type: 'FETCHING_ITEMS'})
-        return fetch('http://127.0.0.1:3000/order_items', {
+        return fetch('https://sweet-spot-back-end.herokuapp.com/order_items', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

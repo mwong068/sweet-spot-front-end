@@ -5,7 +5,7 @@ const closeOrder = (event, total, order) => {
     return (dispatch) => {
         const token = localStorage.token;
         dispatch({type: 'CLOSING_ORDER'})
-        return fetch('http://127.0.0.1:3000/orders/' + `${order.id}`, {
+        return fetch('https://sweet-spot-back-end.herokuapp.com/orders/' + `${order.id}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',

@@ -5,7 +5,7 @@ const addToCart = (event, productData, order) => {
      return (dispatch) => {
         const token = localStorage.token;
         dispatch({type: 'ADDING_PRODUCT_TO_CART', loading: true})
-        return fetch('http://127.0.0.1:3000/order_items', {
+        return fetch('https://sweet-spot-back-end.herokuapp.com/order_items', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

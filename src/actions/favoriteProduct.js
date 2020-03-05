@@ -5,7 +5,7 @@ const favoriteProduct = (event, product, user) => {
     return (dispatch) => {
        const token = localStorage.token;
        dispatch({type: 'FAVORITING_PRODUCT', loading: true})
-       return fetch('http://127.0.0.1:3000/favorite_reviews', {
+       return fetch('https://sweet-spot-back-end.herokuapp.com/favorite_reviews', {
        method: 'POST',
        headers: {
            'Content-Type': 'application/json',

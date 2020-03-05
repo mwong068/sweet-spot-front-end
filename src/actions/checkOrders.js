@@ -5,7 +5,7 @@ const checkOrders = (event, history) => {
     return (dispatch) => {
         const token = localStorage.token;
         dispatch({type: 'CHECKING_FOR_CART'})
-        return fetch('http://127.0.0.1:3000/orders', {
+        return fetch('https://sweet-spot-back-end.herokuapp.com/orders', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

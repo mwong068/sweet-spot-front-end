@@ -4,7 +4,7 @@ const increaseQuantity = (product, num) => {
     return (dispatch) => {
         const token = localStorage.token;
         dispatch({type: 'DELETING_ITEM'})
-        return fetch('http://127.0.0.1:3000/order_items/' + `${product.id}`, {
+        return fetch('https://sweet-spot-back-end.herokuapp.com/order_items/' + `${product.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
