@@ -17,7 +17,7 @@ export default function Subscribe() {
                 <br></br>
                 <h2 style={{textTransform: 'none'}}>Who made this website?</h2>
                 <p>My name is Megan and I'm a software engineer in the San Francisco Bay Area.</p>
-                <p>You can check out my portfolio and a bit about me here at my <a rel={'external'} href={"http://www.petitenutmeg.com"} >personal website</a>.</p>
+                <p>You can check out my portfolio and a bit about me here at my <a rel={'external'} href={"http://www.megan-wong.com"} >personal website</a>.</p>
                 <br></br>
             </div>
         </div>
