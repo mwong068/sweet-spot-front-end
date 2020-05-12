@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import getFavorites from '../actions/getFavorites';
+import getFavorites from '../actions/favorites/getFavorites';
 import FavoritesList from './FavoritesList'
 
 class Favorites extends React.Component{

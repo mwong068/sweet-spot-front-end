@@ -19,10 +19,10 @@ import AddProduct from './components/products/AddProduct';
 // import ProductPage from './components/ProductPage'; 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import checkUser from './actions/checkUser';
-import getProducts from './actions/getProducts';
-import getCartItems from './actions/getCartItems';
-import createNewOrder from './actions/createNewOrder';
+import checkUser from './actions/users/checkUser';
+import getProducts from './actions/products/getProducts';
+import getCartItems from './actions/cart/getCartItems';
+import createNewOrder from './actions/cart/createNewOrder';
 import { StripeProvider } from 'react-stripe-elements';
 
 

@@ -14,8 +14,8 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import InputBase from '@material-ui/core/InputBase';
-import createNewOrder from '../actions/createNewOrder';
-import filterProducts from '../actions/filterProducts';
+import createNewOrder from '../actions/cart/createNewOrder';
+import filterProducts from '../actions/products/filterProducts';
 
 
 

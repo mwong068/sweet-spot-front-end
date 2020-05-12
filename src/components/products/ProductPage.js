@@ -8,11 +8,11 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import PinterestIcon from '@material-ui/icons/Pinterest';
 import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined';
-import addToCart from '../../actions/addToCart';
-import addReview from '../../actions/addReview';
-import deleteReview from '../../actions/deleteReview';
-import favoriteProduct from '../../actions/favoriteProduct';
-import getReviews from '../../actions/getReviews';
+import addToCart from '../../actions/cart/addToCart';
+import addReview from '../../actions/reviews/addReview';
+import deleteReview from '../../actions/reviews/deleteReview';
+import favoriteProduct from '../../actions/favorites/favoriteProduct';
+import getReviews from '../../actions/reviews/getReviews';
 import TextField from '@material-ui/core/TextField';
 import FancyCard from './FancyCard';
 
@@ -38,7 +38,7 @@ class ProductPage extends React.Component {
         // console.log(this.props)
         if(Object.keys(this.props.products).length !== 0) {
             let item = (this.props.products.data.find(product => product.id === (productData)))
-            console.log(order)
+            // console.log(order)
             // this.setState({
             //     item: item
             // })

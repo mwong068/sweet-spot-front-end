@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import getExistingUser from '../actions/getExistingUser';
+import getExistingUser from '../actions/users/getExistingUser';
 import TextField from '@material-ui/core/TextField';
 // import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';

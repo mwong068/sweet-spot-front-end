@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import CartItem from './CartItem';
-import getCartItems from '../../actions/getCartItems';
-import closeOrder from '../../actions/closeOrder';
-import setTotal from '../../actions/setTotal';
+import getCartItems from '../../actions/cart/getCartItems';
+import closeOrder from '../../actions/cart/closeOrder';
+import setTotal from '../../actions/cart/setTotal';
 import { Link } from 'react-router-dom';
 
 

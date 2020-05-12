@@ -1,8 +1,8 @@
 import React from 'react';
 import Cart from './Cart';
 import { connect } from 'react-redux';
-import getCartItems from '../../actions/getCartItems';
-import createNewOrder from '../../actions/createNewOrder';
+import getCartItems from '../../actions/cart/getCartItems';
+import createNewOrder from '../../actions/cart/createNewOrder';
 
 
 

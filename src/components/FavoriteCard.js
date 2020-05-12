@@ -7,7 +7,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { useDispatch } from 'react-redux';
 import Button from '@material-ui/core/Button';
-import deleteFavorite from '../actions/deleteFavorite';
+import deleteFavorite from '../actions/favorites/deleteFavorite';
 
 
 export default function FavoriteCard(props) {

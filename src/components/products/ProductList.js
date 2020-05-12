@@ -2,11 +2,11 @@ import React from 'react';
 import Product from './Product';
 import { connect } from 'react-redux';
 import { Link, Route } from 'react-router-dom';
-import checkOrders from '../../actions/checkOrders';
-import createNewOrder from '../../actions/createNewOrder';
+import checkOrders from '../../actions/cart/checkOrders';
+import createNewOrder from '../../actions/cart/createNewOrder';
 import Button from '@material-ui/core/Button';
-import getFavorites from '../../actions/getFavorites';
-import getReviews from '../../actions/getReviews';
+import getFavorites from '../../actions/favorites/getFavorites';
+import getReviews from '../../actions/reviews/getReviews';
 import ProductFilter from './ProductFilter';
 import SortByFilter from './SortByFilter';
 

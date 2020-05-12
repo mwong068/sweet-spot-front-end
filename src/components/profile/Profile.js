@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import ProfileDesc from './ProfileDesc';
 import EditProfile from './EditProfile';
-import logoutUser from "../../actions/logoutUser";
-import previousOrders from "../../actions/previousOrders";
-import createNewOrder from '../../actions/createNewOrder';
+import logoutUser from "../../actions/users/logoutUser";
+import previousOrders from "../../actions/cart/previousOrders";
+import createNewOrder from '../../actions/cart/createNewOrder';
 
 
 class Profile extends React.Component {

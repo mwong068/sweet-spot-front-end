@@ -1,8 +1,8 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import { useDispatch } from 'react-redux';
-import deleteItem from '../../actions/deleteItem';
-import increaseQuantity from '../../actions/increaseQuantity';
+import deleteItem from '../../actions/cart/deleteItem';
+import increaseQuantity from '../../actions/cart/increaseQuantity';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';

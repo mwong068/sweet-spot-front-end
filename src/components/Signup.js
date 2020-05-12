@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import postNewUser from '../actions/postNewUser';
+import postNewUser from '../actions/users/postNewUser';
 import TextField from '@material-ui/core/TextField';
 // import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';

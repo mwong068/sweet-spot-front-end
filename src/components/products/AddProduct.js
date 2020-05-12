@@ -8,7 +8,7 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import { Link } from 'react-router-dom';
 import { FormLabel } from '@material-ui/core';
-import createNewProduct from '../../actions/createNewProduct';
+import createNewProduct from '../../actions/products/createNewProduct';
 // import postNewUser from '../actions/postNewUser';
 
 class AddProduct extends React.Component {

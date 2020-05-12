@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import checkUser from "../actions/checkUser";
+import checkUser from "../actions/users/checkUser";
 import { connect } from 'react-redux';
 
 
