@@ -25,6 +25,7 @@ const favoriteProduct = (event, product, user) => {
            }
            else {
                console.log(data)
+               window.alert('item added to wishlist!')
             //    dispatch({type: 'ADDED_TO_PRODUCTS', products: data})
             //    history.push('/products')
            }

@@ -6,7 +6,7 @@ import FavoritesList from './FavoritesList'
 class Favorites extends React.Component{
 
     componentDidMount () {
-        
+        window.scrollTo(0, 0)
     }
 
     render() {
