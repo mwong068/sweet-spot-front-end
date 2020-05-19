@@ -26,7 +26,6 @@ const getCartItems = (order) => {
                     dispatch({type: 'SHOW_CART_ITEMS', cart: {}})
                 }
                 else {
-                    
                     // newItems.push(items)
                     dispatch({type: 'SHOW_CART_ITEMS', cart: {data: items}})
                 }

@@ -32,7 +32,7 @@ class ProductPage extends React.Component {
         this.props.getReviews(this.props.match.params.id)
     }
     
-
+    // 
     handleClick = (event, productData, order) => {
         if(Object.keys(this.props.products).length !== 0) {
             let item = (this.props.products.data.find(product => product.id === (productData)))
@@ -180,12 +180,13 @@ class ProductPage extends React.Component {
 {/* 
                     {Object.keys(this.props.products).length !== 0 ? 
                     <h3>{(this.props.products.data.find(product => product.id === this.props.match.params.id).attributes.ingredients)}</h3>
-                    : console.log('not cool')} */}
+                    : console.log('not working')} */}
         
                     <p><b>Delivery estimates:</b><br/>
                     1-3 days for U.S. Residents.
                     <br/>Free delivery over $50.</p>
                     <br></br>
+                    {/* add to cart button ------------------------------------------------------------- */}
                     <Button variant="contained" value={this.props.match.params.id} onClick={(event) => this.handleClick(event, this.props.match.params.id, this.props.order)}
                         style={{
                             radius: '3',
@@ -197,6 +198,7 @@ class ProductPage extends React.Component {
 
                         }}>add to cart</Button>
                     <span>     </span>
+                    {/* add to wishlist button --------------------------------------------------------- */}
                     <Button variant="contained" color="primary"
                     onClick={(event) => this.handleFavorite(event, this.props.match.params.id, this.props.user)}
                     style={{
@@ -228,7 +230,7 @@ class ProductPage extends React.Component {
                         (this.props.products.data.find(product => product.id === this.props.match.params.id).attributes.ingredients) : null}
                     />
               <br></br><br></br><br></br>
-            
+            {/* reviews -------------------------------------------------------------------------> */}
                 <div>
                     <h1>Review Product</h1>
                     <p>(One review per person)</p>

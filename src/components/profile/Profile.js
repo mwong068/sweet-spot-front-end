@@ -28,7 +28,6 @@ class Profile extends React.Component {
     }
 
     handleUpdate = (event, history) => {
-        // console.log('hey')
         event.preventDefault();
         this.setState({
             value: 4
@@ -56,10 +55,10 @@ class Profile extends React.Component {
                     <h3>@{this.props.currentUser.attributes.username}</h3>
                     : null}
 
-                   
 
                     </div>
                     <div><br></br><br></br><br></br>
+                    {/* edit profile button ---------------------------------------------------- */}
                     <Button variant="contained" type="submit"
                     onClick={(event) => this.handleUpdate(event, this.props.history)}
                         style={{
@@ -74,6 +73,7 @@ class Profile extends React.Component {
                         edit profile
                         </Button>
                     <span style={{color: 'white'}}> ----</span>
+                    {/* sign out button -------------------------------------------------------- */}
                     {this.props.currentUser ? 
                     <Button variant="contained" color="primary"
                     onClick={(event) => this.handleClick(event, this.props.history)}
