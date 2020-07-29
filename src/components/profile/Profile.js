@@ -46,7 +46,7 @@ class Profile extends React.Component {
                     {/* get order */}
                     {(Object.keys(this.props.currentUser).length !== 0) ? this.props.createNewOrder(this.props.currentUser) : null}
                     {(Object.keys(this.props.currentUser).length !== 0) ? this.props.previousOrders(this.props.currentUser) : null}
-                    {console.log(this.props.currentUser)}
+                    {/* {console.log(this.props.currentUser)} */}
                     {Object.keys(this.props.currentUser).length !== 0 ? 
                     <h1 style={{color: 'black', fontSize: '35px'}}>Hi there, {this.props.currentUser.attributes.name}!</h1>
                     : null}

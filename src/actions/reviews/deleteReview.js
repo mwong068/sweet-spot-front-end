@@ -3,9 +3,9 @@ const history = createHistory();
 
 const deleteReview = (event, reviews, user)  => {
     let userReviews = reviews.data.filter(review => review.attributes.user.id == user.id)
-    console.log(userReviews.length > 0)
+    // console.log(userReviews.length > 0)
     if (userReviews.length > 0) {
-    console.log(userReviews[0].id)
+    // console.log(userReviews[0].id)
     return (dispatch) => {
        const token = localStorage.token;
        dispatch({type: 'DELETING_REVIEW', loading: true})
@@ -23,7 +23,7 @@ const deleteReview = (event, reviews, user)  => {
                console.log(data.message)
            }
            else {
-               console.log(data)
+            //    console.log(data)
                dispatch({type: 'DELETED_REVIEW', loading: false})
                 history.go(0)
            }

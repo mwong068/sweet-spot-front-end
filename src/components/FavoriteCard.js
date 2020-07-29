@@ -87,7 +87,7 @@ export default function FavoriteCard(props) {
 
     return (
         <div>
-            {console.log(props)}
+            {/* {console.log(props)} */}
         <Card className={classes.root} >
         <CardActionArea>
             <CardMedia

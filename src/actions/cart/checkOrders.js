@@ -19,7 +19,7 @@ const checkOrders = (event, history) => {
                 console.log(data.message)
             }
             else {
-                console.log('cute')
+                // console.log('cute')
                 //   }
                 // user.push(data.user.data.attributes)
                 // console.log(data.user.data)

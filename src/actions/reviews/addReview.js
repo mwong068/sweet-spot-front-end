@@ -2,9 +2,9 @@ import createHistory from 'history/createBrowserHistory'
 const history = createHistory();
 
 const addReview = (event, productId, user, review) => {
-    console.log(productId)
-    console.log(user)
-    console.log(review)
+    // console.log(productId)
+    // console.log(user)
+    // console.log(review)
     return (dispatch) => {
        const token = localStorage.token;
        dispatch({type: 'ADDING_REVIEW', loading: true})
@@ -27,7 +27,7 @@ const addReview = (event, productId, user, review) => {
                console.log(data.message)
            }
            else {
-               console.log(data)
+            //    console.log(data)
                dispatch({type: 'ADDED_RVIEW', loading: false})
                 history.go(0)
            }

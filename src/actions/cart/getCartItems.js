@@ -19,7 +19,7 @@ const getCartItems = (order) => {
                 console.log(data.message)
             }
             else {
-                console.log(data.data)
+                // console.log(data.data)
                 // let newItems = []
                 let items = data.data.filter(item => item.attributes.order.id == order.id )
                 if (items === undefined) {

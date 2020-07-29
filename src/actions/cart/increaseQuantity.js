@@ -1,6 +1,6 @@
 const increaseQuantity = (product, num) => {
-    console.log(num)
-    console.log(product)
+    // console.log(num)
+    // console.log(product)
     return (dispatch) => {
         const token = localStorage.token;
         dispatch({type: 'DELETING_ITEM'})
@@ -21,7 +21,7 @@ const increaseQuantity = (product, num) => {
                 console.log(data.error)
             }
             else {
-                console.log(data)
+                // console.log(data)
                 // let newItems = []
                 // let items = data.data.filter(item => item.attributes.order.id == order )
                 // newItems.push(items)

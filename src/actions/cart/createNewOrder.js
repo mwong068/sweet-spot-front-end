@@ -2,7 +2,7 @@
 
 const createNewOrder = (userInfo) => {
     console.log('making new order!')
-    console.log(userInfo)
+    // console.log(userInfo)
     return (dispatch) => {
         const token = localStorage.token;
         dispatch({type: 'MAKING_NEW_ORDER'})
@@ -28,7 +28,7 @@ const createNewOrder = (userInfo) => {
                 console.log(data.message)
             }
             else {
-                console.log(data.data)
+                // console.log(data.data)
                 dispatch({type: "CREATE_NEW_ORDER", currentOrder: data.data})
                 // history.push("/");
                 // return data.user.data.attributes.username

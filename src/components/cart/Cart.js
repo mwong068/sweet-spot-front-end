@@ -58,7 +58,7 @@ class Cart extends React.Component {
     }
 
     handleCheckout = (event, total, order) => {
-        console.log(order)
+        // console.log(order)
         this.props.closeOrder(event, total, order)
     }
 
@@ -100,7 +100,7 @@ class Cart extends React.Component {
                         <hr></hr>
                         <div id="item-list">
 
-                        {console.log((this.props.cart))}
+                        {/* {console.log((this.props.cart))} */}
                         {(Object.keys(this.props.cart).length !== 0) ? 
                         this.props.cart.data.map(item => <CartItem {...item} />) 
                         : null}

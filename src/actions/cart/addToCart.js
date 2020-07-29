@@ -1,7 +1,7 @@
 
 const addToCart = (event, productData, order) => {
-     console.log(productData)
-     console.log(order)
+    //  console.log(productData)
+    //  console.log(order)
      return (dispatch) => {
         const token = localStorage.token;
         dispatch({type: 'ADDING_PRODUCT_TO_CART', loading: true})
@@ -26,7 +26,7 @@ const addToCart = (event, productData, order) => {
                 console.log(data.message)
             }
             else {
-                console.log(data)
+                // console.log(data)
                 dispatch({type: 'ADDED_TO_CART', loading: false})
                 window.alert('item added to cart!')
                 // history.push('/')

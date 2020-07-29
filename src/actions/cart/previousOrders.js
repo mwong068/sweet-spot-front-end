@@ -2,7 +2,7 @@
 
 const getPreviousOrders = (userInfo) => {
     console.log('getting old orders')
-    console.log(userInfo)
+    // console.log(userInfo)
     return (dispatch) => {
         const token = localStorage.token;
         dispatch({type: 'GETTING_PREVIOUS_ORDERS'})
@@ -22,7 +22,7 @@ const getPreviousOrders = (userInfo) => {
             else {
                 const orders = data.data.filter(order => order.attributes.user.id == userInfo.id)
                 const oldOrders = (orders.filter(order => order.attributes.active == false))
-                console.log(oldOrders)
+                // console.log(oldOrders)
                 dispatch({type: "USER_ORDERS", previousOrders: oldOrders})
                 // history.push("/");
                 // return data.user.data.attributes.username

@@ -1,7 +1,7 @@
 const favoriteProduct = (event, product, user) => {
     // event.preventDefault();
-    console.log(product)
-    console.log(user)
+    // console.log(product)
+    // console.log(user)
     return (dispatch) => {
        const token = localStorage.token;
        dispatch({type: 'FAVORITING_PRODUCT', loading: true})
@@ -24,7 +24,7 @@ const favoriteProduct = (event, product, user) => {
                console.log(data.message)
            }
            else {
-               console.log(data)
+            //    console.log(data)
                window.alert('item added to wishlist!')
             //    dispatch({type: 'ADDED_TO_PRODUCTS', products: data})
             //    history.push('/products')

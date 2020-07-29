@@ -2,7 +2,7 @@ import createHistory from 'history/createBrowserHistory'
 const history = createHistory();
 
 const deleteFavorite = (event, product) => {
-    console.log(product)
+    // console.log(product)
     return (dispatch) => {
         const token = localStorage.token;
         dispatch({type: 'CHECKING_FOR_FAVORITES'})
@@ -23,7 +23,7 @@ const deleteFavorite = (event, product) => {
                 console.log(data.message)
             }
             else {
-                console.log(data)
+                // console.log(data)
                 history.go(0)
     
             }

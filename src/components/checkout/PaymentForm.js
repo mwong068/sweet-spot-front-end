@@ -26,10 +26,10 @@ class PaymentForm extends React.Component {
 
     submit = async () => {
     
-        console.log(this.props.orderId)
-        console.log(this.state.name)
+        // console.log(this.props.orderId)
+        // console.log(this.state.name)
         let {token} = await this.props.stripe.createToken({name: 'Name'});
-        console.log(token)
+        // console.log(token)
         const tokenId = localStorage.token;
         let response = await fetch('https://sweet-spot-back-end.herokuapp.com/charges', {
             method: 'POST',
@@ -47,7 +47,7 @@ class PaymentForm extends React.Component {
                 phone: this.state.phone,
             })
         })
-        console.log(response)
+        // console.log(response)
         if(response.ok) {
             this.setState({
                 complete: true

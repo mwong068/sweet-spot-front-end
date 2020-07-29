@@ -31,7 +31,7 @@ const updateUser = (event, userData, history) => {
           
         .then(resp => resp.json())
         .then(data => {
-            console.log(data)
+            // console.log(data)
             if(data.error){
                 console.log("uh-oh")
             }

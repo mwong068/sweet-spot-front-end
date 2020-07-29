@@ -1,7 +1,7 @@
 
 
 const getReviews = (productId) => {
-    console.log(productId)
+    // console.log(productId)
     return (dispatch) => {
         const token = localStorage.token;
         dispatch({type: 'CHECKING_FOR_REVIEWS'})
@@ -19,9 +19,9 @@ const getReviews = (productId) => {
                 console.log(data.message)
             }
             else {
-                console.log(data)
+                // console.log(data)
                 let reviews = data.data.filter(item => item.attributes.product.id == productId )
-                console.log(reviews)
+                // console.log(reviews)
                 let actualReviews = reviews.filter(review => review.attributes.review !== null)
                 if (reviews === undefined) {
                     dispatch({type: 'NO_REVIEWS', reviews: {}})

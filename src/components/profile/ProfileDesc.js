@@ -101,11 +101,11 @@ export default function SimpleTabs(props) {
         {props.val === 4 ? <EditProfile info={props.info} history={props.history} /> : <RenderUserInfo info={props.info}/>}
       </TabPanel>
       <TabPanel value={value} index={1} style={{fontFamily: 'Montserrat', textAlign: 'left'}}>
-        {console.log(orders)}
+        {/* {console.log(orders)} */}
         {Object.keys(orders).length !== 0 ? orders.map(item => <p><b>{item.type} {item.id}:</b> Total ${(item.attributes.total).toFixed(2)}</p>) : null}
       </TabPanel>
       <TabPanel value={value} index={2} style={{fontFamily: 'Montserrat', textAlign: 'left'}}>
-        {console.log(favorites)}
+        {/* {console.log(favorites)} */}
         {Object.keys(favorites).length !== 0 ? favorites.data.map(item =><p>{item.attributes.product.name}</p>) : null}
       </TabPanel>
       <TabPanel value={value} index={3} style={{fontFamily: 'Montserrat', textAlign: 'left'}}>

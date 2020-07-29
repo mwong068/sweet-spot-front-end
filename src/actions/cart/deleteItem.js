@@ -18,7 +18,7 @@ const deleteItem = (event, product, order) => {
                 console.log(data.error)
             }
             else {
-                console.log(data)
+                // console.log(data)
                 // let newItems = []
                 let items = data.data.filter(item => item.attributes.order.id == order )
                 // newItems.push(items)

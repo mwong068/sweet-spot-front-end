@@ -44,7 +44,7 @@ export default function CartItem(props) {
     return(
         <div id="cart-item">
             <div>
-                {console.log(props)}
+                {/* {console.log(props)} */}
                 <br></br>
                 <img src={ props.attributes.product.image } style={{width: '90%', height: '90%', objectFit: 'cover'}}></img>
             </div>

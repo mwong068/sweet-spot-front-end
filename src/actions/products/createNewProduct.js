@@ -3,7 +3,7 @@ const historyToo = createHistory();
 
 const createNewProduct = (event, productData, history) => {
     event.preventDefault();
-    console.log(productData)
+    // console.log(productData)
     // console.log(order)
     return (dispatch) => {
        const token = localStorage.token;
@@ -31,7 +31,7 @@ const createNewProduct = (event, productData, history) => {
                console.log(data.message)
            }
            else {
-               console.log(data)
+            //    console.log(data)
                dispatch({type: 'ADDED_TO_PRODUCTS', products: data})
                history.push('/products')
                historyToo.go(0)
