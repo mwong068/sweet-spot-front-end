@@ -1,7 +1,7 @@
 
 const getCartItems = (order) => {
     // console.log(event)
-    console.log(order.id)
+    // console.log(order.id)
     return (dispatch) => {
         const token = localStorage.token;
         dispatch({type: 'FETCHING_ITEMS'})

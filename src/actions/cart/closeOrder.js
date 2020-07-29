@@ -1,7 +1,7 @@
 
 const closeOrder = (event, total, order) => {
     console.log('closing order')
-    console.log(order)
+    // console.log(order)
     return (dispatch) => {
         const token = localStorage.token;
         dispatch({type: 'CLOSING_ORDER'})

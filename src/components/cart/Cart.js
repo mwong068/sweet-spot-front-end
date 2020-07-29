@@ -63,7 +63,7 @@ class Cart extends React.Component {
     }
 
     displayEmpty = (cart) => {
-        console.log(cart)
+        // console.log(cart)
         if(Object.keys(cart).length !== 0){
             if(cart.data.length === 0)
             return <h1>Your cart is currently empty! :(<br></br><br></br>Why don't you go find something in the shop?</h1> 
