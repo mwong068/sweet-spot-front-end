@@ -20,7 +20,7 @@ const getExistingUser = (event, userData, history) => {
         })
         .then(resp => resp.json())
         .then(data => {
-            console.log(data)
+            // console.log(data)
             if(data.message){
                 window.alert(data.message)
             }
